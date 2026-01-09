@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { FiPhoneCall } from 'react-icons/fi';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,8 +11,6 @@ export default function Navbar() {
     logo: {
       src: '/logo/logoh.svg',
       alt: 'Nuro Vet Logo',
-      width: 270,
-      height: 60,
     },
     menu: [
       { label: 'Home', href: '/' },
@@ -40,10 +39,10 @@ export default function Navbar() {
               <Image
                 src={navbarData.logo.src}
                 alt={navbarData.logo.alt}
-                width={navbarData.logo.width}
-                height={navbarData.logo.height}
+                width={270}
+                height={60}
                 priority
-                className="object-contain w-[140px] sm:w-[180px] md:w-[220px] lg:w-[270px] h-auto"
+                className="object-contain w-[140px] sm:w-[180px] md:w-[220px] lg:w-[270px] "
               />
             </Link>
 
@@ -63,22 +62,20 @@ export default function Navbar() {
             {/* Right Actions */}
             <div className="hidden md:flex items-center gap-4">
               <div className="flex items-center gap-2 text-white">
-                <span className="h-8 w-8 flex items-center justify-center rounded-full bg-green-600">
-                  📞
+                <span className="h-12 w-12 flex items-center justify-center rounded-full bg-[#00603A]">
+                  <FiPhoneCall size={20} />
                 </span>
-                <span
-                  className="text-sm font-medium leading-tight text-base
-"
-                >
-                  {navbarData.phone.label}
+                <p className="text-2xl  leading-tight text-base">
+                  <span className="fredoka font-medium"> {navbarData.phone.label}</span>
                   <br />
-                  {navbarData.phone.number}
-                </span>
+                  <span className="font-normal"> {navbarData.phone.number}</span>
+                </p>
               </div>
 
               <Link
                 href={navbarData.cta.href}
-                className="rounded-full bg-green-700 px-5 py-2 text-sm font-semibold text-white hover:bg-green-800 transition text-base"
+                className="rounded-full bg-[#00603A] px-5 py-3 text-sm  text-white hover:bg-green-800 transition text-base border border-white text-base
+"
               >
                 {navbarData.cta.label}
               </Link>

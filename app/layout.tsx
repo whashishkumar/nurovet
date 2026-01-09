@@ -14,6 +14,12 @@ const fredoka = localFont({
   display: 'swap',
 });
 
+const figtree = localFont({
+  src: '../public/fonts/Fredoka-Regular.ttf',
+  variable: '--font-figtree',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'nuroVet',
   description:
@@ -27,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fredoka.variable} ${onesta.variable} antialiased`}>{children}</body>
+      <body className={`${fredoka.variable} ${onesta.variable} ${figtree.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

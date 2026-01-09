@@ -25,10 +25,22 @@
   font-family: var(--font-fredoka);
 }
 
+.onesta {
+  font-family: var(--font-onesta);
+}
+
+.figtree {
+  font-family: var(--font-figtree);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-onesta);
+}
+
+.bg-color {
+  background-color: #f7f2ed;
 }
 
 html {
@@ -36,7 +48,7 @@ html {
 }
 
 .wrapper {
-  max-width: 95rem;
+  max-width: 90rem;
 }
 
 .inner-wrapper {
