@@ -47,14 +47,13 @@ export default function HeroBanner() {
             rounded-2xl
             sm:rounded-3xl
             overflow-hidden
-            flex flex-col 
+            flex flex-col
           "
         >
           <div className=" inset-0 bg-gradient-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
           <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
             <Navbar />
           </div>
-
           <div className="relative lg:absolute inset-0 z-20 flex items-center md:flex-grow py-12 lg:py-0 ">
             <div className="px-6 sm:px-10 md:px-16 w-full">
               <div className="inner-wrapper m-auto">
