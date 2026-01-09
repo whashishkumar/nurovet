@@ -1,16 +1,26 @@
 import Link from 'next/link';
 
+type ButtonVariant = 'primary' | 'secondary' | 'outline';
+
+interface ButtonProps {
+  href: string;
+  label: string;
+  variant?: ButtonVariant;
+  className?: string;
+  [key: string]: any; // For the rest of the props (...props)
+}
+
 export default function Button({
   href,
   label,
   variant = 'primary',
-  className = '',
+  className = ' ',
   ...props
-}: any) {
-  const variants = {
+}: ButtonProps) {
+  const variants: Record<ButtonVariant, string> = {
     primary: 'bg-[#00603A] hover:bg-[#004d2e] text-white',
     secondary: 'bg-[#003366] hover:bg-[#002244] text-white',
-    outline: 'border border-[#fff] text-white  hover:text-white',
+    outline: 'border border-[#fff] text-white hover:text-white',
   };
 
   return (
@@ -26,7 +36,7 @@ export default function Button({
         transition-all 
         duration-300 
         text-center
-        ${variants[variant] || variants.primary} 
+        ${variants[variant]} 
         ${className}
       `}
       {...props}
