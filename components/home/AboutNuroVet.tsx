@@ -33,14 +33,14 @@ const heroData = {
 
 export default function Hero() {
   return (
-    <section className="bg-color pb-12 overflow-hidden ">
+    <section className="bg-color  overflow-hidden ">
       <div
         className="
     absolute
     hidden
     lg:block
-    lg:w-[35vw] xl:w-[40vw]
-    lg:h-[640px]
+    lg:w-[30vw] xl:w-[30vw]
+    lg:h-[620px]
     bg-[url('/images/Webp/aboutcat.webp')]
     bg-contain
     bg-left
