@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function FeaturesCards({ featuresData }: any) {
   return (
-    <section className="bg-color py-16">
+    <section className="bg-color pt-12">
       <div className="wrapper mx-auto px-4">
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {featuresData?.map((item: any, idx: any) => (
@@ -10,7 +10,7 @@ export default function FeaturesCards({ featuresData }: any) {
               key={idx}
               className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#00603A]">
+              <div className=" flex h-12 w-12 items-center justify-center rounded-full bg-[#00603A]">
                 <Image
                   src={item.icon}
                   alt={item.title}

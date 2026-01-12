@@ -33,18 +33,34 @@ const heroData = {
 
 export default function Hero() {
   return (
-    <section className="bg-color  overflow-hidden ">
+    <section className="bg-color overflow-hidden">
       <div
         className="
     absolute
     hidden
     lg:block
+    bg-bottom-left
     lg:w-[30vw] xl:w-[30vw]
-    lg:h-[620px]
+    lg:h-175
     bg-[url('/images/Webp/aboutcat.webp')]
-    bg-contain
-    bg-left
     bg-no-repeat
+    bg-contain
+    overflow-hidden
+      "
+      />
+
+      <div
+        className="
+    absolute
+    hidden
+    lg:block
+    right-0
+    lg:w-[50vw] xl:w-[50vw]
+    lg:h-175
+    bg-[url('/images/about.svg')]
+    bg-no-repeat
+    bg-contain
+    bg-right
     overflow-hidden
   "
       />
@@ -52,17 +68,15 @@ export default function Hero() {
       <div className="wrapper m-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0 ">
           {/* LEFT CONTENT */}
-          <div className="px-4 sm:px-10 md:px-16 lg:px-0 lg:pl-26 order-2 lg:order-1 z-1">
+          <div className="px-4 sm:px-10 md:px-16 lg:px-0 lg:pl-22 order-2 lg:order-1 z-1">
             <SectionBadge label="About Nurovet" icon="/icons/bone.svg" />
             <div className="inner-wrapper mx-auto ">
               <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight fredoka">
                 {heroData.title.text}
               </h1>
-
               <p className="mt-6 text-[#000000] leading-relaxed onesta font-normal text-base sm:text-lg lg:text-xl">
                 {heroData.description}
               </p>
-
               {/* FEATURES */}
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
                 {heroData.features.map((item, index) => (
@@ -98,21 +112,6 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div
-            className="relative flex justify-center lg:justify-end order-1 lg:order-2
-                lg:-mr-[calc((100vw-100%)/9)]"
-          >
-            <div className="w-full pl-4 pr-0 lg:pr-0 lg:pl-10">
-              <Image
-                src={heroData.image.src}
-                alt={heroData.image.alt}
-                width={600}
-                height={400}
-                className="w-full h-auto object-contain"
-                priority
-              />
             </div>
           </div>
         </div>

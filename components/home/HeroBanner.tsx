@@ -37,9 +37,9 @@ export default function HeroBanner() {
         <div
           className="
             relative w-full
-            min-h-[600px] 
-            sm:min-h-[500px]
-            lg:h-[702px] 
+            min-h-150 
+            sm:min-h-125
+            lg:h-175.5 
             bg-[url('/images/Webp/Hero.webp')]
             bg-cover        
             bg-center       
@@ -47,18 +47,17 @@ export default function HeroBanner() {
             rounded-2xl
             sm:rounded-3xl
             overflow-hidden
-            flex flex-col 
+            flex flex-col
           "
         >
-          <div className=" inset-0 bg-gradient-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
+          <div className=" inset-0 bg-linear-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
           <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
             <Navbar />
           </div>
-
-          <div className="relative lg:absolute inset-0 z-20 flex items-center md:flex-grow py-12 lg:py-0 ">
+          <div className="relative lg:absolute inset-0 z-20 flex items-center md:grow py-12 lg:py-0 ">
             <div className="px-6 sm:px-10 md:px-16 w-full">
               <div className="inner-wrapper m-auto">
-                <h1 className="text-[2rem] sm:text-[3rem] lg:text-[4.125rem] font-bold leading-[1.2] lg:leading-[4.75rem] text-[#003366] fredoka">
+                <h1 className="text-[2rem] sm:text-[3rem] lg:text-[4.125rem] font-bold leading-[1.2] lg:leading-19 text-[#003366] fredoka">
                   {heroContent.title.first}
                   <span className="text-[#00603A] block">{heroContent.title.highlight}</span>
                   {heroContent.title.last}
@@ -69,7 +68,7 @@ export default function HeroBanner() {
                       key={index}
                       className="text-[#003366] font-bold text-base sm:text-xl lg:text-[1.5rem] flex items-center"
                     >
-                      <span className="mr-2 flex-shrink-0">
+                      <span className="mr-2 shrink-0">
                         <BsCheck2All className="w-5 h-5 sm:w-6 sm:h-6" />
                       </span>
                       {feature}
@@ -104,7 +103,7 @@ export default function HeroBanner() {
             {features.map((item) => (
               <div
                 key={item.id}
-                className="max-w-[160px] sm:max-w-[160px] flex flex-col items-center text-center gap-3 fredoka"
+                className="max-w-40 sm:max-w-40 flex flex-col items-center text-center gap-3 fredoka"
               >
                 <div>
                   <Image
@@ -115,7 +114,7 @@ export default function HeroBanner() {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-[#000] font-semibold text-lg sm:text-sm leading-snug">
+                <p className="text-black font-semibold text-lg sm:text-sm leading-snug">
                   {item.title}
                 </p>
               </div>
@@ -126,7 +125,7 @@ export default function HeroBanner() {
             {featuresRight.map((item) => (
               <div
                 key={item.id}
-                className="max-w-[160px] sm:max-w-[190px] flex flex-col items-center text-center gap-3 fredoka"
+                className="max-w-40 sm:max-w-47.5 flex flex-col items-center text-center gap-3 fredoka"
               >
                 <div>
                   <Image
@@ -137,7 +136,7 @@ export default function HeroBanner() {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-[#000] font-semibold text-lg sm:text-sm leading-snug ">
+                <p className="text-black font-semibold text-lg sm:text-sm leading-snug ">
                   {item.title}
                 </p>
               </div>
