@@ -52,7 +52,7 @@ html {
 }
 
 .inner-wrapper {
-  max-width: 80rem;
+  max-width: 75rem;
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {

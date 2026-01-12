@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline';
@@ -14,7 +15,8 @@ export default function Button({
   href,
   label,
   variant = 'primary',
-  className = ' ',
+  className = '',
+  showICon,
   ...props
 }: ButtonProps) {
   const variants: Record<ButtonVariant, string> = {
@@ -28,7 +30,6 @@ export default function Button({
       href={href}
       className={`
         onesta
-        inline-block
         rounded-full 
         px-6 
         py-2.5 
@@ -36,12 +37,25 @@ export default function Button({
         transition-all 
         duration-300 
         text-center
+        flex 
+        justify-center
+        items-center
+        gap-2
         ${variants[variant]} 
         ${className}
       `}
       {...props}
     >
-      {label}
+      <span>{label}</span>
+      {showICon && (
+        <Image
+          src={'/icons/btnIcon.svg'}
+          alt="icon"
+          height={20}
+          width={20}
+          className="object-contain "
+        />
+      )}
     </Link>
   );
 }
