@@ -183,10 +183,10 @@ const RemoteConsultaions = () => {
             className="
           object-contain
           w-full
-          max-w-[280px]
-          sm:max-w-[360px]
-          md:max-w-[480px]
-          lg:max-w-[680px]
+          max-w-70
+          sm:max-w-90
+          md:max-w-120
+          lg:max-w-170
         "
           />
         </div>

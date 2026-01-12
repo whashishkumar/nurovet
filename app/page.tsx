@@ -5,6 +5,7 @@ import CustomizedDashboard from '@/components/home/CustomizedDashboard';
 import FeaturesNeuroVet from '@/components/home/FeaturesNeuroVet';
 import HeroBanner from '@/components/home/HeroBanner';
 import MobilePlatform from '@/components/home/MobilePlatform';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <FeaturesNeuroVet />
       <CustomizedDashboard />
       <MobilePlatform />
+      <WhyChooseUs />
     </>
   );
 }
