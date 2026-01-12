@@ -20,8 +20,8 @@ const arcFeatures = {
 const ArcFeaturesSection = () => {
   const { cta, items } = arcFeatures;
   return (
-    <section className="relative py-15 overflow-hidden">
-      <div className="wrapper mx-auto relative">
+    <section className="relative pt-15 overflow-hidden">
+      <div className="inner-wrapper mx-auto relative">
         <div className="relative flex justify-center">
           <div className="relative w-full h-95">
             <div className="absolute inset-0 rounded-t-full border-t border-[#FFFFFF]" />
@@ -29,9 +29,9 @@ const ArcFeaturesSection = () => {
             {items.map((item, index) => {
               const positions = [
                 'left-0 top-[220px]',
-                'left-[10%] top-[70px]',
+                'left-[10%] top-[60px]',
                 'left-1/2 -translate-x-1/2 top-[-20px]',
-                'right-[10%] top-[70px]',
+                'right-[10%] top-[60px]',
                 'right-0 top-[220px]',
               ];
 
@@ -57,16 +57,39 @@ const ArcFeaturesSection = () => {
 
 const VideoSection = () => {
   return (
-    <div className="wrapper m-auto">
-      <Image src={'/images/vdoContainer.png'} alt="bg-movie" height={750} width={1856} />
-    </div>
+    <section className="relative pb-16 lg:pt-0 pt-10">
+      <div className="wrapper mx-auto relative">
+        <div className="absolute -top-36 left-1/2 -translate-x-1/2 z-20">
+          <Image
+            src="/images/Webp/whychooseanimals.webp"
+            alt="animals"
+            width={600}
+            height={140}
+            className="object-contain"
+            priority
+          />
+        </div>
+
+        {/* Video container */}
+        <div className="relative rounded-3xl overflow-hidden">
+          <Image
+            src="/images/vdoContainer.png"
+            alt="video background"
+            width={1856}
+            height={750}
+            className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
+            priority
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default function WhyChooseUs() {
   return (
     <div className="bg-color">
-      <div className="inner-wrapper m-auto lg:py:16 py-12">
+      <div className="inner-wrapper m-auto lg:py:16 py-12 ">
         <div className="flex justify-center">
           <SectionBadge label="Our Specialities" icon="/icons/bone.svg" />
         </div>
