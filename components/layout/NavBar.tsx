@@ -107,7 +107,7 @@ export default function Navbar() {
 
               <Link
                 href={navbarData.cta.href}
-                className="block w-full mt-2 rounded-full bg-green-700 px-4 py-2 text-center text-sm font-semibold"
+                className="block w-full mt-2 rounded-full bg-green-700  py-2 text-center text-sm font-semibold"
               >
                 {navbarData.cta.label}
               </Link>

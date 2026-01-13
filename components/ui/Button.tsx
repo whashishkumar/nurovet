@@ -8,6 +8,7 @@ interface ButtonProps {
   label: string;
   variant?: ButtonVariant;
   className?: string;
+  showICon?: boolean;
   [key: string]: any; // For the rest of the props (...props)
 }
 

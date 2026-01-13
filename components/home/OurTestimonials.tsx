@@ -124,7 +124,7 @@ export default function OurTestimonials() {
     bg-center
   "
     >
-      <div className="inner-wrapper m-auto lg:py:16 py-12 lg:px-0 px-4 ">
+      <div className="inner-wrapper m-auto lg:py:16 py-12 lg:px-0 px-6 ">
         <div className="flex justify-between flex-wrap">
           <div>
             <div className="flex justify-start">

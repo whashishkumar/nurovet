@@ -40,7 +40,7 @@ const vetGalleryData = {
 
 const VetGallery = () => {
   return (
-    <section className="wrapper m-auto lg:px-0 px-4">
+    <section className="wrapper m-auto lg:px-0 px-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
         {/* Left */}
         <div className="lg:col-span-4">
@@ -99,7 +99,7 @@ export default function RecentStories() {
           <SectionBadge label="Our Specialities" icon="/icons/bone.svg" />
         </div>
         <SectionHeading
-          title={'Recent Stories'}
+          title={'Our Veterinarian Success Stories'}
           subTitle={'Easily find and book trusted Pet Caregivers near you '}
         />
       </div>

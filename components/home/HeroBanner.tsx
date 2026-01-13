@@ -33,7 +33,7 @@ const featuresRight = [
 export default function HeroBanner() {
   return (
     <div className="bg-color w-full ">
-      <div className="px-4 sm:px-6 mx-auto py-4 sm:py-6 ">
+      <div className=" sm:px-6 mx-auto py-4 sm:py-6 ">
         <div
           className="
             relative w-full
@@ -97,7 +97,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Bottom Features: Adjusted negative margin and spacing */}
-      <div className="px-4 pb-12 lg:relative lg:-translate-y-30 z-28">
+      <div className=" pb-12 lg:relative lg:-translate-y-30 z-28">
         <div className="inner-wrapper mx-auto flex flex-col gap-8 md:flex-row md:justify-center md:items-start lg:gap-12 lg:justify-between">
           <div className="flex flex-row justify-center gap-6 sm:gap-10">
             {features.map((item) => (

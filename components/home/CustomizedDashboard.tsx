@@ -87,7 +87,7 @@ const remoteConsultations = {
 const AiPowerPetCare = () => {
   const { heading, subHeading, features, cta, images } = aiPet;
   return (
-    <section className="lg:py-16 px-4 lg:px-0">
+    <section className="lg:py-16  lg:px-0">
       <div
         className="relative
         w-full

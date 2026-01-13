@@ -57,7 +57,7 @@ const ArcFeaturesSection = () => {
 
 const VideoSection = () => {
   return (
-    <section className="relative pb-16 lg:pt-0 pt-10">
+    <section className="relative  lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
         <div className="absolute -top-36 left-1/2 -translate-x-1/2 z-20">
           <Image
@@ -88,7 +88,20 @@ const VideoSection = () => {
 
 export default function WhyChooseUs() {
   return (
-    <div className="bg-color">
+    <div className="bg-color relative">
+      <div
+        className="
+      absolute
+      inset-0
+      hidden
+      lg:block
+      bg-[url('/images/whybg.svg')]
+      bg-no-repeat
+      bg-contain
+      
+      pointer-events-none
+    "
+      />
       <div className="inner-wrapper m-auto lg:py:16 py-12 ">
         <div className="flex justify-center">
           <SectionBadge label="Our Specialities" icon="/icons/bone.svg" />
