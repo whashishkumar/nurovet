@@ -48,11 +48,11 @@ html {
 }
 
 .wrapper {
-  max-width: 90rem;
+  max-width: 95rem;
 }
 
 .inner-wrapper {
-  max-width: 75rem;
+  max-width: 80rem;
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
@@ -95,4 +95,25 @@ html {
   .wrapper {
     max-width: 90rem;
   }
+}
+
+/* ============ Scroller ============== */
+/* Custom Green Scrollbar */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 10px;
+}
+
+.custom-scrollbar {
+  scrollbar-gutter: stable;
 }
