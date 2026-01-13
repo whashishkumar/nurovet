@@ -1,4 +1,5 @@
 /** @format */
+import Articles from '@/components/Articles';
 import AboutNuroVet from '@/components/home/AboutNuroVet';
 import BookDemo from '@/components/home/BookDemo';
 import CustomizedDashboard from '@/components/home/CustomizedDashboard';
@@ -9,6 +10,7 @@ import OurTestimonials from '@/components/home/OurTestimonials';
 import QuickAnswers from '@/components/home/QuickAnswers';
 import RecentStories from '@/components/home/RecentStories';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
       <OurTestimonials />
       <QuickAnswers />
       <BookDemo />
+      <Articles />
+      <Footer />
     </>
   );
 }

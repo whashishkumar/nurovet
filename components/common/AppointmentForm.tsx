@@ -29,7 +29,7 @@ const AppointmentForm = () => {
 
   return (
     <section>
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto ">
         <div className="bg-[#0B5D3B] rounded-[32px] p-6 sm:p-10 md:py-16">
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Name */}

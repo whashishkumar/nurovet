@@ -19,33 +19,50 @@ const arcFeatures = {
 
 const ArcFeaturesSection = () => {
   const { cta, items } = arcFeatures;
+
   return (
-    <section className="relative pt-15 overflow-hidden">
+    <section className="relative pt-10 md:pt-20 lg:pt-24 overflow-hidden px-6">
       <div className="inner-wrapper mx-auto relative">
         <div className="relative flex justify-center">
-          <div className="relative w-full h-95">
-            <div className="absolute inset-0 rounded-t-full border-t border-[#FFFFFF]" />
+          <div className="relative w-full flex flex-col items-center gap-10 md:block md:h-[350px] lg:h-[400px]">
+            {/* Decorative Arc Line - Visible from Tablet up */}
+            <div className="hidden md:block absolute inset-0 rounded-t-full border-t border-gray-200" />
+
             {/* ITEMS */}
             {items.map((item, index) => {
               const positions = [
-                'left-0 top-[220px]',
-                'left-[10%] top-[60px]',
-                'left-1/2 -translate-x-1/2 top-[-20px]',
-                'right-[10%] top-[60px]',
-                'right-0 top-[220px]',
+                // Item 1: Far Left
+                'md:left-[-2%] md:top-[180px] lg:left-0 lg:top-[220px]',
+                // Item 2: Mid Left
+                'md:left-[8%] md:top-[50px] lg:left-[12%] lg:top-[60px]',
+                // Item 3: Center Top
+                'md:left-1/2 md:-translate-x-1/2 md:-top-[30px] lg:-top-[40px]',
+                // Item 4: Mid Right
+                'md:right-[8%] md:top-[50px] lg:right-[12%] lg:top-[60px]',
+                // Item 5: Far Right
+                'md:right-[-2%] md:top-[180px] lg:right-0 lg:top-[220px]',
               ];
 
               return (
-                <div key={item.id} className={`absolute text-center ${positions[index]}`}>
-                  <div className="mx-auto w-10 h-10 rounded-full bg-white shadow flex items-center justify-center font-semibold">
+                <div
+                  key={item.id}
+                  className={`
+                    flex flex-col items-center text-center max-w-[160px] lg:max-w-[200px]
+                    md:absolute ${positions[index]}
+                  `}
+                >
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-gray-900 border border-gray-100 shrink-0">
                     {item.id}
                   </div>
-                  <p className="mt-3 text-sm font-medium whitespace-pre-line">{item.text}</p>
+                  <p className="mt-2 lg:mt-3 text-xs lg:text-sm font-semibold text-gray-800 whitespace-pre-line leading-snug">
+                    {item.text}
+                  </p>
                 </div>
               );
             })}
-            {/* CENTER CONTENT */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-40 text-center">
+
+            {/* CTA BUTTON */}
+            <div className="mt-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-40 lg:top-48 md:mt-0">
               <Button href={cta.href} label={cta.label} />
             </div>
           </div>
@@ -54,10 +71,9 @@ const ArcFeaturesSection = () => {
     </section>
   );
 };
-
 const VideoSection = () => {
   return (
-    <section className="relative pb-16 lg:pt-0 pt-10">
+    <section className="relative  lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
         <div className="absolute -top-36 left-1/2 -translate-x-1/2 z-20">
           <Image
@@ -65,7 +81,7 @@ const VideoSection = () => {
             alt="animals"
             width={600}
             height={140}
-            className="object-contain"
+            className="object-contain hidden md:block"
             priority
           />
         </div>
@@ -88,8 +104,21 @@ const VideoSection = () => {
 
 export default function WhyChooseUs() {
   return (
-    <div className="bg-color">
-      <div className="inner-wrapper m-auto lg:py:16 py-12 ">
+    <div className="bg-color relative">
+      <div
+        className="
+      absolute
+      inset-0
+      hidden
+      md:block
+      bg-[url('/images/whybg.svg')]
+      bg-no-repeat
+      bg-contain
+      
+      pointer-events-none
+    "
+      />
+      <div className="inner-wrapper m-auto lg:py:16 py-12 px-6 lg:px-0 ">
         <div className="flex justify-center">
           <SectionBadge label="Our Specialities" icon="/icons/bone.svg" />
         </div>
