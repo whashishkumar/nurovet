@@ -65,7 +65,7 @@ export default function Hero() {
   "
       />
 
-      <div className="wrapper m-auto ">
+      <div className="wrapper m-auto lg:px-0 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0 ">
           {/* LEFT CONTENT */}
           <div className=" sm:px-10 md:px-16 lg:px-0 lg:pl-22 order-2 lg:order-1 z-1">

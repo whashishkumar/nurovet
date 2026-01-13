@@ -40,10 +40,9 @@ const vetGalleryData = {
 
 const VetGallery = () => {
   return (
-    <section className="wrapper m-auto lg:px-0 px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
-        {/* Left */}
-        <div className="lg:col-span-4">
+    <section className="wrapper m-auto px-6 md:px-6">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+        <div className="md:col-span-4 h-[300px] md:h-auto">
           <div className="h-full overflow-hidden rounded-2xl">
             <img
               src={vetGalleryData.left.src}
@@ -53,17 +52,17 @@ const VetGallery = () => {
           </div>
         </div>
 
-        {/* Center Stack */}
-        <div className="lg:col-span-2 flex flex-col gap-8 h-full">
+        {/* Center Stack - Spans 2 of 12 on Tablet and Desktop */}
+        <div className="md:col-span-2 flex flex-col gap-4 md:gap-8 h-full">
           {vetGalleryData.centerStack.map((item, index) => (
-            <div key={index} className="overflow-hidden rounded-2xl flex-1">
+            <div key={index} className="overflow-hidden rounded-2xl flex-1 h-[150px] md:h-auto">
               <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
 
-        {/* Highlight */}
-        <div className="lg:col-span-4">
+        {/* Highlight - Spans 4 of 12 on Tablet and Desktop */}
+        <div className="md:col-span-4 h-[300px] md:h-auto">
           <div className="h-full overflow-hidden rounded-2xl">
             <img
               src={vetGalleryData.highlight.src}
@@ -73,17 +72,17 @@ const VetGallery = () => {
           </div>
         </div>
 
-        {/* Right Stack */}
-        <div className="lg:col-span-2 flex flex-col gap-8 h-full">
+        {/* Right Stack - Spans 2 of 12 on Tablet and Desktop */}
+        <div className="md:col-span-2 flex flex-col gap-4 md:gap-8 h-full">
           {vetGalleryData.rightStack.map((item, index) => (
-            <div key={index} className="overflow-hidden rounded-2xl flex-1">
+            <div key={index} className="overflow-hidden rounded-2xl flex-1 h-[150px] md:h-auto">
               <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Button from JSON */}
+      {/* Button */}
       <div className="mt-12 flex justify-center">
         <Button href={vetGalleryData.button.href} label={vetGalleryData.button.label} />
       </div>
@@ -94,7 +93,7 @@ const VetGallery = () => {
 export default function RecentStories() {
   return (
     <div className="bg-color">
-      <div className="inner-wrapper m-auto lg:py:16 py-12 ">
+      <div className="inner-wrapper m-auto lg:py:16 py-12  px-6 lg:px-0">
         <div className="flex justify-center">
           <SectionBadge label="Our Specialities" icon="/icons/bone.svg" />
         </div>

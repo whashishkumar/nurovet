@@ -26,7 +26,7 @@ const MobilePlatform = () => {
   const { title, description, stores, phones } = mobileHeroData;
   return (
     <section className="relative bg-[#00603A] overflow-hidden">
-      <div className="inner-wrapper mx-auto grid grid-cols-1 lg:grid-cols-2  items-center lg:gap-12">
+      <div className="inner-wrapper mx-auto grid grid-cols-1 lg:grid-cols-2  items-center lg:gap-12 px-6 lg:px-0">
         <div className=" text-white py-10 lg:py-12 text-center lg:text-left ">
           <h1 className="text-[2rem] lg:text-[3rem] font-medium lg:leading-15 whitespace-pre-line onesta">
             {title}
