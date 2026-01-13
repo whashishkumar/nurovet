@@ -89,7 +89,7 @@ const data = [
 
 export default function FeaturesNeuroVet() {
   return (
-    <section className="bg-color py-12 px-4">
+    <section className="bg-color py-12 ">
       <div className="inner-wrapper mx-auto text-center">
         <div className="flex justify-center mb-6">
           <div className="flex space-x-1">

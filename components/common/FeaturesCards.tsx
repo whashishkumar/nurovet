@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function FeaturesCards({ featuresData }: any) {
   return (
     <section className="bg-color pt-12">
-      <div className="wrapper mx-auto px-4">
+      <div className="wrapper mx-auto px-6">
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {featuresData?.map((item: any, idx: any) => (
             <div

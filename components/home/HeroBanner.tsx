@@ -33,22 +33,20 @@ const featuresRight = [
 export default function HeroBanner() {
   return (
     <div className="bg-color w-full ">
-      <div className="px-4 sm:px-6 mx-auto py-4 sm:py-6 ">
+      <div className=" sm:px-6 mx-auto py-4 sm:py-6 ">
         <div
           className="
-            relative w-full
-            min-h-150 
-            sm:min-h-125
-            lg:h-175.5 
-            bg-[url('/images/Webp/Hero.webp')]
-            bg-cover        
-            bg-center       
-            bg-no-repeat
-            rounded-2xl
-            sm:rounded-3xl
-            overflow-hidden
-            flex flex-col
-          "
+    relative w-full
+    min-h-160
+    lg:h-[702px] 
+    bg-[url('/images/Webp/Hero.webp')]
+    bg-cover        
+    bg-center       
+    bg-no-repeat
+    rounded-2xl
+    overflow-hidden
+    flex flex-col
+  "
         >
           <div className=" inset-0 bg-linear-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
           <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
@@ -57,16 +55,16 @@ export default function HeroBanner() {
           <div className="relative lg:absolute inset-0 z-20 flex items-center md:grow py-12 lg:py-0 ">
             <div className="px-6 sm:px-10 md:px-16 w-full">
               <div className="inner-wrapper m-auto">
-                <h1 className="text-[2rem] sm:text-[3rem] lg:text-[4.125rem] font-bold leading-[1.2] lg:leading-19 text-[#003366] fredoka">
+                <h1 className="text-[2rem]  lg:text-[4.125rem] font-bold leading-[1.2] lg:leading-19 text-[#003366] fredoka">
                   {heroContent.title.first}
                   <span className="text-[#00603A] block">{heroContent.title.highlight}</span>
                   {heroContent.title.last}
                 </h1>
-                <ul className="mt-6 space-y-3">
+                <ul className="mt-6 space-y-2">
                   {heroContent.features.map((feature, index) => (
                     <li
                       key={index}
-                      className="text-[#003366] font-bold text-base sm:text-xl lg:text-[1.5rem] flex items-center"
+                      className="text-[#003366] font-bold text-base  lg:text-[1.5rem] flex items-center "
                     >
                       <span className="mr-2 shrink-0">
                         <BsCheck2All className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -76,18 +74,18 @@ export default function HeroBanner() {
                   ))}
                 </ul>
 
-                <div className="pt-8 pb-4 flex flex-wrap gap-4">
+                <div className="pt-8 pb-4 flex flex-wrap gap-4 ">
                   <Button
                     href={heroContent.cta.href}
                     label={heroContent.cta.label}
                     variant="primary"
-                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center"
+                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center hidden lg:block"
                   />
                   <Button
                     href={heroContent.demobtn.href}
                     label={heroContent.demobtn.label}
                     variant="outline"
-                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center"
+                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center hidden lg:block"
                   />
                 </div>
               </div>
@@ -97,7 +95,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Bottom Features: Adjusted negative margin and spacing */}
-      <div className="px-4 pb-12 lg:relative lg:-translate-y-30 z-28">
+      <div className=" pb-12 lg:relative lg:-translate-y-30 z-28">
         <div className="inner-wrapper mx-auto flex flex-col gap-8 md:flex-row md:justify-center md:items-start lg:gap-12 lg:justify-between">
           <div className="flex flex-row justify-center gap-6 sm:gap-10">
             {features.map((item) => (

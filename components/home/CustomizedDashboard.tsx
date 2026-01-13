@@ -87,7 +87,7 @@ const remoteConsultations = {
 const AiPowerPetCare = () => {
   const { heading, subHeading, features, cta, images } = aiPet;
   return (
-    <section className="lg:py-16 px-4 lg:px-0">
+    <section className="lg:py-16  lg:px-0 px-6">
       <div
         className="relative
         w-full
@@ -200,7 +200,7 @@ export default function CustomizedDashboard() {
   return (
     <section className={sectionClass}>
       <div className="wrapper m-auto">
-        <div className="relative w-full flex flex-col lg:flex-row rounded-3xl overflow-visible">
+        <div className="relative w-full flex flex-col lg:flex-row rounded-3xl overflow-visible ">
           <div
             className="absolute inset-0 z-0 bg-contain lg:bg-cover bg-bottom bg-no-repeat rounded-3xl hidden lg:block"
             style={{ backgroundImage: `url(${backgroundImage})` }}
