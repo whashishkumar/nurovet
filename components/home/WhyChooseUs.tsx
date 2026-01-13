@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
           <SectionBadge label="Our Specialities" icon="/icons/bone.svg" />
         </div>
         <SectionHeading
-          title={'Our Veterinarian Success Stories'}
+          title={'Why Choose Us?'}
           subTitle={'Easily find and book trusted Pet Caregivers near you '}
         />
         <ArcFeaturesSection />
