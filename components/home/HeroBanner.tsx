@@ -33,21 +33,39 @@ const featuresRight = [
 export default function HeroBanner() {
   return (
     <div className="bg-color w-full ">
-      <div className=" sm:px-6 mx-auto py-4 sm:py-6 ">
+      <div className=" sm:px-6 mx-auto py-4 sm:py-6 relative">
         <div
           className="
-    relative w-full
-    min-h-160
-    lg:h-[702px] 
-    bg-[url('/images/Webp/Hero.webp')]
-    bg-cover        
-    bg-center       
-    bg-no-repeat
-    rounded-2xl
-    overflow-hidden
-    flex flex-col
-  "
+          relative w-full
+          min-h-[90dvh]
+          lg:h-[100dvh]
+          bg-[url('/images/Webp/Hero.webp')]
+          bg-cover
+          bg-center
+          bg-no-repeat
+          rounded-2xl
+          overflow-hidden
+          flex flex-col
+        "
         >
+          {/* <div
+                className="
+        relative
+        w-full
+        min-h-[90dvh]
+        sm:min-h-screen
+        h-auto
+        sm:h-screen
+        bg-no-repeat
+        bg-cover
+        bg-center
+        rounded-2xl
+        overflow-hidden
+        "
+                style={{
+                  backgroundImage: `url(${'/images/Webp/Hero.webp'})`,
+                }}
+        > */}
           <div className=" inset-0 bg-linear-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
           <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
             <Navbar />
@@ -79,13 +97,13 @@ export default function HeroBanner() {
                     href={heroContent.cta.href}
                     label={heroContent.cta.label}
                     variant="primary"
-                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center hidden lg:block"
+                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center "
                   />
                   <Button
                     href={heroContent.demobtn.href}
                     label={heroContent.demobtn.label}
                     variant="outline"
-                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center hidden lg:block"
+                    className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center "
                   />
                 </div>
               </div>
