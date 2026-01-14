@@ -71,6 +71,7 @@ const ArcFeaturesSection = () => {
     </section>
   );
 };
+
 const VideoSection = () => {
   return (
     <section className="relative  lg:pt-0 pt-10">
@@ -85,7 +86,6 @@ const VideoSection = () => {
             priority
           />
         </div>
-
         {/* Video container */}
         <div className="relative rounded-3xl overflow-hidden">
           <Image

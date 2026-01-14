@@ -37,9 +37,10 @@ export default function HeroBanner() {
         <div
           className="
           relative w-full
-          min-h-[90dvh]
-          lg:h-[100dvh]
-          bg-[url('/images/Webp/Hero.webp')]
+          min-h-165
+          md:min-h-185
+          lg:h-dvh
+          bg-[url('/images/bannerbgwithlogo.svg')]
           bg-cover
           bg-center
           bg-no-repeat
@@ -48,24 +49,6 @@ export default function HeroBanner() {
           flex flex-col
         "
         >
-          {/* <div
-                className="
-        relative
-        w-full
-        min-h-[90dvh]
-        sm:min-h-screen
-        h-auto
-        sm:h-screen
-        bg-no-repeat
-        bg-cover
-        bg-center
-        rounded-2xl
-        overflow-hidden
-        "
-                style={{
-                  backgroundImage: `url(${'/images/Webp/Hero.webp'})`,
-                }}
-        > */}
           <div className=" inset-0 bg-linear-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
           <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
             <Navbar />

@@ -68,7 +68,7 @@ export default function Hero() {
       <div className="wrapper m-auto lg:px-0 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0 ">
           {/* LEFT CONTENT */}
-          <div className=" sm:px-10 md:px-16 lg:px-0 lg:pl-22 order-2 lg:order-1 z-1">
+          <div className="sm:px-10 md:px-16 lg:px-0 lg:pl-26 order-2 lg:order-1 z-1 ">
             <SectionBadge label="About Nurovet" icon="/icons/bone.svg" />
             <div className="inner-wrapper mx-auto ">
               <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight fredoka">
