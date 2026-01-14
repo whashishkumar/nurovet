@@ -40,7 +40,7 @@ export default function HeroBanner() {
           min-h-165
           md:min-h-185
           lg:h-dvh
-          bg-[url('/images/Webp/Hero.webp')]
+          bg-[url('/images/bannerbgwithlogo.svg')]
           bg-cover
           bg-center
           bg-no-repeat
