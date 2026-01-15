@@ -1,6 +1,6 @@
 import InnerBanner from '@/components/common/InnerBanner';
-import OurStory from '@/components/home/OurStory';
-import OurTestimonials from '@/components/home/OurTestimonials';
+import OurStory from '@/components/sections/OurStory';
+import OurTestimonials from '@/components/sections/OurTestimonials';
 import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 

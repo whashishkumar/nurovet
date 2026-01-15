@@ -1,15 +1,15 @@
 /** @format */
 import Articles from '@/components/Articles';
-import AboutNuroVet from '@/components/home/AboutNuroVet';
-import BookDemo from '@/components/home/BookDemo';
-import CustomizedDashboard from '@/components/home/CustomizedDashboard';
-import FeaturesNeuroVet from '@/components/home/FeaturesNeuroVet';
-import HeroBanner from '@/components/home/HeroBanner';
-import MobilePlatform from '@/components/home/MobilePlatform';
-import OurTestimonials from '@/components/home/OurTestimonials';
-import QuickAnswers from '@/components/home/QuickAnswers';
-import RecentStories from '@/components/home/RecentStories';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
+import AboutNuroVet from '@/components/sections/AboutNuroVet';
+import BookDemo from '@/components/sections/BookDemo';
+import CustomizedDashboard from '@/components/sections/CustomizedDashboard';
+import FeaturesNeuroVet from '@/components/sections/FeaturesNeuroVet';
+import HeroBanner from '@/components/sections/HeroBanner';
+import MobilePlatform from '@/components/sections/MobilePlatform';
+import OurTestimonials from '@/components/sections/OurTestimonials';
+import QuickAnswers from '@/components/sections/QuickAnswers';
+import RecentStories from '@/components/sections/RecentStories';
+import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 

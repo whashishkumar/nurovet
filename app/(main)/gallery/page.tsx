@@ -1,6 +1,6 @@
 import InnerBanner from '@/components/common/InnerBanner';
-import Gallery from '@/components/home/Gallery';
-import QuickAnswers from '@/components/home/QuickAnswers';
+import Gallery from '@/components/sections/Gallery';
+import QuickAnswers from '@/components/sections/QuickAnswers';
 
 export default function page() {
   return (
