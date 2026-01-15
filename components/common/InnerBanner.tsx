@@ -4,7 +4,7 @@ import Breadcrumbs from '../ui/Breadcrumbs';
 
 export default function InnerBanner({ bannerInfo }: any) {
   return (
-    <div className="p-4 sm:p-6">
+    <div className="bg-white p-4 sm:p-6">
       <div
         className="relative w-full min-h-87.5 sm:min-h-100 md:min-h-112.5 rounded-[1.3125rem] overflow-hidden bg-no-repeat bg-cover bg-center flex flex-col"
         style={{ backgroundImage: `url('${bannerInfo.background.image}')` }}
