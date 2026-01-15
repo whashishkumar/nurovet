@@ -1,43 +1,8 @@
-import React from 'react';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
 
-import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
-
-const featuredVet = {
-  name: 'Alina Maisner',
-  role: 'Veterinarian',
-  image: '/images/Webp/testimonials.webp',
-  bio: [
-    'Emma leads our team with a passion for animal welfare and years of experience.',
-    'Although expert groomers themselves, lots of cats like being brushed and it’s a great way of bonding with your cat.',
-    'As well as fewer hairballs and less shedding, grooming your cats will imitate how they groom each other naturally.',
-  ],
-  socials: [
-    { icon: <FaFacebookF />, link: '#' },
-    { icon: <FaInstagram />, link: '#' },
-    { icon: <FaYoutube />, link: '#' },
-    { icon: <FaLinkedinIn />, link: '#' },
-  ],
-};
-
-const teamMembers = [
-  { name: 'Alina Maisner', role: 'Veterinarian', avatar: '/images/Webp/Testimoinals1.webp' },
-  { name: 'David Smith', role: 'Veterinarian', avatar: '/images/Webp/Testimoinals2.webp' },
-  { name: 'Emma Brown', role: 'Surgeon', avatar: '/images/Webp/Testimoinals3.webp' },
-  { name: 'Mary Douglas', role: 'Veterinarian', avatar: '/images/Webp/Testimoinals4.webp' },
-  { name: 'James Wilson', role: 'Technician', avatar: '/images/Webp/Testimoinals1.webp' },
-  { name: 'Sarah Cook', role: 'Therapist', avatar: '/images/Webp/Testimoinals2.webp' },
-  { name: 'Alina Maisner', role: 'Veterinarian', avatar: '/images/Webp/Testimoinals1.webp' },
-  { name: 'David Smith', role: 'Veterinarian', avatar: '/images/Webp/Testimoinals2.webp' },
-  { name: 'Emma Brown', role: 'Surgeon', avatar: '/images/Webp/Testimoinals3.webp' },
-  { name: 'Mary Douglas', role: 'Veterinarian', avatar: '/images/Webp/Testimoinals4.webp' },
-  { name: 'James Wilson', role: 'Technician', avatar: '/images/Webp/Testimoinals1.webp' },
-  { name: 'Sarah Cook', role: 'Therapist', avatar: '/images/Webp/Testimoinals2.webp' },
-];
-
-const VetTeamSection = () => {
+const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
   return (
     <section className="pt-14">
       <div className="wrapper mx-auto ">
@@ -49,7 +14,7 @@ const VetTeamSection = () => {
               style={{ direction: 'rtl' }}
             >
               <div style={{ direction: 'ltr', marginLeft: '40px' }}>
-                {teamMembers.map((member, index) => (
+                {teamMembers.map((member: any, index: any) => (
                   <li key={index} className="flex items-center gap-4 mb-8 last:mb-0">
                     <img
                       src={member.avatar}
@@ -87,13 +52,13 @@ const VetTeamSection = () => {
                   </p>
 
                   <div className="mt-6 space-y-4 text-[#000000] text-base leading-relaxed">
-                    {featuredVet.bio.map((para, i) => (
+                    {featuredVet.bio.map((para: any, i: number) => (
                       <p key={i}>{para}</p>
                     ))}
                   </div>
 
                   <div className="mt-8 flex gap-3">
-                    {featuredVet.socials.map((social, i) => (
+                    {featuredVet.socials.map((social: any, i: number) => (
                       <a
                         key={i}
                         href={social.link}
@@ -113,7 +78,8 @@ const VetTeamSection = () => {
   );
 };
 
-export default function OurTestimonials() {
+export default function OurTestimonials({ sectionData, teamMembers, featuredVet }: any) {
+  const { badge, heading } = sectionData.testimonialSection;
   return (
     <div
       className="
@@ -126,16 +92,14 @@ export default function OurTestimonials() {
     >
       <div className="inner-wrapper m-auto lg:py:16 py-12 lg:px-0 px-6 ">
         <div className="flex justify-between flex-wrap">
-          <div>
+          <div className="space-y-4 md:space-y-6">
             <div className="flex justify-start">
-              <SectionBadge label="Our Testimonials" icon="/icons/bone.svg" />
+              <SectionBadge label={badge.label} icon={badge.icon} />
             </div>
             <SectionHeading
-              cssClass="text-left"
-              title={'Expert Care, Better Healing.'}
-              subTitle={
-                'Nurovet is powered by experts dedicated to supporting veterinarians and improving pet outcomes.'
-              }
+              cssClass="text-left "
+              title={heading.title}
+              subTitle={heading.subTitle}
             />
           </div>
           <div>
@@ -147,7 +111,7 @@ export default function OurTestimonials() {
             />
           </div>
         </div>
-        <VetTeamSection />
+        <VetTeamSection teamMembers={teamMembers} featuredVet={featuredVet} />
       </div>
     </div>
   );

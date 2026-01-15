@@ -1,21 +1,12 @@
-/** @format */
-import Articles from '@/components/Articles';
-import AboutNuroVet from '@/components/home/AboutNuroVet';
-import BookDemo from '@/components/home/BookDemo';
-import CustomizedDashboard from '@/components/home/CustomizedDashboard';
-import FeaturesNeuroVet from '@/components/home/FeaturesNeuroVet';
-import HeroBanner from '@/components/home/HeroBanner';
-import MobilePlatform from '@/components/home/MobilePlatform';
+import InnerBanner from '@/components/common/InnerBanner';
+import OurStory from '@/components/home/OurStory';
 import OurTestimonials from '@/components/home/OurTestimonials';
-import QuickAnswers from '@/components/home/QuickAnswers';
-import RecentStories from '@/components/home/RecentStories';
-import WhyChooseUs from '@/components/home/WhyChooseUs';
 import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 
 const featuredVet = {
   name: 'Alina Maisner',
-  role: 'Veterinarian',
+  role: 'Pet Sitter',
   image: '/images/Webp/testimonials.webp',
   bio: [
     'Emma leads our team with a passion for animal welfare and years of experience.',
@@ -48,36 +39,38 @@ const teamMembers = [
 const sectionData = {
   testimonialSection: {
     badge: {
-      label: 'Our Testimonials',
+      label: 'Team Members',
       icon: '/icons/bone.svg',
     },
     heading: {
-      title: 'Expert Care, Better Healing.',
-      subTitle:
-        'Nurovet is powered by experts dedicated to supporting veterinarians and improving pet outcomes.',
+      title: 'Loyal, Passionate, and Driven',
+      subTitle: 'Our team is made up of dedicated individuals who share a common love for animals.',
     },
   },
 };
 
-export default function Home() {
+const data = {
+  background: {
+    image: '/images/innerbg.jpg',
+  },
+  title: 'About Us',
+  breadcrumb: {
+    items: ['Home', 'About Us'],
+    activeColor: 'text-orange-500',
+  },
+};
+
+export default function page() {
   return (
     <>
-      <HeroBanner />
-      <AboutNuroVet />
-      <FeaturesNeuroVet />
-      <CustomizedDashboard />
-      <MobilePlatform />
-      <WhyChooseUs />
-      <RecentStories />
+      <InnerBanner bannerInfo={data} />
+      <OurStory />
       <OurTestimonials
-        featuredVet={featuredVet}
         teamMembers={teamMembers}
+        featuredVet={featuredVet}
         sectionData={sectionData}
       />
-      <QuickAnswers />
-      <BookDemo />
-      <Articles />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

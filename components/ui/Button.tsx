@@ -9,7 +9,7 @@ interface ButtonProps {
   variant?: ButtonVariant;
   className?: string;
   showICon?: boolean;
-  [key: string]: any; // For the rest of the props (...props)
+  [key: string]: any;
 }
 
 export default function Button({

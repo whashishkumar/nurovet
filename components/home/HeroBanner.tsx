@@ -4,43 +4,39 @@ import Navbar from '../layout/NavBar';
 import Button from '../ui/Button';
 import { BsCheck2All } from 'react-icons/bs';
 
-export default function HeroBanner() {
-  const bannerData = {
-    heroContent: {
-      title: {
-        first: 'Smart Veterinary',
-        highlight: ' Management, All in',
-        last: ' One Platform',
-      },
-      features: [
-        'Real-time patient tracking',
-        'Role-based staff management',
-        'AI-powered insights',
-      ],
-      cta: {
-        label: 'Request Demo',
-        href: '/',
-      },
-      demobtn: {
-        label: 'View Demo',
-        href: '/',
-      },
-      backgroundImage: '/images/bannerbgwithlogo.svg',
+const bannerData = {
+  heroContent: {
+    title: {
+      first: 'Smart Veterinary',
+      highlight: ' Management, All in',
+      last: ' One Platform',
     },
-    featuresLeft: [
-      { id: 1, icon: '/icons/nuro1.png', title: 'The Neural Network for Your Practice.' },
-      { id: 2, icon: '/icons/brain.png', title: 'Intelligent Insights for Every Patient.' },
-    ],
-    featuresRight: [
-      {
-        id: 1,
-        icon: '/icons/medical.png',
-        title: 'Where Clinical Data Becomes Medical Intelligence.',
-      },
-      { id: 2, icon: '/icons/eye.png', title: 'See the Unseen. Predict the Unpredictable.' },
-    ],
-  };
+    features: ['Real-time patient tracking', 'Role-based staff management', 'AI-powered insights'],
+    cta: {
+      label: 'Request Demo',
+      href: '/',
+    },
+    demobtn: {
+      label: 'View Demo',
+      href: '/',
+    },
+    backgroundImage: '/images/bannerbgwithlogo.svg',
+  },
+  featuresLeft: [
+    { id: 1, icon: '/icons/nuro1.png', title: 'The Neural Network for Your Practice.' },
+    { id: 2, icon: '/icons/brain.png', title: 'Intelligent Insights for Every Patient.' },
+  ],
+  featuresRight: [
+    {
+      id: 1,
+      icon: '/icons/medical.png',
+      title: 'Where Clinical Data Becomes Medical Intelligence.',
+    },
+    { id: 2, icon: '/icons/eye.png', title: 'See the Unseen. Predict the Unpredictable.' },
+  ],
+};
 
+export default function HeroBanner() {
   return (
     <div className="bg-color w-full">
       <div className="sm:px-6 mx-auto py-4 sm:py-6 ">
@@ -48,7 +44,7 @@ export default function HeroBanner() {
           className="relative w-full min-h-165 md:min-h-185 lg:h-dvh bg-cover  bg-center bg-no-repeat rounded-2xl overflow-hidden flex flex-col"
           style={{ backgroundImage: `url('${bannerData.heroContent.backgroundImage}')` }}
         >
-          <div className="inset-0 bg-linear-to-b from-black/15 via-black/0 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0b5d3b]/80 via-[#0b5d3b]/0 to-transparent z-0" />
           <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
             <Navbar />
           </div>
