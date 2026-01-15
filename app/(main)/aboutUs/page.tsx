@@ -1,21 +1,12 @@
-/** @format */
-import Articles from '@/components/Articles';
-import AboutNuroVet from '@/components/sections/AboutNuroVet';
-import BookDemo from '@/components/sections/BookDemo';
-import CustomizedDashboard from '@/components/sections/CustomizedDashboard';
-import FeaturesNeuroVet from '@/components/sections/FeaturesNeuroVet';
-import HeroBanner from '@/components/sections/HeroBanner';
-import MobilePlatform from '@/components/sections/MobilePlatform';
+import InnerBanner from '@/components/common/InnerBanner';
+import OurStory from '@/components/sections/OurStory';
 import OurTestimonials from '@/components/sections/OurTestimonials';
-import QuickAnswers from '@/components/sections/QuickAnswers';
-import RecentStories from '@/components/sections/RecentStories';
-import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 
 const featuredVet = {
   name: 'Alina Maisner',
-  role: 'Veterinarian',
+  role: 'Pet Sitter',
   image: '/images/Webp/testimonials.webp',
   bio: [
     'Emma leads our team with a passion for animal welfare and years of experience.',
@@ -48,36 +39,38 @@ const teamMembers = [
 const sectionData = {
   testimonialSection: {
     badge: {
-      label: 'Our Testimonials',
+      label: 'Team Members',
       icon: '/icons/bone.svg',
     },
     heading: {
-      title: 'Expert Care, Better Healing.',
-      subTitle:
-        'Nurovet is powered by experts dedicated to supporting veterinarians and improving pet outcomes.',
+      title: 'Loyal, Passionate, and Driven',
+      subTitle: 'Our team is made up of dedicated individuals who share a common love for animals.',
     },
   },
 };
 
-export default function Home() {
+const data = {
+  background: {
+    image: '/images/innerbg.jpg',
+  },
+  title: 'About Us',
+  breadcrumb: {
+    items: ['Home', 'About Us'],
+    activeColor: 'text-orange-500',
+  },
+};
+
+export default function page() {
   return (
     <>
-      <HeroBanner />
-      <AboutNuroVet />
-      <FeaturesNeuroVet />
-      <CustomizedDashboard />
-      <MobilePlatform />
-      <WhyChooseUs />
-      <RecentStories />
+      <InnerBanner bannerInfo={data} />
+      <OurStory />
       <OurTestimonials
-        featuredVet={featuredVet}
         teamMembers={teamMembers}
+        featuredVet={featuredVet}
         sectionData={sectionData}
       />
-      <QuickAnswers />
-      <BookDemo />
-      <Articles />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
