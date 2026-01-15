@@ -6,7 +6,10 @@ import { FiPhoneCall } from 'react-icons/fi';
 import SectionBadge from '../common/SectionBadge';
 
 const heroData = {
-  badge: 'About Nurovet',
+  badge: {
+    label: 'About Nurovet',
+    icon: '/icons/bone.svg',
+  },
   title: {
     text: 'Committed to smarter veterinary management and healthier pets.',
   },
@@ -22,11 +25,13 @@ const heroData = {
   ],
   cta: {
     buttonText: 'Learn More',
+    buttonHref: '/',
     phoneLabel: 'Call us:',
     phone: '+1 (424) 323 3268',
   },
-  image: {
-    src: '/images/about.svg',
+  images: {
+    backgroundLeft: '/images/Webp/aboutcat.webp',
+    backgroundRight: '/images/about.svg',
     alt: 'Nurovet Dashboard',
   },
 };
@@ -34,49 +39,54 @@ const heroData = {
 export default function Hero() {
   return (
     <section className="bg-color overflow-hidden">
+      {/* BACKGROUND LEFT */}
       <div
         className="
-    absolute
-    hidden
-    lg:block
-    bg-bottom-left
-    lg:w-[30vw] xl:w-[30vw]
-    lg:h-175
-    bg-[url('/images/Webp/aboutcat.webp')]
-    bg-no-repeat
-    bg-contain
-    overflow-hidden
-      "
+          absolute
+          hidden
+          lg:block
+          bg-bottom-left
+          lg:w-[30vw] xl:w-[30vw]
+          lg:h-175
+          bg-no-repeat
+          bg-contain
+          overflow-hidden
+        "
+        style={{ backgroundImage: `url('${heroData.images.backgroundLeft}')` }}
       />
 
+      {/* BACKGROUND RIGHT */}
       <div
         className="
-    absolute
-    hidden
-    lg:block
-    right-0
-    lg:w-[50vw] xl:w-[50vw]
-    lg:h-175
-    bg-[url('/images/about.svg')]
-    bg-no-repeat
-    bg-contain
-    bg-right
-    overflow-hidden
-  "
+          absolute
+          hidden
+          lg:block
+          right-0
+          lg:w-[50vw] xl:w-[50vw]
+          lg:h-175
+          bg-no-repeat
+          bg-contain
+          bg-right
+          overflow-hidden
+        "
+        style={{ backgroundImage: `url('${heroData.images.backgroundRight}')` }}
       />
 
       <div className="wrapper m-auto lg:px-0 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0 ">
           {/* LEFT CONTENT */}
           <div className="sm:px-10 md:px-16 lg:px-0 lg:pl-26 order-2 lg:order-1 z-1 ">
-            <SectionBadge label="About Nurovet" icon="/icons/bone.svg" />
+            <SectionBadge label={heroData.badge.label} icon={heroData.badge.icon} />
+
             <div className="inner-wrapper mx-auto ">
               <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight fredoka">
                 {heroData.title.text}
               </h1>
+
               <p className="mt-6 text-[#000000] leading-relaxed onesta font-normal text-base sm:text-lg lg:text-xl">
                 {heroData.description}
               </p>
+
               {/* FEATURES */}
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
                 {heroData.features.map((item, index) => (
@@ -92,7 +102,7 @@ export default function Hero() {
               {/* CTA SECTION */}
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-8">
                 <Button
-                  href={'/'}
+                  href={heroData.cta.buttonHref}
                   label={heroData.cta.buttonText}
                   variant="primary"
                   className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
