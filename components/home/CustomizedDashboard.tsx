@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Button from '../ui/Button';
 
 const dashboardData = {
-  sectionClass: 'relative w-full bg-color py-12',
   backgroundImage: '/images/dashboardbg.png',
 
   left: {
@@ -196,9 +195,9 @@ const RemoteConsultaions = () => {
 };
 
 export default function CustomizedDashboard() {
-  const { sectionClass, backgroundImage, left, center, right } = dashboardData;
+  const { backgroundImage, left, center, right } = dashboardData;
   return (
-    <section className={sectionClass}>
+    <section className="relative w-full bg-color py-12">
       <div className="wrapper m-auto">
         <div className="relative w-full flex flex-col lg:flex-row rounded-3xl overflow-visible ">
           <div
