@@ -97,9 +97,7 @@ html {
   }
 }
 
-/* ============ Scroller ============== */
-/* Custom Green Scrollbar */
-
+/* ============ Scroller css Start ============== */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -117,3 +115,4 @@ html {
 .custom-scrollbar {
   scrollbar-gutter: stable;
 }
+/* =============== Scroll bar css End ================ */
