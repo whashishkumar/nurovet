@@ -3,6 +3,8 @@ import OurStory from '@/components/sections/OurStory';
 import OurTestimonials from '@/components/sections/OurTestimonials';
 import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
+import OurHitory from '@/components/sections/OurHitory';
+import Reviews from '@/components/sections/Reviews';
 
 const featuredVet = {
   name: 'Alina Maisner',
@@ -65,12 +67,13 @@ export default function page() {
     <>
       <InnerBanner bannerInfo={data} />
       <OurStory />
+      <OurHitory />
       <OurTestimonials
         teamMembers={teamMembers}
         featuredVet={featuredVet}
         sectionData={sectionData}
       />
-      {/* <Footer /> */}
+      <Reviews />
     </>
   );
 }
