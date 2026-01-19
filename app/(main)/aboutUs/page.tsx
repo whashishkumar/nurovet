@@ -1,10 +1,11 @@
 import InnerBanner from '@/components/common/InnerBanner';
 import OurStory from '@/components/sections/OurStory';
 import OurTestimonials from '@/components/sections/OurTestimonials';
-import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import OurHitory from '@/components/sections/OurHitory';
 import Reviews from '@/components/sections/Reviews';
+import HowWeWork from '@/components/sections/HowWeWork';
+import OurServices from '@/components/sections/OurServices';
 
 const featuredVet = {
   name: 'Alina Maisner',
@@ -67,12 +68,14 @@ export default function page() {
     <>
       <InnerBanner bannerInfo={data} />
       <OurStory />
-      <OurHitory />
+      <OurServices />
       <OurTestimonials
         teamMembers={teamMembers}
         featuredVet={featuredVet}
         sectionData={sectionData}
       />
+      <OurHitory />
+      <HowWeWork />
       <Reviews />
     </>
   );
