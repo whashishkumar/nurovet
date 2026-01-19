@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from '../layout/NavBar';
 import Breadcrumbs from '../ui/Breadcrumbs';
 
-export default function InnerBanner({ bannerInfo }: any) {
+export default function InnerBanner({ bannerInfo, className }: any) {
   return (
-    <div className="bg-white p-4 sm:p-6">
+    <div className={`${className ? className : 'bg-white'}  p-4 sm:p-6`}>
       <div
         className="relative w-full min-h-87.5 sm:min-h-100 md:min-h-112.5 rounded-[1.3125rem] overflow-hidden bg-no-repeat bg-cover bg-center flex flex-col"
         style={{ backgroundImage: `url('${bannerInfo.background.image}')` }}
@@ -21,7 +21,9 @@ export default function InnerBanner({ bannerInfo }: any) {
 
         {/* Breadcrumb */}
         <div className="relative z-20 flex justify-center fredoka">
-          <div className="bg-white px-20 sm:px-52 py-3 sm:py-4 rounded-t-[30px] flex items-center gap-2 text-sm sm:text-2xl font-semibold shadow-2xl">
+          <div
+            className={`${className ? className : 'bg-white'}  px-20 sm:px-52 py-3 sm:py-4 rounded-t-[30px] flex items-center gap-2 text-sm sm:text-2xl font-semibold shadow-2xl`}
+          >
             <Breadcrumbs />
           </div>
         </div>

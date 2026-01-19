@@ -8,7 +8,7 @@ type SectionBadgeProps = {
 
 export default function SectionBadge({ label, icon = '/icons/bone.svg' }: SectionBadgeProps) {
   return (
-    <div className="inline-flex flex-col items-start gap-2 py-4">
+    <div className="inline-flex flex-col items-center gap-2 py-4">
       {/* Top wave */}
       <svg width="160" height="8" viewBox="0 0 160 8" className="text-gray-400" aria-hidden>
         <path

@@ -25,10 +25,9 @@ export default function ReviewCard({ name, role, avatar, rating, review }: any) 
       <div className=" overflow-y-auto pr-2 line-clamp-6">
         <p className="text-gray-600 text-lg leading-relaxed">“{review}”</p>
       </div>
-
       {/* Quote Bubble */}
-      <div className="absolute -bottom-0 -right-0 w-16 h-16 bg-[#0a5e3b] rounded-full flex items-center justify-center shadow-lg">
-        <FaQuoteRight className="text-white text-xl" />
+      <div className="absolute -bottom-0 -right-0 w-16 h-16  rounded-full flex items-center justify-center ">
+        <FaQuoteRight className="text-[#0a5e3b] text-2xl" />
       </div>
     </div>
   );
