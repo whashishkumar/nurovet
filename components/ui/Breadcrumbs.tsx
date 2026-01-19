@@ -18,7 +18,7 @@ const Breadcrumbs = ({
   separator = <FiChevronRight size={16} />,
   containerClasses = 'flex py-2',
   listClasses = 'hover:text-[#0b5d3b] transition-colors flex items-center gap-1',
-  activeClasses = 'text-orange-500 font-semibold',
+  activeClasses = 'text-[#0a5e3b] font-semibold',
   capitalizeLinks = true,
 }: BreadcrumbProps) => {
   const pathname = usePathname();

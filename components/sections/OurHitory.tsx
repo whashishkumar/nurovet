@@ -1,6 +1,7 @@
 'use client';
 
 import HistoryCard from '../common/HistoryCard';
+import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import SwiperContainer from '../ui/Swiper';
 
@@ -58,6 +59,9 @@ const historyData = [
 export default function OurHistory() {
   return (
     <div className="wrapper m-auto py-16">
+      <div className="flex justify-center">
+        <SectionBadge label={'our History'} />
+      </div>
       <div>
         <SectionHeading
           cssClass={'text-center mb-4'}
