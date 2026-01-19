@@ -113,7 +113,7 @@ export default function SwiperContainer({
         <div className="flex items-center  gap-4 mt-6 justify-around pt-8">
           <button
             ref={prevRef}
-            className="p-2 rounded-full bg-white shadow-md border border-gray-100 text-gray-800 hover:bg-[#0a5e3b] hover:text-white transition-all disabled:opacity-50"
+            className="p-2 rounded-full bg-white shadow-md border border-gray-100 text-gray-800 hover:bg-[#0a5e3b] hover:text-white transition-all disabled:opacity-50 cursor-pointer"
           >
             <HiChevronLeft size={24} />
           </button>
@@ -127,7 +127,7 @@ export default function SwiperContainer({
 
           <button
             ref={nextRef}
-            className="p-2 rounded-full bg-white shadow-md border border-gray-100 text-gray-800 hover:bg-[#0a5e3b] hover:text-white transition-all disabled:opacity-50"
+            className="cursor-pointer p-2 rounded-full bg-white shadow-md border border-gray-100 text-gray-800 hover:bg-[#0a5e3b] hover:text-white transition-all disabled:opacity-50"
           >
             <HiChevronRight size={24} />
           </button>

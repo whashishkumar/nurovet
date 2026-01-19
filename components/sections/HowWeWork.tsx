@@ -40,7 +40,7 @@ export const howWeWorkData = {
 
 function ConsultationCards({ steps }: any) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 figtree">
       {steps.map((item: any, index: any) => (
         <div key={index} className="relative bg-[#F9F6F1] rounded-3xl px-8 py-8 overflow-hidden">
           <div className="absolute top-0 right-0 bg-white w-14 h-14 rounded-2xl flex items-center justify-center ">

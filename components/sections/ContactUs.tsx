@@ -3,7 +3,6 @@ import { HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from 'react-ic
 import AppointmentForm from '../common/AppointmentForm';
 import { IconType } from 'react-icons';
 
-// PURE DATA ONLY
 const contactData = {
   header: {
     title: "Let's working together",
@@ -32,7 +31,6 @@ const contactData = {
   ],
 };
 
-// ICON MAP (UI LAYER)
 const iconMap: Record<any, IconType> = {
   phone: HiOutlinePhone,
   email: HiOutlineMail,
@@ -41,13 +39,11 @@ const iconMap: Record<any, IconType> = {
 
 const ContactCard = () => {
   return (
-    <div className="p-8 bg-white rounded-4xl shadow-sm border border-gray-50 font-sans">
+    <div className="p-8 bg-white rounded-4xl shadow-sm border border-gray-50 figtree">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">{contactData.header.title}</h2>
+        <h2 className="text-3xl font-bold text-black mb-3">{contactData.header.title}</h2>
         <p className="text-gray-500 leading-relaxed">{contactData.header.description}</p>
       </div>
-
-      {/* Contact List */}
       <div className="space-y-6">
         {contactData.items.map((item, index) => {
           const Icon = iconMap[item.type];
@@ -58,11 +54,10 @@ const ContactCard = () => {
                   <Icon className="w-6 h-6 text-[#0a5e3b]" />
                 </div>
                 <div>
-                  <p className="text-gray-500 text-sm mb-1">{item.title}</p>
-                  <p className="text-lg font-bold text-gray-900">{item.value}</p>
+                  <p className="text-gray-500 text-sm mb-1 fredoka">{item.title}</p>
+                  <p className="text-lg font-bold text-black">{item.value}</p>
                 </div>
               </div>
-
               {/* Divider */}
               {index !== contactData.items.length - 1 && <hr className="mt-6 border-gray-100" />}
             </div>
