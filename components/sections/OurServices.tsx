@@ -77,7 +77,7 @@ export default function OurServices() {
         {servicesData.map((item) => (
           <div
             key={item.id}
-            className="relative rounded-3xl overflow-hidden bg-[#F9F6F1] group/card "
+            className="relative rounded-3xl overflow-hidden bg-[#F9F6F1] group/card  figtree"
           >
             <div className="relative h-105 w-full">
               <Image
@@ -93,7 +93,7 @@ export default function OurServices() {
             </div>
 
             <div className="absolute bottom-4 left-4 right-4 rounded-2xl px-6 py-5  transition-all duration-300  group-hover/card:bg-white   group-hover/card:shadow-lg">
-              <h3 className="text-xl font-semibold text-white  group-hover/card:text-black mb-2 transition-colors ">
+              <h3 className="text-xl font-semibold text-white  group-hover/card:text-black mb-2 transition-colors fredoka ">
                 {item.title}
               </h3>
               <p className="text-gray-200 group-hover/card:text-gray-600 leading-relaxed transition-colors line-clamp-2">

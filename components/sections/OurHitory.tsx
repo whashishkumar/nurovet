@@ -74,7 +74,7 @@ export default function OurHistory() {
           0: { slidesPerView: 1, spaceBetween: 12 },
           640: { slidesPerView: 2, spaceBetween: 10 },
           768: { slidesPerView: 3, spaceBetween: 15 },
-          1024: { slidesPerView: 4, spaceBetween: 15 },
+          1024: { slidesPerView: 4, spaceBetween: 20 },
         }}
       >
         {historyData.map((item) => (
