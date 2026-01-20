@@ -1,6 +1,11 @@
 import React from 'react';
 import BlogSideBar from './BlogSideBar';
 import ArticleCard from './ArticleCard';
+import Pagination from '../ui/Pagination';
+export const paginationConfig = {
+  totalPages: 10,
+  initialPage: 1,
+};
 
 const blogData = [
   {
@@ -44,6 +49,7 @@ export default function Blogs() {
             {blogData.map((article, index) => (
               <ArticleCard key={index} article={article} />
             ))}
+            <Pagination config={paginationConfig} />
           </div>
           <div className="hidden md:block sticky top-24 h-fit">
             <BlogSideBar />

@@ -40,6 +40,12 @@ const recentPostsData = {
   ],
 };
 
+const tagsData = {
+  title: 'Tags',
+  activeBar: true,
+  tags: ['Cat', 'Dog', 'Grooming', 'Nutrition', 'Pet Care', 'Picky', 'Reduction'],
+};
+
 const CategoriesCard = () => {
   return (
     <div className="max-w-sm bg-[#F9F6F1] rounded-xl p-6 shadow-sm border border-gray-100 font-sans">
@@ -106,11 +112,35 @@ const RecentPostsCard = () => {
   );
 };
 
+const TagsSection = () => {
+  return (
+    <section className="max-w-sm rounded-2xl bg-[#FDF8F2] p-6 shadow-sm">
+      <div className="mb-4">
+        <h2 className="text-2xl font-semibold text-gray-900">{tagsData.title}</h2>
+        <div className="relative mt-2 h-0.75 w-full bg-gray-200 rounded-full overflow-hidden">
+          {tagsData.activeBar && <span className="absolute left-1/2 h-full w-20  rounded-full" />}
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-3">
+        {tagsData.tags.map((tag, index) => (
+          <span
+            key={index}
+            className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-sm font-medium text-gray-800 hover:border-[#0a5e3b]/90 hover:text-white hover:bg-[#0a5e3b]/90 cursor-pointer"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 export default function BlogSideBar() {
   return (
     <div className="grid gap-8">
       <CategoriesCard />
       <RecentPostsCard />
+      <TagsSection />
     </div>
   );
 }
