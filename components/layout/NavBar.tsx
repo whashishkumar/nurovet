@@ -1,55 +1,33 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { FiPhoneCall, FiMenu, FiX } from 'react-icons/fi';
 
-export default function Navbar() {
+export default function Navbar({ headerResp = {} }: any) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  const navbarData = {
-    logo: {
-      src: '/logo/logoh.svg',
-      alt: 'Nuro Vet Logo',
-    },
-    menu: [
-      { label: 'Home', href: '/' },
-      { label: 'About Us', href: '/aboutUs' },
-      { label: 'Gallery', href: '/gallery' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Contact Us', href: '/contact' },
-    ],
-    phone: {
-      label: 'Call us:',
-      number: '+1 (424) 323 3268',
-    },
-    cta: { label: 'Request Demo', href: '/request-demo' },
-  };
-
+  const { logo = {}, menu = [], phone = {}, cta = {} } = headerResp;
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="relative z-50">
+    <header className="absolute z-100 w-full top-10">
       <nav className="mx-auto wrapper px-6">
         <div className="mt-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image
-                src={navbarData.logo.src}
-                alt={navbarData.logo.alt}
+                src={logo.src || '/logo/logoh.svg'}
+                alt={logo.alt || 'Nuro Vet Logo'}
                 width={270}
                 height={60}
                 priority
-                className="object-contain w-[140px] sm:w-[180px] md:w-[220px] lg:w-[270px]"
+                className="object-contain w-35 sm:w-45 md:w-55 lg:w-67.5"
               />
             </Link>
-
-            {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8 text-white/90">
-              {navbarData.menu.map((item) => (
+              {menu.map((item: any) => (
                 <Link
                   key={item.label}
                   href={item.href}
@@ -61,28 +39,28 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-
-            {/* Right Actions */}
             <div className="hidden lg:flex items-center gap-4">
               <div className="flex items-center gap-2 text-white">
                 <span className="h-12 w-12 flex items-center justify-center rounded-full bg-[#00603A]">
                   <FiPhoneCall size={20} />
                 </span>
                 <div className="text-sm leading-tight">
-                  <span className="fredoka font-medium block">{navbarData.phone.label}</span>
-                  <span className="font-normal">{navbarData.phone.number}</span>
+                  <span className="fredoka font-medium block">{phone.label || ''}</span>
+                  <a
+                    href={`tel:${(phone.number || '').replace(/\s|\(|\)|-/g, '')}`}
+                    className="font-normal hover:text-green-400 transition"
+                  >
+                    {phone.number || ''}
+                  </a>
                 </div>
               </div>
-
               <Link
-                href={navbarData.cta.href}
+                href={'#'}
                 className="rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:bg-green-800 transition border border-white"
               >
-                {navbarData.cta.label}
+                {cta.label || ''}
               </Link>
             </div>
-
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setOpen(true)}
               className="lg:hidden text-white p-2"
@@ -91,13 +69,13 @@ export default function Navbar() {
               <FiMenu size={32} />
             </button>
           </div>
+
           <div
             className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden ${
               open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
             }`}
             onClick={() => setOpen(false)}
           />
-
           {/* Sidebar */}
           <div
             className={`fixed top-0 right-0 h-full w-[70%] bg-[#00603A]/95 text-white shadow-2xl transform transition-transform z-50 lg:hidden ${
@@ -111,9 +89,8 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Mobile Menu */}
               <div className="flex flex-col space-y-6">
-                {navbarData.menu.map((item) => (
+                {menu?.map((item: any) => (
                   <Link
                     key={item.label}
                     href={item.href}
@@ -128,25 +105,28 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-
-              {/* Bottom CTA */}
               <div className="mt-auto pb-10 space-y-6">
                 <div className="flex items-center gap-4">
                   <span className="h-10 w-10 flex items-center justify-center rounded-full bg-[#00603A]">
                     <FiPhoneCall size={18} />
                   </span>
+
                   <div>
-                    <p className="text-xs text-gray-400">{navbarData.phone.label}</p>
-                    <p className="text-lg font-medium">{navbarData.phone.number}</p>
+                    <p className="text-xs text-gray-400">{phone.label || ''}</p>
+                    <a
+                      href={`tel:${(phone.number || '').replace(/\s|\(|\)|-/g, '')}`}
+                      className="text-lg font-medium hover:text-green-400 transition"
+                    >
+                      {phone.number || ''}
+                    </a>
                   </div>
                 </div>
-
                 <Link
-                  href={navbarData.cta.href}
+                  href={'#'}
                   onClick={() => setOpen(false)}
                   className="block w-full rounded-full bg-[#00603A] py-4 text-center text-white font-semibold border border-white/20 hover:bg-green-800 transition"
                 >
-                  {navbarData.cta.label}
+                  {cta.label || ''}
                 </Link>
               </div>
             </div>
