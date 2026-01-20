@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
+import Navbar from '@/components/layout/NavBar';
 
 const onesta = localFont({
   src: '../public/fonts/Onest-Regular.ttf',

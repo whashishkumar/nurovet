@@ -1,65 +1,61 @@
 'use client';
 import Image from 'next/image';
-import Navbar from '../layout/NavBar';
 import Button from '../ui/Button';
 import { BsCheck2All } from 'react-icons/bs';
 
-const bannerData = {
-  heroContent: {
-    title: {
-      first: 'Smart Veterinary',
-      highlight: ' Management, All in',
-      last: ' One Platform',
-    },
-    features: ['Real-time patient tracking', 'Role-based staff management', 'AI-powered insights'],
-    cta: {
-      label: 'Request Demo',
-      href: '/',
-    },
-    demobtn: {
-      label: 'View Demo',
-      href: '/',
-    },
-    backgroundImage: '/images/bannerbgwithlogo.svg',
-  },
-  featuresLeft: [
-    { id: 1, icon: '/icons/nuro1.png', title: 'The Neural Network for Your Practice.' },
-    { id: 2, icon: '/icons/brain.png', title: 'Intelligent Insights for Every Patient.' },
-  ],
-  featuresRight: [
-    {
-      id: 1,
-      icon: '/icons/medical.png',
-      title: 'Where Clinical Data Becomes Medical Intelligence.',
-    },
-    { id: 2, icon: '/icons/eye.png', title: 'See the Unseen. Predict the Unpredictable.' },
-  ],
-};
+// const bannerData = {
+//   heroContent: {
+//     title: {
+//       first: 'Smart Veterinary',
+//       highlight: ' Management, All in',
+//       last: ' One Platform',
+//     },
+//     features: ['Real-time patient tracking', 'Role-based staff management', 'AI-powered insights'],
+//     cta: {
+//       label: 'Request Demo',
+//       href: '/',
+//     },
+//     demobtn: {
+//       label: 'View Demo',
+//       href: '/',
+//     },
+//     backgroundImage: '/images/bannerbgwithlogo.svg',
+//   },
+//   featuresLeft: [
+//     { id: 1, icon: '/icons/nuro1.png', title: 'The Neural Network for Your Practice.' },
+//     { id: 2, icon: '/icons/brain.png', title: 'Intelligent Insights for Every Patient.' },
+//   ],
+//   featuresRight: [
+//     {
+//       id: 1,
+//       icon: '/icons/medical.png',
+//       title: 'Where Clinical Data Becomes Medical Intelligence.',
+//     },
+//     { id: 2, icon: '/icons/eye.png', title: 'See the Unseen. Predict the Unpredictable.' },
+//   ],
+// };
 
-export default function HeroBanner() {
+export default function HeroBanner({ heroBanner }: any) {
+  const { heroContent, featuresLeft, featuresRight } = heroBanner || {};
+
   return (
-    <div className="bg-color w-full">
+    <div className="bg-color w-full relative">
       <div className="sm:px-6 mx-auto py-4 sm:py-6 ">
         <div
           className="relative w-full min-h-165 md:min-h-185 lg:h-dvh bg-cover  bg-center bg-no-repeat rounded-2xl overflow-hidden flex flex-col"
-          style={{ backgroundImage: `url('${bannerData.heroContent.backgroundImage}')` }}
+          style={{ backgroundImage: `url('${heroContent?.backgroundImage}')` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0b5d3b]/80 via-[#0b5d3b]/0 to-transparent z-0" />
-          <div className="relative lg:absolute top-0 left-0 w-full z-50 pt-6 sm:pt-6 lg:pt-10">
-            <Navbar />
-          </div>
+          <div className="absolute inset-0 bg-linear-to-b from-[#0b5d3b]/80 via-[#0b5d3b]/0 to-transparent z-0" />
           <div className="relative lg:absolute inset-0 z-20 flex items-center md:grow py-12 lg:py-0">
             <div className="px-6 sm:px-10 md:px-16 w-full">
               <div className="inner-wrapper m-auto">
                 <h1 className="text-[2rem] lg:text-[4.125rem] font-bold leading-[1.2] lg:leading-19 text-[#003366] fredoka">
-                  {bannerData.heroContent.title.first}
-                  <span className="text-[#00603A] block">
-                    {bannerData.heroContent.title.highlight}
-                  </span>
-                  {bannerData.heroContent.title.last}
+                  {heroContent?.title?.first}
+                  <span className="text-[#00603A] block">{heroContent?.title?.highlight}</span>
+                  {heroContent?.title?.last}
                 </h1>
                 <ul className="mt-6 space-y-2">
-                  {bannerData.heroContent.features.map((feature, index) => (
+                  {heroContent?.features?.map((feature: any, index: any) => (
                     <li
                       key={index}
                       className="text-[#003366] font-bold text-base lg:text-[1.5rem] flex items-center"
@@ -73,14 +69,14 @@ export default function HeroBanner() {
                 </ul>
                 <div className="pt-8 pb-4 flex flex-wrap gap-4">
                   <Button
-                    href={bannerData.heroContent.cta.href}
-                    label={bannerData.heroContent.cta.label}
+                    href={heroContent.cta.href}
+                    label={heroContent.cta.label}
                     variant="primary"
                     className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center"
                   />
                   <Button
-                    href={bannerData.heroContent.demobtn.href}
-                    label={bannerData.heroContent.demobtn.label}
+                    href={heroContent.demobtn.href}
+                    label={heroContent.demobtn.label}
                     variant="outline"
                     className="shadow-lg transform hover:scale-105 w-full sm:w-auto text-center justify-center"
                   />
@@ -96,19 +92,19 @@ export default function HeroBanner() {
         <div className="inner-wrapper mx-auto flex flex-col gap-8 md:flex-row md:justify-center md:items-start lg:gap-12 lg:justify-between">
           {/* Left Feature Map */}
           <div className="flex flex-row justify-center gap-6 sm:gap-10">
-            {bannerData.featuresLeft.map((item) => (
+            {featuresLeft?.map((item: any) => (
               <div
                 key={item.id}
                 className="max-w-40 sm:max-w-40 flex flex-col items-center text-center gap-3 fredoka"
               >
                 <div>
-                  <Image
+                  {/* <Image
                     src={item.icon}
                     alt={item.title}
                     width={24}
                     height={24}
                     className="object-contain"
-                  />
+                  /> */}
                 </div>
                 <p className="text-black font-semibold text-lg sm:text-sm leading-snug">
                   {item.title}
@@ -119,19 +115,19 @@ export default function HeroBanner() {
 
           {/* Right Feature Map */}
           <div className="flex flex-row justify-center gap-6 sm:gap-10">
-            {bannerData.featuresRight.map((item) => (
+            {featuresRight?.map((item: any) => (
               <div
                 key={item.id}
                 className="max-w-40 sm:max-w-47.5 flex flex-col items-center text-center gap-3 fredoka"
               >
                 <div>
-                  <Image
+                  {/* <Image
                     src={item.icon}
                     alt={item.title}
                     width={24}
                     height={24}
                     className="object-contain"
-                  />
+                  /> */}
                 </div>
                 <p className="text-black font-semibold text-lg sm:text-sm leading-snug">
                   {item.title}
