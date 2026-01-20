@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogSideBar from './BlogSideBar';
 import BlogDetailCard from './BlogDetailCard';
-import AppointmentForm from '../common/AppointmentForm';
+import CommentForm from '../common/CommentForm';
 
 const blogInfo = [
   {
@@ -30,9 +30,9 @@ export default function BlogDetail() {
             {blogInfo.map((blog, index) => (
               <BlogDetailCard key={index} data={blog} />
             ))}
-            {/* <div className="max-w-4xl justify-center mx-auto py-16">
-              <AppointmentForm className="bg-white" commentHeaderData={commentHeaderData} />
-            </div> */}
+            <div className="max-w-4xl justify-center mx-auto py-16">
+              <CommentForm />
+            </div>
           </div>
           <div className="hidden md:block sticky top-24 h-fit">
             <BlogSideBar />

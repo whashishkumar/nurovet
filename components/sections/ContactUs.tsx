@@ -1,7 +1,6 @@
-import React from 'react';
 import { HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from 'react-icons/hi';
-import AppointmentForm from '../common/AppointmentForm';
 import { IconType } from 'react-icons';
+import ContactUsForm from '../common/ContactUsForm';
 
 const contactData = {
   header: {
@@ -73,7 +72,7 @@ export default function ContactUs() {
     <div className="inner-wrapper m-auto py-16 px-6 lg:px-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <ContactCard />
-        <AppointmentForm />
+        <ContactUsForm />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-const AppointmentForm = ({ className, commentHeaderData }: any) => {
+const AppointmentForm = ({ className }: any) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -33,12 +33,6 @@ const AppointmentForm = ({ className, commentHeaderData }: any) => {
             className ? `${className} ` : 'bg-[#0B5D3B]'
           } rounded-4xl p-6 sm:p-10 md:py-16`}
         >
-          {commentHeaderData && (
-            <div className="mb-6">
-              <h1 className="text-4xl font-semibold fredoka">{commentHeaderData?.title}</h1>
-              <p className="py-4 text-lg font-medium">{commentHeaderData?.note}</p>
-            </div>
-          )}
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <input
               type="text"
@@ -99,19 +93,8 @@ const AppointmentForm = ({ className, commentHeaderData }: any) => {
             <div className="md:col-span-2 mt-6">
               <button
                 type="submit"
-                className={`     inline-flex
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-[#f9f6f1]
-                  px-8
-                  py-4
-                  text-lg
-                  font-medium
-                  text-black
-                  cursor-pointer
-                  hover:bg-gray-100
-                  transition`}
+                className={`inline-flex
+                  items-center justify-center rounded-full bg-[#f9f6f1] px-8 py-4  text-lg  font-medium text-black  cursor-pointer  hover:bg-gray-100  transition`}
               >
                 Submit Now
               </button>
