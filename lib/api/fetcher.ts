@@ -120,7 +120,6 @@ export async function apiFetchWithResponse<T = any>(
 }
 
 // POST request
-
 export async function apiPost<T = any>(
   endpoint: string,
   data?: any,

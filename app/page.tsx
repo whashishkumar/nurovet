@@ -12,6 +12,9 @@ import RecentStories from '@/components/sections/RecentStories';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import Footer from '@/components/layout/Footer';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
+import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
+import { CommonEndPoints } from '@/lib/service/CommonEndPoints';
+import Navbar from '@/components/layout/NavBar';
 
 const featuredVet = {
   name: 'Alina Maisner',
@@ -59,10 +62,15 @@ const sectionData = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const headerResp = await HomePageEndPoints.headerAPi();
+  const footerResp = await CommonEndPoints.footerResponse();
+  const heroBanner = await HomePageEndPoints.heroBanner();
+
   return (
     <>
-      <HeroBanner />
+      <Navbar headerResp={headerResp} />
+      <HeroBanner heroBanner={heroBanner} />
       <AboutNuroVet />
       <FeaturesNeuroVet />
       <CustomizedDashboard />
@@ -77,7 +85,7 @@ export default function Home() {
       <QuickAnswers />
       <BookDemo />
       <Articles />
-      <Footer />
+      <Footer footerResp={footerResp} />
     </>
   );
 }
