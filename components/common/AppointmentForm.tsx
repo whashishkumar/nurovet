@@ -25,6 +25,15 @@ const AppointmentForm = ({ className }: any) => {
     e.preventDefault();
     const resp = await HomePageEndPoints.requestDemoForm(formData);
     console.log(resp, 'formResp');
+    setFormData({
+      name: '',
+      phone: '',
+      business_name: '',
+      website: '',
+      date: '',
+      time: '',
+      address: '',
+    });
   };
 
   return (
