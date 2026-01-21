@@ -26,7 +26,6 @@ const spanClasses: Record<string, string> = {
 
 export default function Gallery() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
-
   return (
     <div className="bg-white">
       {/* GRID */}

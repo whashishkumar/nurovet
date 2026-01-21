@@ -11,13 +11,15 @@ export default function FeaturesCards({ featuresData }: any) {
               className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition"
             >
               <div className=" flex h-12 w-12 items-center justify-center rounded-full bg-[#00603A]">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
+                {item.icon && (
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                  />
+                )}
               </div>
               <h3 className="text-lg font-normal text-[#000000] mb-2">{item.title}</h3>
               <p className="text-base text-[#000000] leading-relaxed figtree">{item.description}</p>

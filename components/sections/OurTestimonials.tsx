@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
@@ -64,7 +65,16 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                         href={social.link}
                         className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-green-700 hover:text-white transition-all"
                       >
-                        {social.icon}
+                        {social.icon && (
+                          <Image
+                            src={social.icon}
+                            alt="Social Icon"
+                            width={12}
+                            height={12}
+                            className="object-contain"
+                          />
+                        )}
+                        {/* {social.icon} */}
                       </a>
                     ))}
                   </div>
@@ -80,6 +90,7 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
 
 export default function OurTestimonials({ sectionData, teamMembers, featuredVet }: any) {
   const { badge, heading } = sectionData.testimonialSection;
+  console.log(badge, heading, 'sectionData');
   return (
     <div
       className="

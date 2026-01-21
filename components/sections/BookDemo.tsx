@@ -23,24 +23,18 @@ export default function BookDemo() {
   const { badge, heading, image } = bookDemoData;
 
   return (
-    <div className="bg-color">
+    <div className="bg-color" id="demo">
       <div className="inner-wrapper m-auto lg:py-16 py-12 lg:px-0 px-6">
-        {/* Badge */}
         <div className="flex justify-left">
           <SectionBadge label={badge.label} icon={badge.icon} />
         </div>
-
-        {/* Heading */}
         <SectionHeading
           cssClass="text-left"
           title={heading.title}
           subTitle={heading.subTitle}
           subHeadingCss="lg:width-[38rem]"
         />
-
-        {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-center">
-          {/* Image */}
           <div className="relative w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[490px]">
             <Image
               src={image.src}
@@ -50,8 +44,6 @@ export default function BookDemo() {
               priority
             />
           </div>
-
-          {/* Form */}
           <AppointmentForm />
         </div>
       </div>
