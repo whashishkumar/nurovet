@@ -2,6 +2,7 @@ import React from 'react';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
+import Image from 'next/image';
 
 // const vetGalleryData = {
 //   left: {
@@ -62,7 +63,7 @@ const VetGallery = ({ recentStories }: any) => {
         {/* Highlight - Spans 4 of 12 on Tablet and Desktop */}
         <div className="md:col-span-4 h-[300px] md:h-auto">
           <div className="h-full overflow-hidden rounded-2xl">
-            <img src={highlight.src} alt={highlight.alt} className="w-full h-full object-cover" />
+            <Image src={highlight.src} alt={highlight.alt} className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -76,7 +77,7 @@ const VetGallery = ({ recentStories }: any) => {
         </div>
       </div>
       <div className="mt-12 flex justify-center">
-        <Button href={button.href} label={button.label} />
+        <Button href={button?.href} label={button?.label} />
       </div>
     </section>
   );

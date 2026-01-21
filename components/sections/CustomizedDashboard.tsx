@@ -89,6 +89,8 @@ import Button from '../ui/Button';
 const AiPowerPetCare = ({ aiSection }: any) => {
   const { heading, subHeading, features, cta, images } = aiSection || {};
 
+  console.log(images, 'images');
+
   return (
     <section className="lg:py-16  lg:px-0 px-6">
       <div
@@ -100,7 +102,11 @@ const AiPowerPetCare = ({ aiSection }: any) => {
         bg-position-[right_0rem_bottom_1.5rem]
         "
         // style={{ backgroundImage: `url(${'/images/dashb-img.png'})` }}
-        style={{ backgroundImage: `url(${images?.bgImage?.src})` }}
+        style={
+          images?.bgImage?.src && {
+            backgroundImage: `url(${images.bgImage.src})`,
+          }
+        }
       >
         <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12 ">
           <div className="relative flex justify-start">

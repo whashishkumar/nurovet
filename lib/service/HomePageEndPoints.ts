@@ -1,4 +1,4 @@
-import { apiFetch } from '../api/fetcher';
+import { apiFetch, apiPost } from '../api/fetcher';
 
 export const HomePageEndPoints = {
   headerAPi: () => {
@@ -74,7 +74,7 @@ export const HomePageEndPoints = {
       cache: 'dynamic',
     });
   },
-  // api/v1/section/home-faq-section
+
   faqSection: () => {
     return apiFetch({
       endpoint: 'section/home-faq-section',
@@ -82,18 +82,21 @@ export const HomePageEndPoints = {
     });
   },
 
-  // /api/v1/section/home-book-demo-section
   bookDemoSection: () => {
     return apiFetch({
       endpoint: 'section/home-book-demo-section',
       cache: 'dynamic',
     });
   },
-  // /api/v1/section/home-articles-section
+
   articlesSection: () => {
     return apiFetch({
       endpoint: 'section/home-articles-section',
       cache: 'dynamic',
     });
+  },
+
+  requestDemoForm: (data: any) => {
+    return apiPost('contact-form', data);
   },
 };

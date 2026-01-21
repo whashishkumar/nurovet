@@ -50,49 +50,49 @@ const quickAnswersData = {
   ],
 };
 
-export default function QuickAnswers() {
-  const { badge, heading, image, faqs } = quickAnswersData;
+export default function QuickAnswers({ faqSection }: any) {
+  const { image, faq, tag, tagicon, heading, bgImage } = faqSection || {};
 
   return (
     <div className="bg-color relative">
-      {/* Decorative background image */}
       <div
         className="
           absolute hidden lg:block
           lg:w-[15vw] xl:w-[20vw]
           lg:h-45
-          bg-[url('/images/Webp/FAQRabit.webp')]
           bg-no-repeat
           bg-contain
           overflow-hidden
         "
+        style={
+          image.src && {
+            backgroundImage: `url(${bgImage.src})`,
+          }
+        }
       />
 
       <div className="inner-wrapper m-auto lg:py-16 py-12 lg:px-0 px-6">
         <div className="flex justify-left">
-          <SectionBadge label={badge.label} icon={badge.icon} />
+          <SectionBadge label={tag} icon={tagicon} />
         </div>
-
-        <SectionHeading cssClass="text-left" title={heading.title} />
-
+        <SectionHeading cssClass="text-left" title={heading} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* FAQ */}
           <div className="pt-6">
-            <Accordion data={faqs} />
+            <Accordion data={faq} />
           </div>
-
-          {/* Image */}
           <div className="relative w-full h-[260px] sm:h-[300px] md:h-[380px] lg:h-[490px]">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 640px) 100vw,
+            {image.src && (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 640px) 100vw,
                 (max-width: 1024px) 80vw,
                 644px"
-              className="rounded-3xl object-fill sm:object-contain"
-              priority
-            />
+                className="rounded-3xl object-fill sm:object-contain"
+                priority
+              />
+            )}
           </div>
         </div>
       </div>
