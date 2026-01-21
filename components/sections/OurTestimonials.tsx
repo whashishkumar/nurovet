@@ -74,7 +74,6 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                             className="object-contain"
                           />
                         )}
-                        {/* {social.icon} */}
                       </a>
                     ))}
                   </div>
@@ -90,7 +89,6 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
 
 export default function OurTestimonials({ sectionData, teamMembers, featuredVet }: any) {
   const { badge, heading } = sectionData.testimonialSection;
-  console.log(badge, heading, 'sectionData');
   return (
     <div
       className="

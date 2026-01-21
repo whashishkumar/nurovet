@@ -126,7 +126,6 @@ export async function apiPost<T = any>(
   options?: Omit<FetchOptions, 'endpoint'>
 ): Promise<T> {
   const { timeout, headers = {} } = options || {};
-
   try {
     const response = await api.post(endpoint, data, {
       timeout: timeout || undefined,

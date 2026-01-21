@@ -21,7 +21,7 @@ const Accordion = ({ data }: AccordionProps) => {
 
   return (
     <div className="space-y-5">
-      {data.map((item) => {
+      {data?.map((item) => {
         const isOpen = activeId === item.id;
 
         return (
