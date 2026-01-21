@@ -1,11 +1,12 @@
 'use client';
+import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 import { useState } from 'react';
 
 const AppointmentForm = ({ className }: any) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    business: '',
+    business_name: '',
     website: '',
     date: '',
     time: '',
@@ -20,14 +21,24 @@ const AppointmentForm = ({ className }: any) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+    const resp = await HomePageEndPoints.requestDemoForm(formData);
+    console.log(resp, 'formResp');
+    setFormData({
+      name: '',
+      phone: '',
+      business_name: '',
+      website: '',
+      date: '',
+      time: '',
+      address: '',
+    });
   };
 
   return (
     <section>
-      <div className="max-w-5xl mx-auto ">
+      <div className="max-w-5xl mx-auto text-black">
         <div
           className={`${
             className ? `${className} ` : 'bg-[#0B5D3B]'
@@ -35,6 +46,7 @@ const AppointmentForm = ({ className }: any) => {
         >
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <input
+              required
               type="text"
               name="name"
               value={formData.name}
@@ -49,13 +61,14 @@ const AppointmentForm = ({ className }: any) => {
               onChange={handleChange}
               placeholder="Enter your phone number*"
               className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              required
             />
             <input
               type="text"
-              name="business"
-              value={formData.business}
+              name="business_name"
+              value={formData.business_name}
               onChange={handleChange}
-              placeholder="Business Name"
+              placeholder="business_name Name"
               className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
             />
             <input

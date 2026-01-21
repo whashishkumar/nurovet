@@ -4,12 +4,11 @@ import { FiPlus, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import ExplorePetcareBanner from '../common/PetCareSolutions';
 
 const Footer = ({ footerResp }: any) => {
-  const { brand, social, quickLinks, services, support } = footerResp || {};
+  const { brand, social, quickLinks, services, support, copyright } = footerResp || {};
 
   return (
     <footer className="bg-[#0B5D3B] text-white overflow-hidden relative">
       <ExplorePetcareBanner />
-
       <div
         className="
     absolute
@@ -26,7 +25,6 @@ const Footer = ({ footerResp }: any) => {
     pointer-events-none
   "
       />
-
       <div
         className="
     absolute
@@ -57,6 +55,64 @@ const Footer = ({ footerResp }: any) => {
               />
             )}
             <p className="mt-6 text-base text-white leading-relaxed onesta">{brand?.description}</p>
+            {/* <ul className="mt-6 space-y-4 text-base">
+              <li className="flex items-center gap-3">
+                <p className="border border-white rounded-full p-2">
+                  <FiMail size={14} />
+                </p>
+                {brand?.email}
+              </li>
+              <li className="flex items-center gap-3">
+                <p className="border border-white rounded-full p-2">
+                  <FiPhone size={14} />
+                </p>
+                {brand?.phone}
+              </li>
+              <li className="flex items-center gap-3">
+                <p className="border border-white rounded-full p-2">
+                  <FiMapPin size={14} />
+                </p>
+                {brand?.address}
+              </li>
+            </ul> */}
+          </div>
+
+          {/* QUICK LINKS */}
+          <div>
+            <h4 className="text-2xl font-semibold mb-6 fredoka">Quick Links</h4>
+            <ul className="space-y-3 text-base">
+              {quickLinks?.map((item: any, index: number) => (
+                <li key={index} className="flex items-center gap-2">
+                  <FiPlus className="text-base" />
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* SUPPORT */}
+          <div>
+            <h4 className="text-2xl font-semibold mb-6 fredoka">Support</h4>
+            <ul className="space-y-3 text-base">
+              {support?.map((item: any, index: number) => (
+                <li key={index} className="flex items-center gap-2">
+                  <FiPlus className="text-base" />
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ContactUs */}
+          <div>
+            <h4 className="text-2xl font-semibold mb-6 fredoka">ContactUs</h4>
+            {/* <ul className="space-y-3 text-base">
+              {services?.map((item: any, index: number) => (
+                <li key={index} className="flex items-center gap-2">
+                  <FiPlus className="text-base" />
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
+            </ul> */}
             <ul className="mt-6 space-y-4 text-base">
               <li className="flex items-center gap-3">
                 <p className="border border-white rounded-full p-2">
@@ -78,55 +134,13 @@ const Footer = ({ footerResp }: any) => {
               </li>
             </ul>
           </div>
-
-          {/* QUICK LINKS */}
-          <div>
-            <h4 className="text-2xl font-semibold mb-6 fredoka">Quick Links</h4>
-            <ul className="space-y-3 text-base">
-              {quickLinks?.map((item: any, index: number) => (
-                <li key={index} className="flex items-center gap-2">
-                  <FiPlus className="text-base" />
-                  <Link href={item.href}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* SERVICES */}
-          <div>
-            <h4 className="text-2xl font-semibold mb-6 fredoka">Services</h4>
-            <ul className="space-y-3 text-base">
-              {services?.map((item: any, index: number) => (
-                <li key={index} className="flex items-center gap-2">
-                  <FiPlus className="text-base" />
-                  <Link href={item.href}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* SUPPORT */}
-          <div>
-            <h4 className="text-2xl font-semibold mb-6 fredoka">Support</h4>
-            <ul className="space-y-3 text-base">
-              {support?.map((item: any, index: number) => (
-                <li key={index} className="flex items-center gap-2">
-                  <FiPlus className="text-base" />
-                  <Link href={item.href}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* DIVIDER */}
         <div className="my-10 h-px bg-white/20" />
-
         {/* BOTTOM */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white">
-          <p className="text-base onesta">
-            © Copyright 2026 Nurovet. . All Rights Reserved By VMP.
-          </p>
+          <p className="text-base onesta">{copyright}</p>
 
           <div className="flex items-center gap-4 text-base onesta">
             <span>Social Media:</span>

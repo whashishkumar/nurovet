@@ -77,7 +77,6 @@ export default async function Home() {
   const testimonialsData = await HomePageEndPoints.testimonialSection();
   const { teamMembers, featuredVet, heading, subHeadingmtag, tagicon, tag } =
     testimonialsData || {};
-
   const sectionData = {
     testimonialSection: {
       badge: {
@@ -90,7 +89,9 @@ export default async function Home() {
       },
     },
   };
-
+  const faqSection = await HomePageEndPoints.faqSection();
+  const bookDemoSection = await HomePageEndPoints.bookDemoSection();
+  const article = await HomePageEndPoints.articlesSection();
   return (
     <>
       <Navbar headerResp={headerResp} />
@@ -110,9 +111,9 @@ export default async function Home() {
         teamMembers={teamMembers}
         sectionData={sectionData}
       />
-      <QuickAnswers />
-      <BookDemo />
-      <Articles />
+      <QuickAnswers faqSection={faqSection} />
+      <BookDemo bookDemoSection={bookDemoSection} />
+      <Articles article={article} />
       <Footer footerResp={footerResp} />
     </>
   );
