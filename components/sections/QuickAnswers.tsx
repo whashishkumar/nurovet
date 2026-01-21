@@ -65,7 +65,7 @@ export default function QuickAnswers({ faqSection }: any) {
           overflow-hidden
         "
         style={
-          image.src && {
+          bgImage?.src && {
             backgroundImage: `url(${bgImage.src})`,
           }
         }
@@ -81,9 +81,9 @@ export default function QuickAnswers({ faqSection }: any) {
             <Accordion data={faq} />
           </div>
           <div className="relative w-full h-[260px] sm:h-[300px] md:h-[380px] lg:h-[490px]">
-            {image.src && (
+            {image?.src && (
               <Image
-                src={image.src}
+                src={image?.src}
                 alt={image.alt}
                 fill
                 sizes="(max-width: 640px) 100vw,

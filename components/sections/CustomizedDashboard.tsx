@@ -89,8 +89,6 @@ import Button from '../ui/Button';
 const AiPowerPetCare = ({ aiSection }: any) => {
   const { heading, subHeading, features, cta, images } = aiSection || {};
 
-  console.log(images, 'images');
-
   return (
     <section className="lg:py-16  lg:px-0 px-6">
       <div

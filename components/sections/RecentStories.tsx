@@ -47,7 +47,13 @@ const VetGallery = ({ recentStories }: any) => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
         <div className="md:col-span-4 h-[300px] md:h-auto">
           <div className="h-full overflow-hidden rounded-2xl">
-            <img src={left.src} alt={left.alt} className="w-full h-full object-cover" />
+            <Image
+              src={left?.src}
+              alt={left?.alt}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
@@ -55,7 +61,13 @@ const VetGallery = ({ recentStories }: any) => {
         <div className="md:col-span-2 flex flex-col gap-4 md:gap-8 h-full">
           {centerStack?.map((item: any, index: any) => (
             <div key={index} className="overflow-hidden rounded-2xl flex-1 h-[150px] md:h-auto">
-              <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={500}
+                height={500}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -63,7 +75,13 @@ const VetGallery = ({ recentStories }: any) => {
         {/* Highlight - Spans 4 of 12 on Tablet and Desktop */}
         <div className="md:col-span-4 h-[300px] md:h-auto">
           <div className="h-full overflow-hidden rounded-2xl">
-            <Image src={highlight.src} alt={highlight.alt} className="w-full h-full object-cover" />
+            <Image
+              src={highlight?.src}
+              alt={highlight?.alt}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
@@ -71,7 +89,13 @@ const VetGallery = ({ recentStories }: any) => {
         <div className="md:col-span-2 flex flex-col gap-4 md:gap-8 h-full">
           {rightStack?.map((item: any, index: number) => (
             <div key={index} className="overflow-hidden rounded-2xl flex-1 h-[150px] md:h-auto">
-              <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={500}
+                height={500}
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
