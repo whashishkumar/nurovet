@@ -37,9 +37,6 @@ import { BsCheck2All } from 'react-icons/bs';
 
 export default function HeroBanner({ heroBanner }: any) {
   const { heroContent, featuresLeft, featuresRight } = heroBanner || {};
-
-  console.log(featuresLeft, 'featuresLeft');
-
   return (
     <div className="bg-color w-full relative">
       <div className="sm:px-6 mx-auto py-4 sm:py-6 ">
@@ -99,7 +96,7 @@ export default function HeroBanner({ heroBanner }: any) {
                 key={item.id}
                 className="max-w-40 sm:max-w-40 flex flex-col items-center text-center gap-3 fredoka"
               >
-                {/* <div>
+                <div>
                   {item.icon && (
                     <Image
                       src={item.icon}
@@ -109,7 +106,7 @@ export default function HeroBanner({ heroBanner }: any) {
                       className="object-contain"
                     />
                   )}
-                </div> */}
+                </div>
                 <p className="text-black font-semibold text-lg sm:text-sm leading-snug">
                   {item.title}
                 </p>
@@ -125,13 +122,15 @@ export default function HeroBanner({ heroBanner }: any) {
                 className="max-w-40 sm:max-w-47.5 flex flex-col items-center text-center gap-3 fredoka"
               >
                 <div>
-                  {/* <Image
-                    src={item.icon}
-                    alt={item.title}
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  /> */}
+                  {item.icon && (
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
+                  )}
                 </div>
                 <p className="text-black font-semibold text-lg sm:text-sm leading-snug">
                   {item.title}

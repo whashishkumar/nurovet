@@ -3,47 +3,46 @@ import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
 
-const whyChooseUsData = {
-  badge: {
-    label: 'Our Specialities',
-    icon: '/icons/bone.svg',
-  },
-  heading: {
-    title: 'Why Choose Us?',
-    subTitle: 'Easily find and book trusted Pet Caregivers near you',
-  },
-  arcFeatures: {
-    cta: {
-      label: 'Book a Demo Now!',
-      href: '/demo',
-    },
-    items: [
-      { id: '01', text: 'Smart Veterinary\nSystem Excellence' },
-      { id: '02', text: 'Secure & Reliable\nClinic Platform' },
-      { id: '03', text: 'Customizable for Every\nPractice' },
-      { id: '04', text: 'Simplified Daily\nOperations' },
-      { id: '05', text: 'Performance-\nDriven Efficiency' },
-    ],
-  },
-  video: {
-    floatingImage: {
-      src: '/images/Webp/whychooseanimals.webp',
-      alt: 'animals',
-    },
-    background: {
-      src: '/images/vdoContainer.png',
-      alt: 'video background',
-    },
-  },
-};
+// const whyChooseUsData = {
+//   badge: {
+//     label: 'Our Specialities',
+//     icon: '/icons/bone.svg',
+//   },
+//   heading: {
+//     title: 'Why Choose Us?',
+//     subTitle: 'Easily find and book trusted Pet Caregivers near you',
+//   },
+//   arcFeatures: {
+//     cta: {
+//       label: 'Book a Demo Now!',
+//       href: '/demo',
+//     },
+//     items: [
+//       { id: '01', text: 'Smart Veterinary\nSystem Excellence' },
+//       { id: '02', text: 'Secure & Reliable\nClinic Platform' },
+//       { id: '03', text: 'Customizable for Every\nPractice' },
+//       { id: '04', text: 'Simplified Daily\nOperations' },
+//       { id: '05', text: 'Performance-\nDriven Efficiency' },
+//     ],
+//   },
+//   video: {
+//     floatingImage: {
+//       src: '/images/Webp/whychooseanimals.webp',
+//       alt: 'animals',
+//     },
+//     background: {
+//       src: '/images/vdoContainer.png',
+//       alt: 'video background',
+//     },
+//   },
+// };
 
 const ArcFeaturesSection = ({ data }: any) => {
-  const { cta, items } = data;
-
+  const { cta, items } = data || {};
   const positions = [
     'md:left-[-2%] md:top-[180px] lg:left-0 lg:top-[220px]',
     'md:left-[8%] md:top-[50px] lg:left-[12%] lg:top-[60px]',
-    'md:left-1/2 md:-translate-x-1/2 md:-top-[30px] lg:-top-[40px]',
+    'md:left-1/2 md:-translate-x-1/2 md:-top-[30px] lg:-top-[20px]',
     'md:right-[8%] md:top-[50px] lg:right-[12%] lg:top-[60px]',
     'md:right-[-2%] md:top-[180px] lg:right-0 lg:top-[220px]',
   ];
@@ -55,9 +54,7 @@ const ArcFeaturesSection = ({ data }: any) => {
           <div className="relative w-full flex flex-col items-center gap-10 md:block md:h-[350px] lg:h-[400px]">
             {/* Arc Line */}
             <div className="hidden md:block absolute inset-0 rounded-t-full border-t border-gray-200" />
-
-            {/* Items */}
-            {items.map((item: any, index: any) => (
+            {items?.map((item: any, index: any) => (
               <div
                 key={item.id}
                 className={`
@@ -68,7 +65,7 @@ const ArcFeaturesSection = ({ data }: any) => {
                 <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-gray-900 border border-gray-100 shrink-0">
                   {item.id}
                 </div>
-                <p className="mt-2 lg:mt-3 text-xs lg:text-sm font-semibold text-gray-800 whitespace-pre-line leading-snug">
+                <p className="mt-2 lg:mt-3 text-xs lg:text-sm font-semibold text-gray-800 whitespace-pre-line leading-snug w-[10rem]">
                   {item.text}
                 </p>
               </div>
@@ -89,14 +86,14 @@ const ArcFeaturesSection = ({ data }: any) => {
    VIDEO
 ========================= */
 const VideoSection = ({ data }: any) => {
-  const { floatingImage, background } = data;
+  const { floatingImage, background } = data || {};
 
   return (
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
         <div className="absolute -top-36 left-1/2 -translate-x-1/2 z-20">
           <Image
-            src={floatingImage.src}
+            src={floatingImage?.src}
             alt={floatingImage.alt}
             width={600}
             height={140}
@@ -107,7 +104,7 @@ const VideoSection = ({ data }: any) => {
 
         <div className="relative rounded-3xl overflow-hidden">
           <Image
-            src={background.src}
+            src={background?.src}
             alt={background.alt}
             width={1856}
             height={750}
@@ -120,11 +117,8 @@ const VideoSection = ({ data }: any) => {
   );
 };
 
-/* =========================
-   MAIN
-========================= */
-export default function WhyChooseUs() {
-  const { badge, heading, arcFeatures, video } = whyChooseUsData;
+export default function WhyChooseUs({ chooseSection }: any) {
+  const { arcFeatures, video, tag, heading, subHeading, tagIcon } = chooseSection || {};
 
   return (
     <div className="bg-color relative">
@@ -139,10 +133,10 @@ export default function WhyChooseUs() {
 
       <div className="inner-wrapper m-auto lg:py-16 py-12 px-6 lg:px-0">
         <div className="flex justify-center">
-          <SectionBadge label={badge.label} icon={badge.icon} />
+          <SectionBadge label={tag} icon={tagIcon} />
         </div>
 
-        <SectionHeading title={heading.title} subTitle={heading.subTitle} />
+        <SectionHeading title={heading} subTitle={subHeading} />
 
         <ArcFeaturesSection data={arcFeatures} />
       </div>

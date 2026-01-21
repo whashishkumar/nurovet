@@ -1,90 +1,94 @@
 import Image from 'next/image';
 import Button from '../ui/Button';
 
-const dashboardData = {
-  backgroundImage: '/images/dashboardbg.png',
+// const dashboardData = {
+//   backgroundImage: '/images/dashboardbg.png',
 
-  left: {
-    image: {
-      src: '/images/dashboard.png',
-      alt: 'Dashboard on Laptop',
-    },
-  },
+//   left: {
+//     image: {
+//       src: '/images/dashboard.png',
+//       alt: 'Dashboard on Laptop',
+//     },
+//   },
 
-  center: {
-    title: 'Customized Dashboard',
-    description:
-      'A fully customized dashboard offering real-time visibility into patients, staff, appointments, labs, inventory, and clinic performance.',
-  },
+//   center: {
+//     title: 'Customized Dashboard',
+//     description:
+//       'A fully customized dashboard offering real-time visibility into patients, staff, appointments, labs, inventory, and clinic performance.',
+//   },
 
-  right: {
-    image: {
-      src: '/images/dashb-img.png',
-      alt: 'Pets',
-    },
-  },
-  btn: {
-    text: 'Book a Demo',
-    href: '',
-  },
-};
+//   right: {
+//     image: {
+//       src: '/images/dashb-img.png',
+//       alt: 'Pets',
+//     },
+//   },
+//   btn: {
+//     text: 'Book a Demo',
+//     href: '',
+//   },
+// };
 
-const aiPet = {
-  heading: 'Nurovet AI-Powered Pet Care',
-  subHeading:
-    'Advanced AI tools designed for neurological, behavioral, and preventive pet healthcare.',
+// const aiPet = {
+//   heading: 'Nurovet AI-Powered Pet Care',
+//   subHeading:
+//     'Advanced AI tools designed for neurological, behavioral, and preventive pet healthcare.',
 
-  features: [
-    'AI-assisted diagnosis',
-    'Generates SOAP notes automatically',
-    'Predictive health alerts',
-    'Smart treatment recommendations',
-  ],
+//   features: [
+//     'AI-assisted diagnosis',
+//     'Generates SOAP notes automatically',
+//     'Predictive health alerts',
+//     'Smart treatment recommendations',
+//   ],
 
-  cta: {
-    label: 'Book a Demo',
-    href: '',
-  },
+//   cta: {
+//     label: 'Book a Demo',
+//     href: '',
+//   },
 
-  images: {
-    dashboard: {
-      src: '/images/Webp/nurovetAi.webp',
-      alt: 'Nurovet Dashboard',
-    },
+//   images: {
+//     dashboard: {
+//       src: '/images/Webp/nurovetAi.webp',
+//       alt: 'Nurovet Dashboard',
+//     },
 
-    pets: {
-      src: '/images/dashb-img.png',
-      alt: 'Pets',
-    },
-  },
-};
+//     pets: {
+//       src: '/images/dashb-img.png',
+//       alt: 'Pets',
+//     },
+//   },
+//   bgImage: '/images/dashb-img.png',
+//   icon: '/images/SVG/paw-icon.svg',
+// };
 
-const remoteConsultations = {
-  heading: 'Telemedicine & Remote Consultations',
-  subHeading:
-    'Advanced AI tools designed for neurological, behavioral, and preventive pet healthcare.',
-  features: [
-    'Video & chat consultations',
-    'Digital prescriptions',
-    'Follow-up tracking',
-    'Reduced clinic visits',
-  ],
+// const remoteConsultations = {
+//   heading: 'Telemedicine & Remote Consultations',
+//   subHeading:
+//     'Advanced AI tools designed for neurological, behavioral, and preventive pet healthcare.',
+//   features: [
+//     'Video & chat consultations',
+//     'Digital prescriptions',
+//     'Follow-up tracking',
+//     'Reduced clinic visits',
+//   ],
 
-  cta: {
-    label: 'Book a Demo',
-    href: '',
-  },
+//   cta: {
+//     label: 'Book a Demo',
+//     href: '',
+//   },
 
-  images: {
-    dashboard: {
-      src: '/images/Webp/Telemedicine.webp',
-      alt: 'Nurovet Dashboard',
-    },
-  },
-};
+//   images: {
+//     dashboard: {
+//       src: '/images/Webp/Telemedicine.webp',
+//       alt: 'Nurovet Dashboard',
+//     },
+//   },
+//   icon: '/images/SVG/paw-icon.svg',
+// };
 
-const AiPowerPetCare = () => {
-  const { heading, subHeading, features, cta, images } = aiPet;
+const AiPowerPetCare = ({ aiSection }: any) => {
+  const { heading, subHeading, features, cta, images } = aiSection || {};
+
   return (
     <section className="lg:py-16  lg:px-0 px-6">
       <div
@@ -95,7 +99,8 @@ const AiPowerPetCare = () => {
         bg-size-[300px_220px]
         bg-position-[right_0rem_bottom_1.5rem]
         "
-        style={{ backgroundImage: `url(${'/images/dashb-img.png'})` }}
+        // style={{ backgroundImage: `url(${'/images/dashb-img.png'})` }}
+        style={{ backgroundImage: `url(${images?.bgImage?.src})` }}
       >
         <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12 ">
           <div className="relative flex justify-start">
@@ -115,10 +120,11 @@ const AiPowerPetCare = () => {
             </h1>
             <p className="mt-2 text-black text-lg  figtree">{subHeading}</p>
             <ul className="mt-6 space-y-3">
-              {features.map((item, index) => (
+              {features?.map((item: any, index: number) => (
                 <li key={index} className="flex items-center gap-3  justify-start">
                   <Image
-                    src={'/images/SVG/paw-icon.svg'}
+                    // src={'/images/SVG/paw-icon.svg'}
+                    src={images?.icon?.src}
                     alt={'paw icon'}
                     width={20}
                     height={20}
@@ -139,12 +145,11 @@ const AiPowerPetCare = () => {
   );
 };
 
-const RemoteConsultaions = () => {
-  const { heading, subHeading, features, cta, images } = remoteConsultations;
+const RemoteConsultaions = ({ remoteSection }: any) => {
+  const { heading, subHeading, features, cta, images } = remoteSection || {};
   return (
     <section className="px-6 sm:px-10 lg:px-0 mt-8">
       <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
-        {/* TEXT — SECOND on mobile, FIRST on md+ */}
         <div className="text-left order-2 md:order-1">
           <h1 className="text-[2rem] lg:text-[2.4rem] font-medium text-[#1F2021] onesta">
             {heading}
@@ -153,10 +158,11 @@ const RemoteConsultaions = () => {
           <p className="mt-2 text-black text-lg figtree">{subHeading}</p>
 
           <ul className="mt-6 space-y-3">
-            {features.map((item, index) => (
+            {features?.map((item: any, index: number) => (
               <li key={index} className="flex items-start gap-3 justify-start">
                 <Image
-                  src="/images/SVG/paw-icon.svg"
+                  // src="/images/SVG/paw-icon.svg"
+                  src={images?.icon?.src}
                   alt="paw icon"
                   width={20}
                   height={20}
@@ -194,8 +200,9 @@ const RemoteConsultaions = () => {
   );
 };
 
-export default function CustomizedDashboard() {
-  const { backgroundImage, left, center, right } = dashboardData;
+export default function CustomizedDashboard({ customSection, aiSection, remoteSection }: any) {
+  const { backgroundImage, left, center, right, btn } = customSection || {};
+
   return (
     <section className="relative w-full bg-color py-12">
       <div className="wrapper m-auto">
@@ -215,31 +222,27 @@ export default function CustomizedDashboard() {
                 height={200}
               />
             </div>
-
-            {/* CENTER */}
             <div className="w-full lg:w-[30%] flex items-center  lg:py-0 text-center lg:text-left">
               <div className="lg:py-14 w-full">
                 <h2 className="text-[1rem] md:text-[1.875rem] font-medium onesta text-black">
-                  {center.title}
+                  {center?.title}
                 </h2>
                 <p className="font-medium md:text-base text-black leading-relaxed mt-2 figtree text-lg">
-                  {center.description}
+                  {center?.description}
                 </p>
               </div>
             </div>
-
-            {/* RIGHT */}
             <div className="hidden lg:flex lg:w-[15%] items-end justify-end pr-6">
-              <Image {...right.image} className="object-contain" width={300} height={250} />
+              <Image {...right?.image} className="object-contain" width={300} height={250} />
             </div>
           </div>
         </div>
         <div className="flex justify-center py-6">
-          <Button href={''} label={'Book a Demo'} variant={'primary'} showICon={true} />
+          <Button href={btn?.href} label={btn?.label} variant={'primary'} showICon={true} />
         </div>
       </div>
-      <AiPowerPetCare />
-      <RemoteConsultaions />
+      <AiPowerPetCare aiSection={aiSection} />
+      <RemoteConsultaions remoteSection={remoteSection} />
     </section>
   );
 }
