@@ -67,7 +67,7 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                       >
                         {social?.icon && (
                           <Image
-                            src={social.icon}
+                            src={social?.icon}
                             alt="Social Icon"
                             width={12}
                             height={12}

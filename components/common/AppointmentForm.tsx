@@ -71,7 +71,7 @@ const AppointmentForm = ({ className }: any) => {
               name="business_name"
               value={formData.business_name}
               onChange={handleChange}
-              placeholder="business_name Name"
+              placeholder="Business Name"
               className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
             />
             <input
