@@ -34,4 +34,11 @@ export const AboutPageEndPoints = {
       cache: 'dynamic',
     });
   },
+
+  reviews: () => {
+    return apiFetch({
+      endpoint: 'page/about-us/review',
+      cache: 'dynamic',
+    });
+  },
 };

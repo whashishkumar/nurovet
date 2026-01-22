@@ -7,4 +7,10 @@ export const CommonEndPoints = {
       cache: 'no-store',
     });
   },
+  footerBannerSection: () => {
+    return apiFetch({
+      endpoint: 'section/footer-banner-section',
+      cache: 'no-store',
+    });
+  },
 };
