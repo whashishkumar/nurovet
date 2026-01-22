@@ -38,8 +38,8 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
               <div className="flex flex-col md:flex-row gap-10 items-center">
                 <div className="relative shrink-0 rounded-3xl border-10 border-[#F6F6F6] overflow-hidden w-full max-w-[300px] lg:max-w-[320px]">
                   <img
-                    src={featuredVet.image}
-                    alt={featuredVet.name}
+                    src={featuredVet?.image}
+                    alt={featuredVet?.name || 'Featured Vet'}
                     className="w-full h-[400px] object-cover"
                   />
                 </div>
@@ -59,7 +59,7 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                   </div>
 
                   <div className="mt-8 flex gap-3">
-                    {featuredVet.socials.map((social: any, i: number) => (
+                    {featuredVet?.socials?.map((social: any, i: number) => (
                       <a
                         key={i}
                         href={social.link}
