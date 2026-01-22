@@ -27,9 +27,11 @@ export default function Button({
   };
 
   return (
-    <Link
-      href={href}
-      className={`
+    <>
+      {href && (
+        <Link
+          href={href}
+          className={`
         onesta
         rounded-full 
         px-6 
@@ -45,18 +47,20 @@ export default function Button({
         ${variants[variant]} 
         ${className}
       `}
-      {...props}
-    >
-      <span>{label}</span>
-      {showICon && (
-        <Image
-          src={'/icons/btnIcon.svg'}
-          alt="icon"
-          height={20}
-          width={20}
-          className="object-contain "
-        />
+          {...props}
+        >
+          <span>{label}</span>
+          {showICon && (
+            <Image
+              src={'/icons/btnIcon.svg'}
+              alt="icon"
+              height={20}
+              width={20}
+              className="object-contain "
+            />
+          )}
+        </Link>
       )}
-    </Link>
+    </>
   );
 }
