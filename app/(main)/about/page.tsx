@@ -58,7 +58,7 @@ const data = {
   },
   title: 'About Us',
   breadcrumb: {
-    items: ['Home', 'About Us'],
+    // items: ['Home', 'About Us'],
     activeColor: 'text-orange-500',
   },
 };

@@ -1,25 +1,33 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiMenu, FiX, FiPhoneCall } from 'react-icons/fi';
+import { usePathname } from 'next/navigation';
 
 export default function Header({ headerResp = {} }: any) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const pathname = usePathname();
+
   const { logo = {}, menu = [], phone = {}, cta = {} } = headerResp || {};
+
   // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 600);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Active link checker (App Router friendly)
   const isActive = (href: string) => {
-    if (typeof window === 'undefined') return false;
-    return window.location.pathname === href;
+    if (!pathname) return false;
+    return pathname === href || pathname.startsWith(href + '/');
   };
 
   return (
@@ -34,6 +42,7 @@ export default function Header({ headerResp = {} }: any) {
     >
       <nav className="mx-auto wrapper px-6">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src={logo?.src || '/logo/logoh.svg'}
@@ -98,6 +107,7 @@ export default function Header({ headerResp = {} }: any) {
         </div>
       </nav>
 
+      {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden
           ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
