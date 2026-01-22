@@ -24,11 +24,11 @@ export default function Header({ headerResp = {} }: any) {
 
   return (
     <header
-      className={`w-full z-50 transition-all duration-300
+      className={`w-full z-50 transition-all duration-300 
         ${
           scrolled
             ? 'fixed top-0 bg-[#00603A] py-4 shadow-lg'
-            : 'absolute top-10 bg-transparent py-0'
+            : 'absolute top-5 lg:top-10 bg-transparent py-6 px-4'
         }
       `}
     >
