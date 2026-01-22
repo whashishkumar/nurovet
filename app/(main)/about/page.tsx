@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/f
 import OurHitory from '@/components/sections/OurHitory';
 import Reviews from '@/components/sections/Reviews';
 import HowWeWork from '@/components/sections/HowWeWork';
-import OurServices from '@/components/sections/OurServices';
+// import OurServices from '@/components/sections/OurServices';
 
 const featuredVet = {
   name: 'Alina Maisner',
@@ -68,7 +68,7 @@ export default function page() {
     <>
       <InnerBanner bannerInfo={data} />
       <OurStory />
-      <OurServices />
+      {/* <OurServices /> */}
       <OurTestimonials
         teamMembers={teamMembers}
         featuredVet={featuredVet}

@@ -1,4 +1,5 @@
 'use client';
+import { useToast } from '@/context/ToastContext';
 import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 import { useState } from 'react';
 
@@ -13,6 +14,7 @@ const AppointmentForm = ({ className }: any) => {
     address: '',
   });
 
+  const { showToast } = useToast();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -25,6 +27,7 @@ const AppointmentForm = ({ className }: any) => {
     e.preventDefault();
     const resp = await HomePageEndPoints.requestDemoForm(formData);
     console.log(resp, 'formResp');
+    showToast(resp.message || 'Form submitted successfully!');
     setFormData({
       name: '',
       phone: '',

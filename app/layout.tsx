@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
-import Navbar from '@/components/layout/NavBar';
+import { ToastProvider } from '@/context/ToastContext';
 
 const onesta = localFont({
   src: '../public/fonts/Onest-Regular.ttf',
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fredoka.variable} ${onesta.variable} ${figtree.variable} antialiased`}>
-        {children}
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );
