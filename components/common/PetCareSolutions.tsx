@@ -17,7 +17,6 @@ const bannerData = {
   },
 };
 
-/* ---------- COMPONENT ---------- */
 const ExplorePetcareBanner = () => {
   return (
     <section className="relative bg-[#0B5D3B] pb-10">
@@ -44,7 +43,6 @@ const ExplorePetcareBanner = () => {
               <br />
               {bannerData.title.line2}
             </h2>
-
             {/* CENTER IMAGE */}
             <div className="absolute lg:-bottom-6.5 md:-bottom-10 translate-x-full hidden md:block">
               <div className="relative w-[140px] md:w-[280px] h-[140px] md:h-[100px]">
