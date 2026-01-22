@@ -28,7 +28,6 @@ export default function Gallery() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   return (
     <div className="bg-white">
-      {/* GRID */}
       <div className="inner-wrapper mx-auto lg:px-0 px-4 pb-10 ">
         <SectionHeading
           cssClass={'text-left'}

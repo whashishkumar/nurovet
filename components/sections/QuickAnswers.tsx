@@ -76,7 +76,7 @@ export default function QuickAnswers({ faqSection }: any) {
           <SectionBadge label={tag} icon={tagicon} />
         </div>
         <SectionHeading cssClass="text-left" title={heading} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="pt-6">
             <Accordion data={faq} />
           </div>

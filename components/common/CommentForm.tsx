@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import { FiUser, FiMail, FiGlobe, FiEdit3, FiArrowLeft } from 'react-icons/fi';
 import { TiArrowBack } from 'react-icons/ti';

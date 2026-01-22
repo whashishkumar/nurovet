@@ -65,9 +65,9 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                         href={social.link}
                         className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-green-700 hover:text-white transition-all"
                       >
-                        {social.icon && (
+                        {social?.icon && (
                           <Image
-                            src={social.icon}
+                            src={social?.icon}
                             alt="Social Icon"
                             width={12}
                             height={12}

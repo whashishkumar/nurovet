@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import SectionHeading from '../common/SectionHeading';
 import { FiCheckCircle } from 'react-icons/fi';
 import Image from 'next/image';
