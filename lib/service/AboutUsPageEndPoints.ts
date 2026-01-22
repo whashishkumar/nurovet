@@ -1,15 +1,36 @@
 import { apiFetch } from '../api/fetcher';
 
-const HomePageEndPoints = {
-  headerAPi: () => {
+export const AboutPageEndPoints = {
+  heroBanner: () => {
     return apiFetch({
-      endpoint: 'navigation-menu',
+      endpoint: 'page/about-us/hero',
       cache: 'dynamic',
     });
   },
-  heroBanner: () => {
+
+  ourStory: () => {
     return apiFetch({
-      endpoint: 'section/home-hero-section',
+      endpoint: 'page/about-us/story',
+      cache: 'dynamic',
+    });
+  },
+
+  testimonials: () => {
+    return apiFetch({
+      endpoint: 'page/about-us/testimonial',
+      cache: 'dynamic',
+    });
+  },
+
+  ourHistory: () => {
+    return apiFetch({
+      endpoint: 'page/about-us/history',
+      cache: 'dynamic',
+    });
+  },
+  ourWork: () => {
+    return apiFetch({
+      endpoint: 'page/about-us/work',
       cache: 'dynamic',
     });
   },

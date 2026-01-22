@@ -15,7 +15,7 @@ export default function HistoryCard({ year, image, alt, description }: any) {
       </div>
       <div className="mt-12 space-y-6 text-center">
         <div className="overflow-hidden rounded-3xl ">
-          <Image src={image} alt={alt} width={250} height={150} className="w-full object-cover" />
+          <Image src={image} alt={'alt'} width={250} height={150} className="w-full object-cover" />
         </div>
         <p className="text-black text-lg leading-relaxed px-4 text-left ">{description}</p>
       </div>
