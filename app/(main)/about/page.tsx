@@ -25,8 +25,7 @@ export default async function page() {
   };
   const ourHistoryData = await AboutPageEndPoints.ourHistory();
   const ourWorkData = await AboutPageEndPoints.ourWork();
-  // const reviewsData = await AboutPageEndPoints.reviews();
-  // console.log(reviewsData, 'reviews');
+  const reviewsData = await AboutPageEndPoints.reviews();
 
   return (
     <>
@@ -39,7 +38,7 @@ export default async function page() {
       />
       <OurHitory ourHistoryData={ourHistoryData} />
       <HowWeWork ourWorkData={ourWorkData} />
-      <Reviews />
+      <Reviews reviewsData={reviewsData} />
     </>
   );
 }

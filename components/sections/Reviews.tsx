@@ -5,46 +5,47 @@ import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import SwiperContainer from '../ui/Swiper';
 
-const reviewsData = [
-  {
-    id: 1,
-    name: 'Mary Douglas',
-    role: 'Pet Lover',
-    avatar: '/images/Webp/Testimoinals4.webp',
-    rating: 5,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-  {
-    id: 2,
-    name: 'John Carter',
-    role: 'Dog Owner',
-    avatar: '/images/Webp/Testimoinals4.webp',
-    rating: 4,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-  {
-    id: 3,
-    name: 'Mary Douglas',
-    role: 'Pet Lover',
-    avatar: '/images/Webp/Testimoinals4.webp',
-    rating: 5,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-  {
-    id: 4,
-    name: 'John Carter',
-    role: 'Dog Owner',
-    avatar: '/images/Webp/Testimoinals4.webp',
-    rating: 4,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-];
+// const reviewsData = [
+//   {
+//     id: 1,
+//     name: 'Mary Douglas',
+//     role: 'Pet Lover',
+//     avatar: '/images/Webp/Testimoinals4.webp',
+//     rating: 5,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+//   {
+//     id: 2,
+//     name: 'John Carter',
+//     role: 'Dog Owner',
+//     avatar: '/images/Webp/Testimoinals4.webp',
+//     rating: 4,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+//   {
+//     id: 3,
+//     name: 'Mary Douglas',
+//     role: 'Pet Lover',
+//     avatar: '/images/Webp/Testimoinals4.webp',
+//     rating: 5,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+//   {
+//     id: 4,
+//     name: 'John Carter',
+//     role: 'Dog Owner',
+//     avatar: '/images/Webp/Testimoinals4.webp',
+//     rating: 4,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+// ];
 
-export default function Reviews() {
+export default function Reviews({ reviewsData }: any) {
+  const { heading, subHeading, reviews, tag, tagicon } = reviewsData || {};
   return (
     <div className="relative">
       <div
@@ -63,19 +64,12 @@ export default function Reviews() {
     pointer-events-none
   "
       />
-
       <div className="wrapper m-auto py-16 ">
         <div className="flex justify-center">
-          <SectionBadge label={'Reviews'} />
+          <SectionBadge label={tag} icon={tagicon} />
         </div>
         <div>
-          <SectionHeading
-            cssClass={'text-center mb-10'}
-            title={'Loyal Hearts, Forever Homes.'}
-            subTitle={
-              'Read the heartwarming stories of those who gave a second chance to animals in need.'
-            }
-          />
+          <SectionHeading cssClass={'text-center mb-10'} title={heading} subTitle={subHeading} />
         </div>
         <SwiperContainer
           breakpoints={{
@@ -85,7 +79,7 @@ export default function Reviews() {
             1024: { slidesPerView: 2, spaceBetween: 24 },
           }}
         >
-          {reviewsData.map((item) => (
+          {reviews?.map((item: any) => (
             <div className="py-4">
               <ReviewCard
                 key={item.id}
