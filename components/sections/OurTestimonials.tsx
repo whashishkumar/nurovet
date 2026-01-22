@@ -15,16 +15,18 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
               style={{ direction: 'rtl' }}
             >
               <div style={{ direction: 'ltr', marginLeft: '40px' }}>
-                {teamMembers.map((member: any, index: any) => (
+                {teamMembers?.map((member: any, index: any) => (
                   <li key={index} className="flex items-center gap-4 mb-8 last:mb-0">
                     <img
-                      src={member.avatar}
-                      alt={member.name}
+                      src={member?.avatar}
+                      alt={member?.name}
                       className="w-16 h-16 rounded-full object-cover shrink-0 border border-gray-100"
                     />
                     <div>
-                      <p className="font-semibold text-[#02000F] text-2xl fredoka">{member.name}</p>
-                      <p className="text-base text-[#4E4E4E] font-normal onesta">{member.role}</p>
+                      <p className="font-semibold text-[#02000F] text-2xl fredoka">
+                        {member?.name}
+                      </p>
+                      <p className="text-base text-[#4E4E4E] font-normal onesta">{member?.role}</p>
                     </div>
                   </li>
                 ))}
@@ -43,32 +45,30 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                     className="w-full h-[400px] object-cover"
                   />
                 </div>
-
                 <div className="flex-1">
                   <h3 className=" text-[2rem] lg:text-[2.5rem] font-semibold text-[#02000F] fredoka lg:leading-14 ">
-                    {featuredVet.name}
+                    {featuredVet?.name}
                   </h3>
                   <p className="text-base text-[#4E4E4E] mt-1 capitalize tracking-wider onesta">
-                    {featuredVet.role}
+                    {featuredVet?.role}
                   </p>
-
                   <div className="mt-6 space-y-4 text-[#000000] text-base leading-relaxed">
-                    {featuredVet.bio.map((para: any, i: number) => (
+                    {featuredVet?.bio?.map((para: any, i: number) => (
                       <p key={i}>{para}</p>
                     ))}
                   </div>
-
                   <div className="mt-8 flex gap-3">
                     {featuredVet?.socials?.map((social: any, i: number) => (
                       <a
                         key={i}
-                        href={social.link}
+                        href={social?.link}
+                        target="__blank"
                         className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-green-700 hover:text-white transition-all"
                       >
                         {social?.icon && (
                           <Image
                             src={social?.icon}
-                            alt="Social Icon"
+                            alt="socialIcon"
                             width={12}
                             height={12}
                             className="object-contain"
@@ -88,7 +88,7 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
 };
 
 export default function OurTestimonials({ sectionData, teamMembers, featuredVet }: any) {
-  const { badge, heading } = sectionData.testimonialSection;
+  const { badge, heading } = sectionData.testimonialSection || {};
   return (
     <div
       className="
