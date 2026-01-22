@@ -1,4 +1,3 @@
-// app/components/SectionBadge.tsx
 import Image from 'next/image';
 
 type SectionBadgeProps = {
@@ -23,7 +22,7 @@ export default function SectionBadge({ label, icon = '/icons/bone.svg' }: Sectio
 
       {/* Content */}
       <div className="flex items-center gap-2 text-[#00603A] font-semibold text-lg leading-6 fredoka">
-        <Image src={icon} alt={label} width={24} height={24} className="object-contain" />
+        <Image src={icon} alt={label || 'Icon'} width={24} height={24} className="object-contain" />
         <span>{label}</span>
       </div>
 

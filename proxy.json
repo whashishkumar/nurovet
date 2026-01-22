@@ -1,0 +1,80 @@
+import { NextResponse, type NextRequest } from 'next/server';
+
+// const checkMethods: any = {
+//   Exact: 'exact',
+//   Contains: 'contains',
+//   'Starts With': 'startsWith',
+//   'End With': 'endsWith',
+//   Regex: 'regex',
+// };
+
+export async function proxy(request: NextRequest) {
+  // Create headers object with x-pathname for breadcrumb schema
+  const headers = new Headers(request.headers);
+  headers.set('x-pathname', request.nextUrl.pathname);
+
+  //   const setting = await fetchData("setting", {
+  //     cacheStrategy: "no-store",
+  //     cache: "no-store",
+  //   });
+
+  // Debug logging for settings
+  const path = request.nextUrl.pathname.toLowerCase();
+
+  // ------------------------------ CORS & Default Response -------------------------------
+
+  // Set the x-url header with the current pathname
+  headers.set('x-url', path);
+
+  // Create a response with the modified headers
+  const response = NextResponse.next({
+    request: {
+      headers: headers,
+    },
+  });
+
+  if (request.nextUrl.pathname.startsWith('/api')) {
+    const allowedOrigins = process.env.NEXT_PUBLIC_SERVER_URL ? [process.env.NEXT_PUBLIC_SERVER_URL] : [];
+    const origin = request.headers.get('origin');
+    const isAllowedOrigin = origin && allowedOrigins.includes(origin);
+
+    // Handle preflight OPTIONS request
+    if (request.method === 'OPTIONS') {
+      const preflightHeaders = {
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':
+          'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version',
+        'Access-Control-Max-Age': '86400',
+      };
+
+      if (isAllowedOrigin) {
+        // Handle OPTIONS for allowed origins
+        return new NextResponse(null, {
+          status: 204,
+          headers: {
+            ...preflightHeaders,
+            'Access-Control-Allow-Origin': origin,
+          },
+        });
+      } else {
+        // Block OPTIONS for disallowed origins
+        return new NextResponse(null, { status: 204 });
+      }
+    }
+
+    // Add CORS headers to the response for other requests
+    if (isAllowedOrigin) {
+      response.headers.set('Access-Control-Allow-Origin', origin);
+      response.headers.set('Access-Control-Allow-Credentials', 'true');
+      response.headers.set('Access-Control-Expose-Headers', 'x-url');
+    }
+  }
+
+  return response;
+}
+
+// Updated matcher to include all routes except static files
+export const config = {
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+};

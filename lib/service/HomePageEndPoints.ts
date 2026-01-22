@@ -95,7 +95,6 @@ export const HomePageEndPoints = {
       cache: 'dynamic',
     });
   },
-
   requestDemoForm: (data: any) => {
     return apiPost('contact-form', data);
   },

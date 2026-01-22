@@ -70,7 +70,6 @@ const ArcFeaturesSection = ({ data }: any) => {
                 </p>
               </div>
             ))}
-
             {/* CTA */}
             <div className="mt-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:top-40 lg:top-48 md:mt-0">
               <Button href={cta.href} label={cta.label} />
@@ -119,7 +118,6 @@ const VideoSection = ({ data }: any) => {
 
 export default function WhyChooseUs({ chooseSection }: any) {
   const { arcFeatures, video, tag, heading, subHeading, tagIcon } = chooseSection || {};
-
   return (
     <div className="bg-color relative">
       <div
@@ -135,12 +133,9 @@ export default function WhyChooseUs({ chooseSection }: any) {
         <div className="flex justify-center">
           <SectionBadge label={tag} icon={tagIcon} />
         </div>
-
         <SectionHeading title={heading} subTitle={subHeading} />
-
         <ArcFeaturesSection data={arcFeatures} />
       </div>
-
       <VideoSection data={video} />
     </div>
   );
