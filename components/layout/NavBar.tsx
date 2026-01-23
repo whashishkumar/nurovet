@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FiMenu, FiX, FiPhoneCall } from 'react-icons/fi';
 import { usePathname } from 'next/navigation';
+import Modal from '../ui/Modal';
 
 export default function Header({ headerResp = {} }: any) {
   const [open, setOpen] = useState(false);
@@ -95,6 +96,14 @@ export default function Header({ headerResp = {} }: any) {
               {cta?.label || ''}
             </Link>
           </div>
+          {/* <Modal
+            isOpen={!!activeImage}
+            onClose={() => setActiveImage(null)}
+            maxWidth="max-w-4xl"
+            height="h-[80vh]"
+          >
+            <Image src={activeImage || ''} alt="Gallery preview" fill className="object-contain" />
+          </Modal> */}
 
           {/* Mobile Button */}
           <button
@@ -165,13 +174,13 @@ export default function Header({ headerResp = {} }: any) {
               </div>
             </div>
 
-            <Link
+            {/* <Link
               href={cta?.href || '#'}
               onClick={() => setOpen(false)}
               className="block w-full rounded-full bg-[#00603A] py-4 text-center text-white font-semibold border border-white/20 hover:bg-green-800 transition"
             >
               {cta?.label || ''}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

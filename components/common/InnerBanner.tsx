@@ -3,6 +3,7 @@ import Breadcrumbs from '../ui/Breadcrumbs';
 
 export default function InnerBanner({ bannerInfo = {}, className }: any) {
   const { bgImage, title } = bannerInfo || {};
+
   return (
     <div className={`${className ? className : 'bg-white'}  p-4 sm:p-6 relative`}>
       <div
@@ -17,7 +18,6 @@ export default function InnerBanner({ bannerInfo = {}, className }: any) {
             {title}
           </h1>
         </div>
-
         {/* Breadcrumb */}
         <div className="relative z-20 flex justify-center fredoka">
           <div

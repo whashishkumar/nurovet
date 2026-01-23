@@ -36,15 +36,17 @@ const iconMap: Record<any, IconType> = {
   location: HiOutlineLocationMarker,
 };
 
-const ContactCard = () => {
+const ContactCard = ({ contactUsInfo }: any) => {
+  const { header, items } = contactUsInfo || {};
+
   return (
     <div className="p-8 bg-white rounded-4xl shadow-sm border border-gray-50 figtree">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-black mb-3">{contactData.header.title}</h2>
-        <p className="text-gray-500 leading-relaxed">{contactData.header.description}</p>
+        <h2 className="text-3xl font-bold text-black mb-3">{header.title}</h2>
+        <p className="text-gray-500 leading-relaxed">{header.description}</p>
       </div>
       <div className="space-y-6">
-        {contactData.items.map((item, index) => {
+        {items?.map((item: any, index: number) => {
           const Icon = iconMap[item.type];
           return (
             <div key={item.id}>
@@ -67,11 +69,11 @@ const ContactCard = () => {
   );
 };
 
-export default function ContactUs() {
+export default function ContactUs({ contactUsInfo }: any) {
   return (
     <div className="inner-wrapper m-auto py-16 px-6 lg:px-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <ContactCard />
+        <ContactCard contactUsInfo={contactUsInfo} />
         <ContactUsForm />
       </div>
     </div>

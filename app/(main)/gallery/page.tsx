@@ -1,6 +1,8 @@
 import InnerBanner from '@/components/common/InnerBanner';
 import Gallery from '@/components/sections/Gallery';
 import QuickAnswers from '@/components/sections/QuickAnswers';
+import { GalleryPageEndPoints } from '@/lib/service/GalleryPageEndPoints';
+import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 
 // const quickAnswersData = {
 //   badge: {
@@ -47,19 +49,15 @@ import QuickAnswers from '@/components/sections/QuickAnswers';
 //     },
 //   ],
 // };
-export default function page() {
+export default async function page() {
+  const faqSection = await HomePageEndPoints.faqSection();
+  const bannerInfo = await GalleryPageEndPoints.heroBanner();
+  const galleryData = await GalleryPageEndPoints.gallery();
   return (
     <div>
-      <InnerBanner
-        bannerInfo={{
-          background: {
-            image: '/images/innerbg.jpg',
-          },
-          title: 'Gallery',
-        }}
-      />
-      <Gallery />
-      <QuickAnswers />
+      <InnerBanner bannerInfo={bannerInfo} />
+      <Gallery galleryData={galleryData} />
+      <QuickAnswers faqSection={faqSection} />
     </div>
   );
 }
