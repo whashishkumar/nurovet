@@ -49,6 +49,7 @@ import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 //     },
 //   ],
 // };
+
 export default async function page() {
   const faqSection = await HomePageEndPoints.faqSection();
   const bannerInfo = await GalleryPageEndPoints.heroBanner();
