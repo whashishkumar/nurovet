@@ -1,6 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DropdownSelect from '../ui/DropdownSelect';
+import { ContactUsEndPoints } from '@/lib/service/ContactUsPageEndPoints';
+import { useToast } from '@/context/ToastContext';
 
 type FormState = {
   name: string;
@@ -23,6 +25,7 @@ export const serviceSelectData = {
 };
 
 export default function ContactForm() {
+  const { showToast } = useToast();
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
@@ -30,19 +33,31 @@ export default function ContactForm() {
     service: '',
     message: '',
   });
+  const [services, setServices] = useState(null);
+
+  const getServices = async () => {
+    const resp = await ContactUsEndPoints.services();
+    setServices(resp);
+    console.log(resp, 'services');
+  };
+
+  useEffect(() => {
+    getServices();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const resp = await ContactUsEndPoints.contactUsForm(form);
 
-    console.log('Form Submitted:', form);
-    // Example validation
+    showToast(resp.message || 'Form submitted successfully!');
+
     if (!form.name || !form.email || !form.phone || !form.service) {
-      alert('Please fill all required fields');
+      showToast('Please fill all required fields');
       return;
     }
     setForm({
@@ -58,6 +73,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="rounded-4xl bg-white p-8 md:p-10  mx-auto  shadow-sm">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <input
+          required
           type="text"
           name="name"
           placeholder="Your name*"
@@ -66,6 +82,7 @@ export default function ContactForm() {
           className="rounded-full bg-gray-50 px-6 py-4 text-gray-700 border border-gray-200 focus:border-[#0B5D3B] focus:outline-none transition"
         />
         <input
+          required
           type="email"
           name="email"
           placeholder="Email Address*"
@@ -82,9 +99,9 @@ export default function ContactForm() {
           className="rounded-full bg-gray-50 px-6 py-4 text-gray-700 border border-gray-200 focus:border-[#0B5D3B] focus:outline-none transition"
         />
         <DropdownSelect
-          data={serviceSelectData}
+          data={services}
           value={form.service}
-          onChange={(value) => setForm((prev) => ({ ...prev, service: value }))}
+          onChange={(value: any) => setForm((prev) => ({ ...prev, service: value }))}
         />
       </div>
       <textarea

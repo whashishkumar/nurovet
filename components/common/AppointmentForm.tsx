@@ -26,7 +26,6 @@ const AppointmentForm = ({ className }: any) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const resp = await HomePageEndPoints.requestDemoForm(formData);
-    console.log(resp, 'formResp');
     showToast(resp.message || 'Form submitted successfully!');
     setFormData({
       name: '',

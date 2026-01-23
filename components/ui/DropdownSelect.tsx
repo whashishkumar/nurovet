@@ -13,7 +13,7 @@ type DropdownSelectProps = {
   onChange: (value: string) => void;
 };
 
-export default function DropdownSelect({ data, value, onChange }: DropdownSelectProps) {
+export default function DropdownSelect({ data, value, onChange }: any) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -41,7 +41,7 @@ export default function DropdownSelect({ data, value, onChange }: DropdownSelect
         `}
       >
         <span className={value ? 'text-gray-900' : 'text-gray-400'}>
-          {value || data.placeholder}
+          {value || data?.placeholder}
         </span>
         <svg
           className={`h-5 w-5 transform transition ${open ? 'rotate-180' : ''}`}
@@ -55,7 +55,7 @@ export default function DropdownSelect({ data, value, onChange }: DropdownSelect
       {/* Dropdown */}
       {open && (
         <div className="absolute z-20 mt-2 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
-          {data.options.map((option, index) => (
+          {data?.options?.map((option: any, index: number) => (
             <button
               key={index}
               type="button"

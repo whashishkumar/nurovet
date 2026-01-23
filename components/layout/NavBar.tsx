@@ -1,17 +1,18 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiMenu, FiX, FiPhoneCall } from 'react-icons/fi';
 import { usePathname } from 'next/navigation';
+import Modal from '../ui/Modal';
+import AppointmentForm from '../common/AppointmentForm';
 
 export default function Header({ headerResp = {} }: any) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openModals, setOpenModals] = useState(false);
 
   const pathname = usePathname();
-
   const { logo = {}, menu = [], phone = {}, cta = {} } = headerResp || {};
 
   // Detect scroll
@@ -42,7 +43,6 @@ export default function Header({ headerResp = {} }: any) {
     >
       <nav className="mx-auto wrapper px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src={logo?.src || '/logo/logoh.svg'}
@@ -88,14 +88,16 @@ export default function Header({ headerResp = {} }: any) {
               </div>
             </div>
 
-            <Link
-              href={cta?.href || '#'}
+            <button
+              onClick={() => setOpenModals(true)}
               className="rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:bg-green-800 transition border border-white"
             >
               {cta?.label || ''}
-            </Link>
+            </button>
           </div>
-
+          <Modal isOpen={openModals} onClose={() => setOpenModals(false)} maxWidth="max-w-2xl">
+            <AppointmentForm />
+          </Modal>
           {/* Mobile Button */}
           <button
             onClick={() => setOpen(true)}
@@ -106,7 +108,6 @@ export default function Header({ headerResp = {} }: any) {
           </button>
         </div>
       </nav>
-
       {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/50 transition-opacity lg:hidden
@@ -164,14 +165,13 @@ export default function Header({ headerResp = {} }: any) {
                 </a>
               </div>
             </div>
-
-            <Link
+            {/* <Link
               href={cta?.href || '#'}
               onClick={() => setOpen(false)}
               className="block w-full rounded-full bg-[#00603A] py-4 text-center text-white font-semibold border border-white/20 hover:bg-green-800 transition"
             >
               {cta?.label || ''}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
