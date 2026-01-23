@@ -1,7 +1,12 @@
+'use client';
+import { useEffect, useState } from 'react';
+import { BlogEndPoints } from '@/lib/service/BlogsEndPoints';
+import Loader from '../ui/Loader';
 import React from 'react';
 import BlogSideBar from './BlogSideBar';
 import BlogDetailCard from './BlogDetailCard';
 import CommentForm from '../common/CommentForm';
+import { useParams, usePathname } from 'next/navigation';
 
 const blogInfo = [
   {
@@ -22,6 +27,32 @@ export const commentHeaderData = {
 };
 
 export default function BlogDetail() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [article, setCurrentArticle] = useState([]);
+  const { slug } = useParams();
+  const {} = article || {};
+
+  const getBlogs = async (slug: any) => {
+    try {
+      setIsLoading(true);
+      const blogs = await BlogEndPoints.blogDetails(slug);
+      setCurrentArticle(blogs);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getBlogs(slug);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  console.log(article, 'article');
+
   return (
     <div className="bg-blog">
       <div className="wrapper m-auto py-16 px-6 lg:px-0">

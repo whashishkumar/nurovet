@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiOutlineUser, HiOutlineCalendar, HiOutlineChat } from 'react-icons/hi';
+import { useRouter } from 'next/navigation';
 
 interface ArticleCardProps {
   article: {
@@ -18,11 +19,15 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({ article }: ArticleCardProps) {
+  const router = useRouter();
+
   return (
     <article className="bg-[#F9F6F1] rounded-xl overflow-hidden shadow-sm border border-gray-100 font-sans">
       {/* Image */}
       <div className="relative w-full h-70 sm:h-85">
-        <Image src={article.image} alt={article.title} fill className="object-cover" priority />
+        {article.image && (
+          <Image src={article.image} alt={article.title} fill className="object-cover" priority />
+        )}
       </div>
 
       {/* Content */}
@@ -52,17 +57,15 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
         <hr className="border-gray-200 mb-6" />
 
-        {article.slug ? (
-          <Link
-            href={`/blogs/${article.slug}`}
+        {article.slug && (
+          <button
+            onClick={() => router.push(`/blog/${article.slug}`)}
+            // href={`/blogs/${article.slug}`}
+            // href={'#'}
             className="inline-flex items-center gap-2 font-semibold text-black hover:text-[#0a5e3b] transition-colors fredoka"
           >
             Read More <span className="text-xl">→</span>
-          </Link>
-        ) : (
-          <span className="inline-flex items-center gap-2 font-semibold text-gray-400 cursor-not-allowed">
-            Read More <span className="text-xl">→</span>
-          </span>
+          </button>
         )}
       </div>
     </article>
