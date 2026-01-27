@@ -30,7 +30,7 @@ export default function BlogDetail() {
   const [isLoading, setIsLoading] = useState(false);
   const [article, setCurrentArticle] = useState([]);
   const { slug } = useParams();
-  const {} = article || {};
+  const { data }: any = article || {};
 
   const getBlogs = async (slug: any) => {
     try {
@@ -51,14 +51,14 @@ export default function BlogDetail() {
     return <Loader />;
   }
 
-  console.log(article, 'article');
+  // console.log(data, 'article');
 
   return (
     <div className="bg-blog">
       <div className="wrapper m-auto py-16 px-6 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-[70%_28%] gap-[2%] min-h-[80vh]">
           <div className="space-y-10 overflow-y-auto h-fit pr-2">
-            {blogInfo.map((blog, index) => (
+            {blogInfo?.map((blog: any, index: any) => (
               <BlogDetailCard key={index} data={blog} />
             ))}
             <div className="max-w-4xl justify-center mx-auto py-16">
