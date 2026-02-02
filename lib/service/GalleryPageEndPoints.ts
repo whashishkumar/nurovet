@@ -14,4 +14,11 @@ export const GalleryPageEndPoints = {
       cache: 'dynamic',
     });
   },
+  // /api/v1/page/gallery/faq
+  faq: () => {
+    return apiFetch({
+      endpoint: 'page/gallery/faq',
+      cache: 'dynamic',
+    });
+  },
 };
