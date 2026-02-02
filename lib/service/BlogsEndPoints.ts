@@ -36,4 +36,16 @@ export const BlogEndPoints = {
       cache: 'no-store',
     });
   },
+
+  comments: (slug: string, data: any) => {
+    return apiPost(`posts/comments/${slug}`,data)
+  },
+
+
+  getComments: (slug: string) => {
+    return apiFetch({
+      endpoint: `posts/comments/${slug}`,
+      cache: 'no-store',  
+    })
+  } 
 };
