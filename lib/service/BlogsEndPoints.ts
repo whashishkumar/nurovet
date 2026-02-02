@@ -41,7 +41,7 @@ export const BlogEndPoints = {
     return apiPost(`posts/comments/${slug}`,data)
   },
 
-  // /api/v1/posts/comments/{slug}
+
   getComments: (slug: string) => {
     return apiFetch({
       endpoint: `posts/comments/${slug}`,

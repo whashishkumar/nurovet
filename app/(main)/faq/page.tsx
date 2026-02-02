@@ -10,7 +10,7 @@ export default async function page() {
   const reviewsData = await AboutPageEndPoints.reviews();
   const bannerdata = await FAQPageEndPoints.heroBanner();
   const faq = await FAQPageEndPoints.faq();
-  console.log(faq,"faq");
+
   return (
     <div>
       <InnerBanner
