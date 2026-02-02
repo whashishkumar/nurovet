@@ -31,7 +31,7 @@ export default function CommentForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.content) {
-      alert('Please fill all required fields');
+      showToast('Please fill all required fields');
       return;
     }
     if (typeof slug !== 'string') {
