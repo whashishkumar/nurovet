@@ -130,7 +130,7 @@ export default function BlogDetail() {
               <BlogComments commentsData={comments} />
             </div>
             <div className="max-w-4xl justify-center mx-auto py-1">
-              <CommentForm />
+              <CommentForm getBlogCommentList={getBlogCommentList} />
             </div>
           </div>
           <div className="hidden md:block sticky top-24 h-fit">

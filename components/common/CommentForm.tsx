@@ -13,7 +13,7 @@ type CommentFormState = {
   content: string;
 };
 
-export default function CommentForm() {
+export default function CommentForm({getBlogCommentList}:any) {
   const { showToast } = useToast();
     const { slug } = useParams();
   const [form, setForm] = useState<CommentFormState>({
@@ -45,6 +45,7 @@ export default function CommentForm() {
       website: '',
       content: '',
     });
+    getBlogCommentList(slug);
   };  
 
   return (
