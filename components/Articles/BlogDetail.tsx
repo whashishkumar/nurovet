@@ -6,40 +6,23 @@ import React from 'react';
 import BlogSideBar from './BlogSideBar';
 import BlogDetailCard from './BlogDetailCard';
 import CommentForm from '../common/CommentForm';
-import { useParams  } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { FaUserCircle, FaClock } from 'react-icons/fa';
-
-const blogInfo = [
-  {
-    author: 'Babet',
-    date: 'October 5, 2025',
-    comments: 0,
-    title: 'How to Keep Your Loved Ones Healthy Year-Round',
-    excerpt:
-      'Dirt, debris, and loose fur can build up in your pet’s coat and lead to matting, hot spots, and skin care...',
-    image: '/images/service3.jpg',
-    slug: 'keep-your-loved-ones-healthy',
-  },
-];
 
 export const commentHeaderData = {
   title: 'Leave comments',
   note: 'Your email address will not be published. Required fields are marked *',
 };
 
-
-
- const  BlogComments = ({commentsData}:any) =>{
+const BlogComments = ({ commentsData }: any) => {
   const { total, items } = commentsData || {};
-    
+
   return (
     <section className="max-w-4l mx-auto  px-4">
-      <h2 className="text-2xl font-bold mb-8 fredoka">
-        {total} Comments
-      </h2>
+      <h2 className="text-2xl font-bold mb-8 fredoka">{total} Comments</h2>
 
       <div className="space-y-6">
-        {items?.map((item:any) => (
+        {items?.map((item: any) => (
           <div
             key={item.id}
             className="bg-white rounded-xl shadow-sm  p-6 hover:shadow-md transition"
@@ -51,12 +34,8 @@ export const commentHeaderData = {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="font-semibold text-black capitalize">
-                      {item.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      {item.email}
-                    </p>
+                    <h3 className="font-semibold text-black capitalize">{item.name}</h3>
+                    <p className="text-sm text-gray-500">{item.email}</p>
                   </div>
 
                   <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -65,9 +44,7 @@ export const commentHeaderData = {
                   </div>
                 </div>
 
-                <p className="mt-4 text-gray-700 figtree">
-                  {item.comment}
-                </p>
+                <p className="mt-4 text-gray-700 figtree">{item.comment}</p>
               </div>
             </div>
           </div>
@@ -75,8 +52,7 @@ export const commentHeaderData = {
       </div>
     </section>
   );
-}
-
+};
 
 export default function BlogDetail() {
   const [isLoading, setIsLoading] = useState(false);
@@ -98,7 +74,7 @@ export default function BlogDetail() {
   };
 
   const getBlogCommentList = async (slug: any) => {
-     try {
+    try {
       setIsLoading(true);
       const comment = await BlogEndPoints.getComments(slug);
       setComments(comment);
@@ -106,8 +82,22 @@ export default function BlogDetail() {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
+  const FilterBlogs = async (search = '', tag = '', category = '') => {
+    console.log(search,tag,category,"search,tag,category");
+    try {
+      setIsLoading(true);
+      const filter = await BlogEndPoints.getfilteredPosts( search, tag, category);
+      // setCurrentArticle(filter);
+      console.log('Filtered blogs:', filter);
+    } catch (error) {
+      console.error('Failed to filter blogs:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
   useEffect(() => {
     getBlogs(slug);
     getBlogCommentList(slug);
@@ -117,15 +107,12 @@ export default function BlogDetail() {
     return <Loader />;
   }
 
-
   return (
     <div className="bg-blog">
       <div className="wrapper m-auto py-16 px-6 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-[70%_28%] gap-[2%] min-h-[80vh]">
           <div className="space-y-10 overflow-y-auto h-fit pr-2">
-            {blogInfo?.map((blog: any, index: any) => (
-              <BlogDetailCard key={index} data={blog} />
-            ))}
+            <BlogDetailCard data={data} />
             <div className="max-w-4xl justify-center mx-auto py-12">
               <BlogComments commentsData={comments} />
             </div>
@@ -134,7 +121,8 @@ export default function BlogDetail() {
             </div>
           </div>
           <div className="hidden md:block sticky top-24 h-fit">
-            <BlogSideBar />
+            <BlogSideBar onFilter={FilterBlogs}
+            />
           </div>
         </div>
       </div>

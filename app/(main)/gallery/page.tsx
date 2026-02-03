@@ -6,7 +6,7 @@ import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 
 
 export default async function page() {
-  const faqSection = await HomePageEndPoints.faqSection();
+  // const faqSection = await HomePageEndPoints.faqSection();
   const bannerInfo = await GalleryPageEndPoints.heroBanner();
   const galleryData = await GalleryPageEndPoints.gallery();
   const faq = await GalleryPageEndPoints.faq();
@@ -15,7 +15,7 @@ export default async function page() {
     <div>
       <InnerBanner bannerInfo={bannerInfo} />
       <Gallery galleryData={galleryData} />
-      <QuickAnswers faqSection={faqSection} />
+      <QuickAnswers faqSection={faq} />
     </div>
   );
 }

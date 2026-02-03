@@ -3,42 +3,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FiUser, FiCalendar, FiArrowRight } from 'react-icons/fi';
 
-// const blogCardsData = [
-//   {
-//     id: 1,
-//     image: {
-//       src: '/images/Webp/blog1.webp',
-//       alt: 'Pet care',
-//     },
-//     author: 'Babet',
-//     date: 'Oct 05, 2025',
-//     title: 'How To Look After Dogs Loved Ones Healthy Year-Round',
-//     cta: 'Read More',
-//   },
-//   {
-//     id: 2,
-//     image: {
-//       src: '/images/Webp/blog2.webp',
-//       alt: 'Pet grooming',
-//     },
-//     author: 'Emma',
-//     date: 'Sep 18, 2025',
-//     title: 'Best Grooming Tips to Keep Your Pet Happy & Healthy',
-//     cta: 'Read More',
-//   },
-//   {
-//     id: 3,
-//     image: {
-//       src: '/images/Webp/blog3.webp',
-//       alt: 'Veterinary care',
-//     },
-//     author: 'David',
-//     date: 'Aug 30, 2025',
-//     title: 'Why Regular Vet Checkups Are Important for Pets',
-//     cta: 'Read More',
-//   },
-// ];
-
 const BlogCards = ({ articles }: any) => {
   const router = useRouter();
 

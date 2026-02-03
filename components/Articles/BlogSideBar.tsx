@@ -5,56 +5,16 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { HiOutlineCalendar, HiOutlineLink } from 'react-icons/hi';
 
-// const categoriesData = {
-//   title: 'Categories',
-//   items: [
-//     { id: 1, name: 'Bath & Spa', count: 3 },
-//     { id: 2, name: 'Face Trim', count: 4 },
-//     { id: 3, name: 'Fluff & Brush', count: 3 },
-//     { id: 4, name: 'Pet grooming', count: 4 },
-//     { id: 5, name: 'Teeth Cleaning', count: 4 },
-//   ],
-// };
-
-// const recentPostsData = {
-//   title: 'Recent Posts',
-//   posts: [
-//     {
-//       id: 1,
-//       title: 'How To Keep Your Loved Ones Healthy Year-Round',
-//       date: 'October 5, 2025',
-//       image: '/images/service1.jpg',
-//       featured: false,
-//     },
-//     {
-//       id: 2,
-//       title: 'How To Look After Dogs Loved Ones Healthy',
-//       date: 'October 5, 2025',
-//       image: '/images/service2.jpg',
-//       featured: true,
-//     },
-//     {
-//       id: 3,
-//       title: 'Essential Tips For A Healthy Pet Life Throughout',
-//       date: 'October 5, 2025',
-//       image: '/images/service3.jpg',
-//       featured: false,
-//     },
-//   ],
-// };
-
-// const tagsData = {
-//   title: 'Tags',
-//   activeBar: true,
-//   tags: ['Cat', 'Dog', 'Grooming', 'Nutrition', 'Pet Care', 'Picky', 'Reduction'],
-// };
-
-const CategoriesCard = ({ categories }: any) => {
+const CategoriesCard = ({ categories ,onFilter}: any) => {
   const { title, data } = categories || {};
   const router = useRouter();
 
   const handleSelectCategory = (slug: string) => {
-    router.push(`/blog/${slug}`);
+    onFilter('', '', slug);
+    router.push(`/blog`);
+     setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100);
   };
 
   return (
@@ -132,14 +92,16 @@ const RecentPostsCard = ({ recentPosts }: any) => {
   );
 };
 
-const TagsSection = ({ tags }: any) => {
+const TagsSection = ({ tags,onFilter }: any) => {
   const { title, data } = tags || {};
   const router = useRouter();
-
-  const handleTagPosts = (slug: string) => {
-    router.push(`/blog/${slug}`);
-  };
-
+ const handleTagPosts =  (slug: string) => {
+  onFilter('', slug, '');
+  router.push(`/blog`)
+   setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 100);
+};
   return (
     <section className="max-w-sm rounded-2xl bg-[#FDF8F2] p-6 shadow-sm">
       <div className="mb-4">
@@ -163,7 +125,7 @@ const TagsSection = ({ tags }: any) => {
   );
 };
 
-export default function BlogSideBar() {
+export default function BlogSideBar({onFilter}:any) {
   const [categories, setCategories] = useState([]);
   const [recentPosts, setRecentPosts] = useState([]);
   const [tags, setTags] = useState([]);
@@ -179,6 +141,7 @@ export default function BlogSideBar() {
   const getTags = async () => {
     const tags = await BlogEndPoints.tags();
     setTags(tags);
+  
   };
 
   useEffect(() => {
@@ -189,9 +152,9 @@ export default function BlogSideBar() {
 
   return (
     <div className="grid gap-8">
-      <CategoriesCard categories={categories} />
+      <CategoriesCard categories={categories}  onFilter={onFilter}  />
       <RecentPostsCard recentPosts={recentPosts} />
-      <TagsSection tags={tags} />
+      <TagsSection tags={tags} onFilter={onFilter} />
     </div>
   );
 }
