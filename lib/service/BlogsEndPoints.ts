@@ -40,7 +40,6 @@ export const BlogEndPoints = {
     return apiPost(`posts/comments/${slug}`,data)
   },
 
-
   getComments: (slug: string) => {
     return apiFetch({
       endpoint: `posts/comments/${slug}`,
@@ -48,7 +47,7 @@ export const BlogEndPoints = {
     })
   },
 
-  getfilteredPosts: (  search?:any, tag?: string, category?: string) => {
+  getfilteredPosts: (search?:any, tag?: string, category?: string) => {
     return apiFetch({
       endpoint: `/posts/filters?search=${search}&tag=${tag}&category=${category}`,
       cache: 'no-store',

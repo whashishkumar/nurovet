@@ -9,8 +9,8 @@ export default function HeroBanner({ heroBanner }: any) {
     <div className="bg-color w-full relative">
       <div className="sm:px-6 mx-auto p-4 sm:py-6  ">
         <div
-          className="relative w-full min-h-165 md:min-h-185 lg:h-dvh bg-cover  bg-center bg-no-repeat rounded-2xl overflow-hidden flex flex-col"
-          style={{ backgroundImage: `url('${heroContent?.backgroundImage}')` }}
+          className="relative w-full min-h-165 md:min-h-185 lg:h-dvh bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden flex flex-col"
+          style={{ backgroundImage: `url('${heroContent?.backgroundImage}')`}}
         >
           <div className="absolute inset-0 bg-linear-to-b from-[#0b5d3b]/80 via-[#0b5d3b]/0 to-transparent z-0" />
           <div className="relative lg:absolute inset-0 z-20 flex items-center md:grow py-12 lg:py-0">
@@ -21,7 +21,7 @@ export default function HeroBanner({ heroBanner }: any) {
                   <span className="text-[#00603A] block">{heroContent?.title?.highlight}</span>
                   {heroContent?.title?.last}
                 </h1>
-                <ul className="mt-6 space-y-2">
+                <ul className="mt-4 space-y-2">
                   {heroContent?.features?.map((feature: any, index: any) => (
                     <li
                       key={index}
@@ -34,7 +34,7 @@ export default function HeroBanner({ heroBanner }: any) {
                     </li>
                   ))}
                 </ul>
-                <div className="pt-8 pb-4 flex flex-wrap gap-4">
+                <div className=" p-4 flex flex-wrap gap-4">
                   <Button
                     href={heroContent.cta.href}
                     label={heroContent.cta.label}
