@@ -24,7 +24,7 @@ const BlogCards = ({ articles }: any) => {
                 <span>{item?.date}</span>
               </div>
             </div>
-            <h3 className="mt-4 text-2xl font-semibold text-[#02000F] leading-snug fredoka">
+            <h3 className="mt-4 text-2xl font-semibold text-[#02000F] leading-snug fredoka line-clamp-2 min-h-18">
               {item?.title}
             </h3>
             <div className="mt-6 h-px w-full bg-gray-300" />

@@ -3,39 +3,6 @@ import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
 
-// const whyChooseUsData = {
-//   badge: {
-//     label: 'Our Specialities',
-//     icon: '/icons/bone.svg',
-//   },
-//   heading: {
-//     title: 'Why Choose Us?',
-//     subTitle: 'Easily find and book trusted Pet Caregivers near you',
-//   },
-//   arcFeatures: {
-//     cta: {
-//       label: 'Book a Demo Now!',
-//       href: '/demo',
-//     },
-//     items: [
-//       { id: '01', text: 'Smart Veterinary\nSystem Excellence' },
-//       { id: '02', text: 'Secure & Reliable\nClinic Platform' },
-//       { id: '03', text: 'Customizable for Every\nPractice' },
-//       { id: '04', text: 'Simplified Daily\nOperations' },
-//       { id: '05', text: 'Performance-\nDriven Efficiency' },
-//     ],
-//   },
-//   video: {
-//     floatingImage: {
-//       src: '/images/Webp/whychooseanimals.webp',
-//       alt: 'animals',
-//     },
-//     background: {
-//       src: '/images/vdoContainer.png',
-//       alt: 'video background',
-//     },
-//   },
-// };
 
 const ArcFeaturesSection = ({ data }: any) => {
   const { cta, items } = data || {};
@@ -81,16 +48,14 @@ const ArcFeaturesSection = ({ data }: any) => {
   );
 };
 
-/* =========================
-   VIDEO
-========================= */
+
 const VideoSection = ({ data }: any) => {
   const { floatingImage, background } = data || {};
 
   return (
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
-        <div className="absolute -top-36 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute top-7 left-1/2 -translate-x-1/2  -translate-y-1/1 z-20 ">
           <Image
             src={floatingImage?.src}
             alt={floatingImage.alt}
@@ -99,17 +64,20 @@ const VideoSection = ({ data }: any) => {
             className="object-contain hidden md:block"
             priority
           />
-        </div>
-
+        </div>   
         <div className="relative rounded-3xl overflow-hidden">
-          <Image
-            src={background?.src}
-            alt={background.alt}
-            width={1856}
-            height={750}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
-            priority
-          />
+          >
+            <source src={'/video/video.mp4'} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+            <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
+
         </div>
       </div>
     </section>

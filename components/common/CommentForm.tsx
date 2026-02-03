@@ -49,7 +49,7 @@ export default function CommentForm({getBlogCommentList}:any) {
   };  
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[40px] bg-white p-8 md:p-16 max-w-4xl mx-auto">
+    <form onSubmit={handleSubmit} className="rounded-[40px] bg-white p-8 md:p-16 max-w-4xl mx-auto overflow-hidden">
       <div className="mb-10">
         <div className="flex items-center gap-3">
           <TiArrowBack className="text-[#0B5D3B] text-4xl" />
