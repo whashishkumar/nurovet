@@ -10,6 +10,7 @@ type Blog = {
   excerpt: string;
   image: string;
   slug: string;
+  content?: string;
 };
 
 type BlogDetailCardProps = {
@@ -17,6 +18,8 @@ type BlogDetailCardProps = {
 };
 
 export default function BlogDetailCard({ data }: BlogDetailCardProps) {
+  const content = data?.content;
+  
   return (
     <article className=" mx-auto px-6 lg:px-0">
       <div className="pb-8">
@@ -28,37 +31,41 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
         </a>
       </div>
       <div className="relative h-[420px] w-full overflow-hidden rounded-3xl">
-        <Image src={data.image} alt={data.title} fill className="object-cover" priority />
+        <Image src={data?.image} alt={data?.title} fill className="object-cover" priority />
       </div>
       <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-500">
-        <span>By {data.author}</span>
+        <span>By {data?.author}</span>
         <span>•</span>
-        <span>{data.date}</span>
+        <span>{data?.date}</span>
         <span>•</span>
-        <span>{data.comments} Comments</span>
+        <span>{data?.comments} Comments</span>
       </div>
-      <h1 className="mt-4 text-4xl font-bold text-black leading-tight">{data.title}</h1>
+      <h1 className="mt-4 text-4xl font-bold text-black leading-tight">{data?.title}</h1>
       <div className="mt-8 space-y-6 text-gray-700 leading-relaxed">
-        <p>
-          Dirt, debris, and loose fur can build up in your pet’s coat and lead to matting, hot
-          spots, and skin irritation. Regular grooming ensures your pet stays clean, comfortable,
-          and healthy.
-        </p>
-
-        <p>
-          Nutrition plays a critical role in maintaining your pet’s immune system. Balanced meals
-          rich in vitamins, minerals, and protein can help your pet stay energetic and happy
-          year-round.
-        </p>
-
-        <blockquote className="border-l-4 border-[#0a5e3b] pl-4 italic text-gray-600">
-          “Healthy pets are happy pets. Consistency in care and nutrition makes all the difference.”
-        </blockquote>
-
-        <p>
-          Always consult with your veterinarian for personalized care plans and preventive measures
-          to ensure your loved ones live long, fulfilling lives.
-        </p>
+            <div
+      className="
+        prose 
+        prose-lg 
+        max-w-none
+        prose-p:text-gray-600
+        prose-p:leading-relaxed
+        prose-h4:text-black
+        prose-h4:font-semibold
+        prose-ul:list-disc
+        prose-li:ml-5
+        prose-blockquote:border-l-4
+        prose-blockquote:border-gray-300
+        prose-blockquote:pl-6
+        prose-blockquote:italic
+        prose-blockquote:bg-white
+        prose-blockquote:rounded-lg
+        prose-blockquote:py-4
+        prose-blockquote:px-6
+        prose-img:rounded-xl
+        prose-img:shadow-md
+      "
+        dangerouslySetInnerHTML={{ __html: content ||  ''}}
+      />
       </div>
     </article>
   );

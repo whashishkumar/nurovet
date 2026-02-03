@@ -5,41 +5,65 @@ import ArticleCard from './ArticleCard';
 import Pagination from '../ui/Pagination';
 import { BlogEndPoints } from '@/lib/service/BlogsEndPoints';
 import Loader from '../ui/Loader';
+// import { useSearchParams } from 'next/navigation';
 
 export default function Blogs({ blogs }: any) {
   const { data, meta } = blogs || {};
   const [page, setPage] = useState(1);
-  const { current_page, last_page } = meta || {};
+  const { last_page } = meta || {};
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setCurrentArticle] = useState([]);
+  const [filters, setFilters] = useState({ search: '', tag: '', category: '' });
+
+  // const searchParams = useSearchParams();
+
+  const FilterBlogs = async (search: string, tag: string, category: string) => {
+    setFilters({ search, tag, category });
+    try {
+      setIsLoading(true);
+      const blogs = await BlogEndPoints.getfilteredPosts( search, tag, category);
+      setCurrentArticle(blogs?.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
 
   const handePageChange = async (page: number) => {
     setPage(page);
     try {
       setIsLoading(true);
-      const blogs = await BlogEndPoints.blogList(page);
+      const blogs = (filters.search || filters.tag || filters.category)
+        ? await BlogEndPoints.getfilteredPosts( filters?.search, filters?.tag, filters?.category)
+        : await BlogEndPoints.blogList(page);
       setCurrentArticle(blogs?.data);
       setIsLoading(false);
     } catch (error) {
       console.error(error);
-    }
-  };
-
-  const getBlogs = async () => {
-    try {
-      setIsLoading(true);
-      const blogs = await BlogEndPoints.blogList(page);
-      setCurrentArticle(blogs?.data);
       setIsLoading(false);
-    } catch (error) {
-      console.error(error);
     }
   };
 
-  const articlesData = articles ? articles : data;
+  const articlesData = articles.length > 0 ? articles : data;
 
   useEffect(() => {
-    getBlogs();
+    // const tag = searchParams.get('tag') || '';
+    // if (tag) {
+    //   FilterBlogs('', tag, '');
+    // } else {
+        const getBlogs = async () => {
+            try {
+              setIsLoading(true);
+              const blogs = await BlogEndPoints.blogList(page);
+              setCurrentArticle(blogs?.data);
+              setIsLoading(false);
+            } catch (error) {
+              console.error(error);
+            }
+        };
+        getBlogs();
+    // }
   }, []);
 
   if (isLoading) {
@@ -61,7 +85,7 @@ export default function Blogs({ blogs }: any) {
             />
           </div>
           <div className="hidden md:block sticky top-24 h-fit">
-            <BlogSideBar />
+            <BlogSideBar onFilter={FilterBlogs} />
           </div>
         </div>
       </div>

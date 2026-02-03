@@ -6,7 +6,7 @@ import { FAQPageEndPoints } from '@/lib/service/FAQEndPoints';
 import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 
 export default async function page() {
-  const faqSection = await HomePageEndPoints.faqSection();
+  // const faqSection = await HomePageEndPoints.faqSection();
   const reviewsData = await AboutPageEndPoints.reviews();
   const bannerdata = await FAQPageEndPoints.heroBanner();
   const faq = await FAQPageEndPoints.faq();
@@ -17,7 +17,7 @@ export default async function page() {
         bannerInfo={bannerdata}
         className="bg-color"
       />
-      <QuickAnswers faqSection={faqSection} />
+      <QuickAnswers faqSection={faq} />
       <Reviews reviewsData={reviewsData} />
     </div>
   );

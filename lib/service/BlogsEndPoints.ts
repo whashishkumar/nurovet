@@ -3,12 +3,11 @@ import { apiFetch, apiPost } from '../api/fetcher';
 export const BlogEndPoints = {
   blogList: (page: number) => {
     return apiFetch({
-      endpoint: `posts?page=${page}&per_page=2`,
+      endpoint: `posts?page=${page}`,
       cache: 'no-store',
     });
   },
 
-  // /api/v1/posts/{slug}
   blogDetails: (slug: string) => {
     return apiFetch({
       endpoint: `posts/${slug}`,
@@ -47,5 +46,13 @@ export const BlogEndPoints = {
       endpoint: `posts/comments/${slug}`,
       cache: 'no-store',  
     })
-  } 
+  },
+
+  getfilteredPosts: (  search?:any, tag?: string, category?: string) => {
+    return apiFetch({
+      endpoint: `/posts/filters?search=${search}&tag=${tag}&category=${category}`,
+      cache: 'no-store',
+    });
+  },
+
 };
