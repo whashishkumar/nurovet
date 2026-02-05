@@ -85,7 +85,6 @@ export default function BlogDetail() {
   };
 
   const FilterBlogs = async (search = '', tag = '', category = '') => {
-    console.log(search,tag,category,"search,tag,category");
     try {
       setIsLoading(true);
       const filter = await BlogEndPoints.getfilteredPosts( search, tag, category);
@@ -108,7 +107,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="bg-blog">
+    <div className="bg-color">
       <div className="wrapper m-auto py-16 px-6 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-[70%_28%] gap-[2%] min-h-[80vh]">
           <div className="space-y-10  h-fit pr-2">

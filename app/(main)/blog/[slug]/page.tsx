@@ -1,20 +1,27 @@
+
 import BlogDetail from '@/components/Articles/BlogDetail';
 import InnerBanner from '@/components/common/InnerBanner';
-import React from 'react';
+import { BlogEndPoints } from '@/lib/service/BlogsEndPoints';
 
-export default function page() {
+export default async function Page( {params} :any) {
+  const  {slug}  = await  params;
+  const resp = await BlogEndPoints.blogDetails(slug);
+  const { bgImage,title } = resp || {};
+
   return (
     <div>
       <InnerBanner
         bannerInfo={{
           background: {
-            image: '/images/innerbg.jpg',
+            image: `${bgImage}`,
           },
-          title: 'Blogs-slug',
+          title: title,
         }}
-        className="bg-blog"
+        className="bg-color"
       />
-      <BlogDetail />
+
+      <BlogDetail  />
     </div>
   );
 }
+

@@ -75,7 +75,7 @@ export default function OurStory({ ourStoryData }: any) {
                   href={cta.buttonHref}
                   label={cta.buttonText}
                   variant="primary"
-                  className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-10 py-5 rounded-full font-bold transition-all"
+                  className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-6 py-4 rounded-full font-bold transition-all"
                 />
                 <div className="hidden lg:block w-px h-12 bg-gray-200" />
                 <div className="flex items-center gap-4 group cursor-pointer">
@@ -88,7 +88,7 @@ export default function OurStory({ ourStoryData }: any) {
                     </p>
                     <a
                       href={`tel:${cta.phone}`}
-                      className="font-bold text-xl sm:text-2xl text-[#02000F] hover:text-[#00603A] transition-colors"
+                      className="font-bold text-lg sm:text-2xl text-[#02000F] hover:text-[#00603A] transition-colors"
                     >
                       {cta.phone}
                     </a>
@@ -97,8 +97,7 @@ export default function OurStory({ ourStoryData }: any) {
               </div>
             </div>
           </div>
-
-          <div className="relative w-full h-55 sm:h-70 md:h-85 lg:h-122.5">
+          <div className="relative w-full aspect-[16/9]">
             <Image
               src={image.src}
               alt={image.alt}
@@ -107,6 +106,16 @@ export default function OurStory({ ourStoryData }: any) {
               priority
             />
           </div>
+
+          {/* <div className="relative w-full h-55 sm:h-70 md:h-85 lg:h-122.5">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover rounded-2xl"
+              priority
+            />
+          </div> */}
         </div>
       </div>
     </div>

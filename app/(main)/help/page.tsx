@@ -1,7 +1,7 @@
 import InnerBanner from '@/components/common/InnerBanner';
 import EmergencyContact from '@/components/sections/EmergencyContact';
 import FeaturesNeuroVet from '@/components/sections/FeaturesNeuroVet';
-import HelpCenterServices from '@/components/sections/HelpCenterServices';
+// import HelpCenterServices from '@/components/sections/HelpCenterServices';
 import Reviews from '@/components/sections/Reviews';
 import { AboutPageEndPoints } from '@/lib/service/AboutUsPageEndPoints';
 import { HelpCenterPageEndPoints } from '@/lib/service/HelpCenterPageEndPoints';
@@ -22,7 +22,7 @@ export default async function page() {
         className="bg-color"
       />
       <FeaturesNeuroVet featuresNuroVet={featuresNuroVet} />
-      <HelpCenterServices services={services} />
+      {/* <HelpCenterServices services={services} /> */}
       <EmergencyContact emergency={emergency} />
       <Reviews reviewsData={reviewsData} />
     </>

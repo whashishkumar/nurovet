@@ -10,7 +10,7 @@ export default function FeaturesCards({ featuresData }: any) {
               key={idx}
               className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition"
             >
-              <div className=" flex h-12 w-12 items-center justify-center rounded-full bg-[#00603A]">
+              <div className=" flex h-12 w-12 items-center justify-center rounded-full bg-[#00603A] mb-4">
                 {item.icon && (
                   <Image
                     src={item.icon}
