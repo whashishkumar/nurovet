@@ -52,13 +52,12 @@ const ArcFeaturesSection = ({ data }: any) => {
 const VideoSection = ({ data }: any) => {
   const { floatingImage, background } = data || {};
 
-  console.log(background,"background");
   
 
   return (
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
-        <div className="absolute top-7 left-1/2 -translate-x-1/2  -translate-y-1/1 z-20 ">
+        {/* <div className="absolute top-7 left-1/2 -translate-x-1/2  -translate-y-1/1 z-20 ">
           <Image
             src={floatingImage?.src}
             alt={floatingImage.alt}
@@ -67,7 +66,7 @@ const VideoSection = ({ data }: any) => {
             className="object-contain hidden md:block"
             priority
           />
-        </div>   
+        </div>    */}
         <div className="relative rounded-3xl overflow-hidden">
           <video
             autoPlay
@@ -90,7 +89,6 @@ const VideoSection = ({ data }: any) => {
 export default function WhyChooseUs({ chooseSection }: any) {
   const { arcFeatures, video, tag, heading, subHeading, tagicon } = chooseSection || {};
 
-  console.log(chooseSection,"chooseSection");
   
   return (
     <div className="bg-color relative">
@@ -103,7 +101,7 @@ export default function WhyChooseUs({ chooseSection }: any) {
         "
       />
 
-      <div className="inner-wrapper m-auto lg:py-16 py-12 px-6 lg:px-0">
+      <div className="inner-wrapper m-auto lg:pt-16 pt-12 px-6 lg:px-0">
         <div className="flex justify-center">
           <SectionBadge label={tag} icon={tagicon} />
         </div>
