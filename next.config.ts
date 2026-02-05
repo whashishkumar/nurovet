@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'nurovet.whdev.in',
+        hostname: `${process.env.NEXT_PUBLIC_API_URL}`,
         pathname: '/**',
       },
     ],

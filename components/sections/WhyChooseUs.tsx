@@ -48,11 +48,8 @@ const ArcFeaturesSection = ({ data }: any) => {
   );
 };
 
-
 const VideoSection = ({ data }: any) => {
   const { floatingImage, background } = data || {};
-
-  
 
   return (
     <section className="relative lg:pt-0 pt-10">
