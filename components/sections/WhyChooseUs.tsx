@@ -52,6 +52,9 @@ const ArcFeaturesSection = ({ data }: any) => {
 const VideoSection = ({ data }: any) => {
   const { floatingImage, background } = data || {};
 
+  console.log(background,"background");
+  
+
   return (
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
@@ -73,7 +76,7 @@ const VideoSection = ({ data }: any) => {
             playsInline
             className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
           >
-            <source src={'/video/video.mp4'} type="video/mp4" />
+            <source src={background.src || '/video/video.mp4'} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
             <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
@@ -85,7 +88,10 @@ const VideoSection = ({ data }: any) => {
 };
 
 export default function WhyChooseUs({ chooseSection }: any) {
-  const { arcFeatures, video, tag, heading, subHeading, tagIcon } = chooseSection || {};
+  const { arcFeatures, video, tag, heading, subHeading, tagicon } = chooseSection || {};
+
+  console.log(chooseSection,"chooseSection");
+  
   return (
     <div className="bg-color relative">
       <div
@@ -99,7 +105,7 @@ export default function WhyChooseUs({ chooseSection }: any) {
 
       <div className="inner-wrapper m-auto lg:py-16 py-12 px-6 lg:px-0">
         <div className="flex justify-center">
-          <SectionBadge label={tag} icon={tagIcon} />
+          <SectionBadge label={tag} icon={tagicon} />
         </div>
         <SectionHeading title={heading} subTitle={subHeading} />
         <ArcFeaturesSection data={arcFeatures} />

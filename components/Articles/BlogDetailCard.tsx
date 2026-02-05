@@ -21,7 +21,7 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
   const content = data?.content;
   
   return (
-    <article className=" mx-auto px-6 lg:px-0">
+    <article className="bg-color mx-auto px-6 lg:px-0">
       <div className="pb-8">
         <a
           href="/blog"
@@ -41,29 +41,29 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
         <span>{data?.comments} Comments</span>
       </div>
       <h1 className="mt-4 text-4xl font-bold text-black leading-tight">{data?.title}</h1>
-      <div className="mt-8 space-y-6 text-gray-700 leading-relaxed">
+      <div className="mt-8 space-y-4  leading-relaxed ">
             <div
-      className="
-        prose 
-        prose-lg 
-        max-w-none
-        prose-p:text-gray-600
-        prose-p:leading-relaxed
-        prose-h4:text-black
-        prose-h4:font-semibold
-        prose-ul:list-disc
-        prose-li:ml-5
-        prose-blockquote:border-l-4
-        prose-blockquote:border-gray-300
-        prose-blockquote:pl-6
-        prose-blockquote:italic
-        prose-blockquote:bg-white
-        prose-blockquote:rounded-lg
-        prose-blockquote:py-4
-        prose-blockquote:px-6
-        prose-img:rounded-xl
-        prose-img:shadow-md
-      "
+          className="
+  prose 
+  prose-lg 
+  max-w-none
+  prose-p:text-gray-600
+  prose-p:leading-relaxed
+  prose-h4:text-black
+  prose-h4:font-semibold
+  prose-ul:list-disc
+  prose-li:ml-5
+  prose-blockquote:border-l-4
+  prose-blockquote:border-gray-300
+  prose-blockquote:pl-6
+  prose-blockquote:italic
+  prose-blockquote:rounded-lg
+  prose-blockquote:py-4
+  prose-blockquote:px-6
+  prose-img:rounded-xl
+  prose-img:shadow-md
+"
+
         dangerouslySetInnerHTML={{ __html: content ||  ''}}
       />
       </div>

@@ -17,10 +17,12 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
               <div style={{ direction: 'ltr', marginLeft: '40px' }}>
                 {teamMembers?.map((member: any, index: any) => (
                   <li key={index} className="flex items-center gap-4 mb-8 last:mb-0">
-                    <img
+                    <Image
                       src={member?.avatar}
                       alt={member?.name}
                       className="w-16 h-16 rounded-full object-cover shrink-0 border border-gray-100"
+                      height={50}
+                      width={50}
                     />
                     <div>
                       <p className="font-semibold text-[#02000F] text-2xl fredoka">
@@ -38,13 +40,24 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
           <div className="md:col-span-8">
             <div className="bg-white rounded-[40px] p-8 md:p-10 shadow-lg border border-gray-50">
               <div className="flex flex-col md:flex-row gap-10 items-center">
-                <div className="relative shrink-0 rounded-3xl border-10 border-[#F6F6F6] overflow-hidden w-full max-w-[300px] lg:max-w-[320px]">
-                  <img
+                {/* <div className="relative shrink-0 rounded-3xl border-10 border-[#F6F6F6] overflow-hidden w-full max-w-[300px] lg:max-w-[320px]">
+                  <Image
                     src={featuredVet?.image}
                     alt={featuredVet?.name || 'Featured Vet'}
                     className="w-full h-[400px] object-cover"
+                    height={200}
+                    width={200}
+                  />
+                </div> */}
+                <div className="relative w-full max-w-[360px] aspect-[3/4] rounded-3xl border-[10px] border-[#F6F6F6] overflow-hidden">
+                  <Image
+                    src={featuredVet?.image}
+                    alt={featuredVet?.name || 'Featured Vet'}
+                    fill
+                    className="object-cover"
                   />
                 </div>
+
                 <div className="flex-1">
                   <h3 className=" text-[2rem] lg:text-[2.5rem] font-semibold text-[#02000F] fredoka lg:leading-14 ">
                     {featuredVet?.name}
