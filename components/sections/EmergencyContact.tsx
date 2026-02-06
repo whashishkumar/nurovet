@@ -9,7 +9,7 @@ export default function EmergencyContact({emergency}:any) {
     <section className="py-16 px-6 lg:px-0">
       <div className="inner-wrapper mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center">
-          <div className="relative w-full aspect-[20/12] rounded-xl overflow-hidden ">
+          <div className="relative w-full aspect-[20/12] lg:aspect-[10/10] rounded-xl overflow-hidden ">
             <Image
               src={image}
               alt="Emergency Pet Care"

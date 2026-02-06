@@ -38,7 +38,6 @@ export default function ContactForm() {
   const getServices = async () => {
     const resp = await ContactUsEndPoints.services();
     setServices(resp);
-    console.log(resp, 'services');
   };
 
   useEffect(() => {
@@ -52,14 +51,12 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const resp = await ContactUsEndPoints.contactUsForm(form);
-
-    showToast(resp.message || 'Form submitted successfully!');
-
-    if (!form.name || !form.email || !form.phone || !form.service) {
-      showToast('Please fill all required fields');
+      if (!form.name || !form.email || !form.phone) {
       return;
     }
+    const resp = await ContactUsEndPoints.contactUsForm(form);
+    showToast(resp.message || 'Form submitted successfully!');
+
     setForm({
       name: '',
       email: '',
