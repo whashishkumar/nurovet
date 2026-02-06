@@ -25,7 +25,16 @@ export const metadata: Metadata = {
   title: 'nuroVet',
   description:
     'Nurovet is an AI-driven veterinary intelligence platform designed to augment—not replace—clinical judgment. It functions as a digital specialist, continuously analyzing data, recognizing patterns, and delivering insights that improve diagnostic accuracy, workflow efficiency, and patient outcomes.',
-};
+
+  icons: {
+    icon: "/logo/logoh.svg",
+    shortcut: "/logo/logoh.svg"
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  };
 
 export default function RootLayout({
   children,

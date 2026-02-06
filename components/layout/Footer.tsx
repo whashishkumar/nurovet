@@ -55,26 +55,7 @@ const Footer = ({ footerResp }: any) => {
               />
             )}
             <p className="mt-6 text-base text-white leading-relaxed onesta">{brand?.description}</p>
-            {/* <ul className="mt-6 space-y-4 text-base">
-              <li className="flex items-center gap-3">
-                <p className="border border-white rounded-full p-2">
-                  <FiMail size={14} />
-                </p>
-                {brand?.email}
-              </li>
-              <li className="flex items-center gap-3">
-                <p className="border border-white rounded-full p-2">
-                  <FiPhone size={14} />
-                </p>
-                {brand?.phone}
-              </li>
-              <li className="flex items-center gap-3">
-                <p className="border border-white rounded-full p-2">
-                  <FiMapPin size={14} />
-                </p>
-                {brand?.address}
-              </li>
-            </ul> */}
+
           </div>
 
           {/* QUICK LINKS */}
@@ -105,32 +86,42 @@ const Footer = ({ footerResp }: any) => {
           {/* ContactUs */}
           <div>
             <h4 className="text-2xl font-semibold mb-6 fredoka">ContactUs</h4>
-            {/* <ul className="space-y-3 text-base">
-              {services?.map((item: any, index: number) => (
-                <li key={index} className="flex items-center gap-2">
-                  <FiPlus className="text-base" />
-                  <Link href={item.href}>{item.name}</Link>
-                </li>
-              ))}
-            </ul> */}
+
             <ul className="mt-6 space-y-4 text-base">
               <li className="flex items-center gap-3">
                 <p className="border border-white rounded-full p-2">
                   <FiMail size={14} />
                 </p>
-                {brand?.email}
+                <a href={`mailto:${brand?.email}`} className=" hover:underline">
+                  {brand?.email}
+                </a>
+
               </li>
               <li className="flex items-center gap-3">
                 <p className="border border-white rounded-full p-2">
                   <FiPhone size={14} />
                 </p>
-                {brand?.phone}
+                <a href={`tel:${brand?.phone}`} className="hover:underline">
+                  {brand?.phone}
+                </a>
+
               </li>
               <li className="flex items-center gap-3">
                 <p className="border border-white rounded-full p-2">
                   <FiMapPin size={14} />
                 </p>
-                {brand?.address}
+                {/* {brand?.address} */}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    brand?.address || ""
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {brand?.address}
+                </a>
+
               </li>
             </ul>
           </div>

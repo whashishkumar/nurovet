@@ -83,8 +83,9 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                             src={social?.icon}
                             alt="socialIcon"
                             width={12}
-                            height={12}
+                            height={10}
                             className="object-contain"
+                      
                           />
                         )}
                       </a>

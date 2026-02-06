@@ -78,7 +78,7 @@ export default function OurStory({ ourStoryData }: any) {
                   className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-6 py-4 rounded-full font-bold transition-all"
                 />
                 <div className="hidden lg:block w-px h-12 bg-gray-200" />
-                <div className="flex items-center gap-4 group cursor-pointer">
+                <a  href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#A1A4B1] text-[#00603A] transition-all group-hover:bg-[#00603A] group-hover:border-[#00603A] group-hover:text-white shadow-md">
                     <FiPhoneCall size={22} />
                   </span>
@@ -87,13 +87,13 @@ export default function OurStory({ ourStoryData }: any) {
                       {cta.phoneLabel}
                     </p>
                     <a
-                      href={`tel:${cta.phone}`}
+  
                       className="font-bold text-lg sm:text-2xl text-[#02000F] hover:text-[#00603A] transition-colors"
                     >
                       {cta.phone}
                     </a>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
