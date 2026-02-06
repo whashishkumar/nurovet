@@ -37,7 +37,7 @@ import SectionBadge from '../common/SectionBadge';
 export default function Hero({ aboutSection }: any) {
   const { description, features, cta, images, tag, tagicon, heading } = aboutSection || {};
   return (
-    <section className="bg-color overflow-hidden">
+    <section className="bg-color overflow-hidden lg:-mt-25">
       <div
         className="
           absolute
@@ -68,7 +68,7 @@ export default function Hero({ aboutSection }: any) {
         style={{ backgroundImage: `url('${images?.backgroundRight}')` }}
       />
 
-      <div className="wrapper m-auto lg:px-0 px-6">
+      <div className="wrapper m-auto lg:px-0 px-6 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0 ">
           {/* LEFT CONTENT */}
           <div className="sm:px-10 md:px-16 lg:px-0 lg:pl-26 order-2 lg:order-1 z-1 ">
@@ -102,18 +102,17 @@ export default function Hero({ aboutSection }: any) {
                   variant="primary"
                   className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
                 />
-
-                <div className="flex items-center gap-4">
+                <a href={`tel:${cta.phone}`} className=' flex items-center gap-4' >
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
                     <FiPhoneCall size={20} />
                   </span>
-                  <a href={`tel:${cta.phone}`}>
+                  <div>
                     <p className="font-semibold fredoka text-lg sm:text-xl text-[#02000F] leading-tight">
                       {cta?.phoneLabel}
                     </p>
                     <p className="font-normal text-[#02000F] text-base sm:text-lg">{cta?.phone}</p>
-                  </a>
-                </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

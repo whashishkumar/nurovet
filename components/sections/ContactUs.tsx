@@ -39,28 +39,76 @@ const iconMap: Record<any, IconType> = {
 const ContactCard = ({ contactUsInfo }: any) => {
   const { header, items } = contactUsInfo || {};
 
+  const renderValue = (item: any) => {
+    if (item.type === "email") {
+      return (
+        <a href={`mailto:${item.value}`} className="hover:underline">
+          {item.value}
+        </a>
+      );
+    }
+
+    if (item.type === "phone") {
+      return (
+        <a
+          href={`tel:${item.value.replace(/[^\d+]/g, "")}`}
+          className="hover:underline"
+        >
+          {item.value}
+        </a>
+      );
+    }
+
+    if (item.type === "address") {
+      return (
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            item.value
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline cursor-pointer"
+        >
+          {item.value}
+        </a>
+      );
+    }
+
+    return item.value;
+  };
+
   return (
     <div className="p-8 bg-white rounded-4xl shadow-sm border border-gray-50 figtree">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-black mb-3">{header.title}</h2>
-        <p className="text-gray-500 leading-relaxed">{header.description}</p>
+        <h2 className="text-3xl font-bold text-black mb-3">
+          {header?.title}
+        </h2>
+        <p className="text-gray-500 leading-relaxed">
+          {header?.description}
+        </p>
       </div>
+
       <div className="space-y-6">
         {items?.map((item: any, index: number) => {
           const Icon = iconMap[item.type];
+
           return (
             <div key={item.id}>
-              <div className="flex items-center gap-5 py-2">
-                <div className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center bg-orange-50">
-                  <Icon className="w-6 h-6 text-[#0a5e3b]" />
-                </div>
-                <div>
-                  <p className="text-gray-500 text-sm mb-1 fredoka">{item.title}</p>
-                  <p className="text-lg font-bold text-black">{item.value}</p>
-                </div>
-              </div>
-              {/* Divider */}
-              {index !== contactData.items.length - 1 && <hr className="mt-6 border-gray-100" />}
+              
+              {item.title && (
+                <p className="text-gray-500 mb-1 flex items-center gap-2">
+                  {Icon && <Icon className="w-4 h-4" />}
+                  {item.title}
+                </p>
+              )}
+
+
+              <p className="text-lg font-bold text-black">
+                {renderValue(item)}
+              </p>
+              {index !== items.length - 1 && (
+                <hr className="mt-6 border-gray-100" />
+              )}
             </div>
           );
         })}
@@ -68,6 +116,7 @@ const ContactCard = ({ contactUsInfo }: any) => {
     </div>
   );
 };
+
 
 export default function ContactUs({ contactUsInfo }: any) {
   return (

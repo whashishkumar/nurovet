@@ -28,7 +28,7 @@ const Accordion = ({ data }: AccordionProps) => {
           <div key={item.id} className="rounded-lg bg-white  border-gray-200">
             <button
               onClick={() => toggle(item.id)}
-              className="flex w-full items-center justify-between px-6 py-5 text-left cursor-pointer onesta"
+              className="flex w-full items-center justify-between pl-10 pr-6 py-5  text-left cursor-pointer onesta"
             >
               <span className="text-lg font-medium text-[#02000F] ">
                 {item.id}. {item.question}

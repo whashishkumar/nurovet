@@ -86,10 +86,7 @@ export default function QuickAnswers({ faqSection }: any) {
                 src={image?.src}
                 alt={image.alt}
                 fill
-                sizes="(max-width: 640px) 100vw,
-                (max-width: 1024px) 80vw,
-                644px"
-                className="rounded-3xl object-fill sm:object-contain"
+                className="rounded-2xl object-contain w-full"
                 priority
               />
             )}
