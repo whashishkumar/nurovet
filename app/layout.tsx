@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     shortcut: "/logo/logoh.svg"
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   };
 
