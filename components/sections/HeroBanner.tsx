@@ -5,7 +5,8 @@ import { BsCheck2All } from 'react-icons/bs';
 
 export default function HeroBanner({ heroBanner }: any) {
   const { heroContent, featuresLeft, featuresRight } = heroBanner || {};
-
+ 
+  
   return (
     <div className="bg-color w-full ">
       <div className="mx-auto sm:px-6 p-4 sm:py-6">
