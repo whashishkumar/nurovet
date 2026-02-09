@@ -2,46 +2,47 @@ import Button from '../ui/Button';
 import { BsCheck2All } from 'react-icons/bs';
 
 export default function NewHeroBanner({ heroBanner }: any) {
-  const heroData = {
-    description:
-      "All-in-One Brain for Your Hospital Where CRM, PIMS, iPaaS and AI Become One",
+  // const heroData = {
+  //   description:
+  //     "All-in-One Brain for Your Hospital Where CRM, PIMS, iPaaS and AI Become One",
 
-    features: [
-      "Real-time patient tracking",
-      "Role-based staff management",
-      "AI-powered insights",
-    ],
+  //   features: [
+  //     "Real-time patient tracking",
+  //     "Role-based staff management",
+  //     "AI-powered insights",
+  //   ],
 
-    cta: {
-      buttonText: "Book a Demo",
-      buttonHref: "/contact",
-    },
+  //   cta: {
+  //     buttonText: "Book a Demo",
+  //     buttonHref: "/contact",
+  //   },
 
-    ctademo: {
-      buttonText: "View Demo",
-      buttonHref: "/",
-    },
-    bannerImage: "/images/herobanner.png",
-  };
+  //   ctademo: {
+  //     buttonText: "View Demo",
+  //     buttonHref: "/",
+  //   },
+  //   bannerImage: "/images/herobanner.png",
+  // };
 
   const { heroContent } = heroBanner || {}
   const { cta, backgroundImage,
-    demobtn, features
+    demobtn, features, title
 
   } = heroContent || {}
 
 
+
   return (
-    <section className="relative overflow-hidden bg-[#00603A] min-h-auto min-h-[60vh] flex items-center">
+    <section className="relative overflow-hidden bg-[#00603A] min-h-auto lg:min-h-[90vh] flex items-center">
       <div
         className="absolute hidden md:block right-0 top-0 h-full w-[60vw] bg-no-repeat bg-contain bg-right-bottom"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
       <div className="relative z-10 inner-wrapper mx-auto px-6 lg:px-0 w-full  py-20">
         <div className="max-w-3xl text-white ">
-          <p className="mt-15 md:mt-25  text-white text-[2rem] lg:text-[3.125rem] font-bold leading-tight fredoka ">
-            {heroData.description}
-          </p>
+          {title && <p className="mt-15 md:mt-25  text-white text-[2rem] lg:text-[3.125rem] font-bold leading-tight fredoka ">
+            {title?.first}
+          </p>}
           <ul className="mt-8 space-y-4">
             {features?.map((feature: string, index: number) => (
               <li

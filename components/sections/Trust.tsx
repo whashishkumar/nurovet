@@ -6,7 +6,7 @@ export default function TrustAuthoritySection({ heroBanner }: any) {
   const { featuresLeft, featuresRight, heading, subHeading } = heroBanner || {};
 
   return (
-    <section className="bg-[#e9e6e1] py-16">
+    <section className="py-16">
       <div className="inner-wrapper mx-auto px-6 lg:px-0">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
