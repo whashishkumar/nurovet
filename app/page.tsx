@@ -14,6 +14,8 @@ import Footer from '@/components/layout/Footer';
 import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 import { CommonEndPoints } from '@/lib/service/CommonEndPoints';
 import Navbar from '@/components/layout/NavBar';
+import NewHeroBanner from '@/components/sections/NewHeroBanner';
+import TrustAuthoritySection from '@/components/sections/Trust';
 
 export default async function Home() {
   const headerResp = await HomePageEndPoints.headerAPi();
@@ -48,7 +50,8 @@ export default async function Home() {
   return (
     <>
       <Navbar headerResp={headerResp} />
-      <HeroBanner heroBanner={heroBanner} />
+      <NewHeroBanner heroBanner={heroBanner} />
+      <TrustAuthoritySection heroBanner={heroBanner} />
       <AboutNuroVet aboutSection={aboutSection} />
       <FeaturesNeuroVet featuresNuroVet={featuresNuroVet} />
       <CustomizedDashboard

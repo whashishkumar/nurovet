@@ -34,10 +34,9 @@ export default function Header({ headerResp = {} }: any) {
   return (
     <header
       className={`w-full z-50 transition-all duration-300 
-        ${
-          scrolled
-            ? 'fixed top-0 bg-[#00603A] py-4 shadow-lg'
-            : 'absolute top-5 lg:top-10 bg-transparent py-6 px-4'
+        ${scrolled
+          ? 'fixed top-0 bg-[#00603A] py-4 shadow-lg'
+          : 'absolute top-5 lg:top-10 bg-transparent py-6 px-4'
         }
       `}
     >
@@ -74,7 +73,7 @@ export default function Header({ headerResp = {} }: any) {
           {/* Desktop Right */}
           <div className="hidden lg:flex items-center gap-4">
             <div className="flex items-center gap-2 text-white">
-              <span className="h-12 w-12 flex items-center justify-center rounded-full bg-[#00603A]">
+              <span className="h-12 w-12 flex items-center justify-center rounded-full ">
                 <FiPhoneCall size={20} />
               </span>
               <div className="text-sm leading-tight">
@@ -136,10 +135,9 @@ export default function Header({ headerResp = {} }: any) {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`text-xl border-b border-white/10 pb-3 transition
-                  ${
-                    isActive(item.href)
-                      ? 'text-[#22c55e] font-bold'
-                      : 'font-light hover:text-green-400'
+                  ${isActive(item.href)
+                    ? 'text-[#22c55e] font-bold'
+                    : 'font-light hover:text-green-400'
                   }
                 `}
               >
