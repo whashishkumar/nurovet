@@ -2,6 +2,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FiUser, FiCalendar, FiArrowRight } from 'react-icons/fi';
+import { FaUser } from "react-icons/fa6";
+import { FaCalendarWeek } from "react-icons/fa";
+
 
 const BlogCards = ({ articles }: any) => {
   const router = useRouter();
@@ -16,11 +19,11 @@ const BlogCards = ({ articles }: any) => {
           <div className="pt-6">
             <div className="flex items-center gap-6 text-sm text-black onesta">
               <div className="flex items-center gap-2">
-                <FiUser className="text-[#0B5D3B]" size={22} />
+                <FaUser className="text-[#0B5D3B]" size={14} />
                 <span>{item?.author}</span>
               </div>
               <div className="flex items-center gap-2">
-                <FiCalendar className="text-[#0B5D3B]" size={22} />
+                <FaCalendarWeek className="text-[#0B5D3B]" size={14} />
                 <span>{item?.date}</span>
               </div>
             </div>

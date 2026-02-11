@@ -22,7 +22,7 @@ export default function FeaturesCards({ featuresData }: any) {
                 )}
               </div>
               <h3 className="text-lg font-normal text-[#000000] mb-2">{item.title}</h3>
-              <p className="text-base text-[#000000] leading-relaxed figtree">{item.description}</p>
+              <p className="text-base text-[#000000] leading-relaxed figtree font-light">{item.description}</p>
             </div>
           ))}
         </div>

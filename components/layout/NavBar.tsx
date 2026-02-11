@@ -49,8 +49,8 @@ export default function Header({ headerResp = {} }: any) {
               width={270}
               height={60}
               priority
-              className={`object-none transition-all duration-300
-                ${scrolled ? 'w-32 sm:w-40 md:w-44' : 'w-35 sm:w-45 md:w-55 lg:w-67.5'}
+              className={`object-contain transition-all duration-300
+                ${scrolled ? 'w-32 sm:w-40 md:w-44' : 'w-30 sm:w-45 md:w-45 lg:w-60.5'}
               `}
             />
           </Link>
@@ -89,7 +89,7 @@ export default function Header({ headerResp = {} }: any) {
 
             <button
               onClick={() => setOpenModals(true)}
-              className="rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:bg-green-800 transition border border-white"
+              className="rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:text-[#00603A] hover:bg-white transition border border-white"
             >
               {cta?.label || ''}
             </button>
