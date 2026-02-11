@@ -43,19 +43,21 @@ body {
 .bg-color {
   background-color: #f7f2ed;
 }
+
 .bg-blog {
   background-color: #f9f6f1;
 }
+
 html {
   font-size: 14px;
 }
 
 .wrapper {
-  max-width: 90rem;
+  max-width: 95rem;
 }
 
 .inner-wrapper {
-  max-width: 76rem;
+  max-width: 80rem;
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
@@ -118,4 +120,5 @@ html {
 .custom-scrollbar {
   scrollbar-gutter: stable;
 }
+
 /* =============== Scroll bar css End ================ */
