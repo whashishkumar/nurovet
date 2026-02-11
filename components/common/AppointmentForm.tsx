@@ -52,8 +52,8 @@ const AppointmentForm = ({ className }: any) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter your name*"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+              placeholder="Enter your name"
+              className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
             />
             <input
               type="tel"
@@ -61,7 +61,7 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter your phone number*"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+              className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
               required
             />
             <input
@@ -70,7 +70,7 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.business_name}
               onChange={handleChange}
               placeholder="Business Name"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+              className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
             />
             <input
               type="url"
@@ -78,21 +78,21 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.website}
               onChange={handleChange}
               placeholder="Website URL"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+              className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
             />
             <input
               type="date"
               name="date"
               value={formData.date}
               onChange={handleChange}
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+              className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
             />
             <input
               type="time"
               name="time"
               value={formData.time}
               onChange={handleChange}
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+              className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
             />
             <div className="md:col-span-2">
               <input
@@ -100,8 +100,8 @@ const AppointmentForm = ({ className }: any) => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Address 1"
-                className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
+                placeholder="Address"
+                className="w-full rounded-xl px-5 py-5 text-sm outline-none bg-[#fff]"
               />
             </div>
             <div className="md:col-span-2 mt-6">
