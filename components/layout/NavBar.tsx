@@ -49,7 +49,7 @@ export default function Header({ headerResp = {} }: any) {
               width={270}
               height={60}
               priority
-              className={`object-contain transition-all duration-300
+              className={`object-none transition-all duration-300
                 ${scrolled ? 'w-32 sm:w-40 md:w-44' : 'w-35 sm:w-45 md:w-55 lg:w-67.5'}
               `}
             />
