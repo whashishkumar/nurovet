@@ -2,24 +2,49 @@ import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
 import { ToastProvider } from '@/context/ToastContext';
+import { Fredoka, Onest, Figtree } from 'next/font/google';
 
-const onesta = localFont({
-  src: '../public/fonts/Onest-Regular.ttf',
-  variable: '--font-onesta',
-  display: 'swap',
+
+// const onesta = localFont({
+//   src: '../public/fonts/Onest-Regular.ttf',
+//   variable: '--font-onesta',
+//   display: 'swap',
+// });
+
+
+
+
+// const fredoka = localFont({
+//   src: '../public/fonts/Fredoka-Regular.ttf',
+//   variable: '--font-fredoka',
+//   display: 'swap',
+// });
+
+// const figtree = localFont({
+//   src: '../public/fonts/Fredoka-Regular.ttf',
+//   variable: '--font-figtree',
+//   display: 'swap',
+// });
+
+
+const fredoka = Fredoka({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
 });
 
-const fredoka = localFont({
-  src: '../public/fonts/Fredoka-Regular.ttf',
-  variable: '--font-fredoka',
-  display: 'swap',
+const onesta = Onest({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
-const figtree = localFont({
-  src: '../public/fonts/Fredoka-Regular.ttf',
-  variable: '--font-figtree',
-  display: 'swap',
+
+
+const figtree = Figtree({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
+
+
 
 export const metadata: Metadata = {
   title: 'nuroVet',
@@ -34,7 +59,7 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
-  };
+};
 
 export default function RootLayout({
   children,
@@ -43,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fredoka.variable} ${onesta.variable} ${figtree.variable} antialiased`}>
+      <body className={`${fredoka} ${onesta} ${figtree} antialiased`}>
         <ToastProvider>{children}</ToastProvider>
       </body>
     </html>

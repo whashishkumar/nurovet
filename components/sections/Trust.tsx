@@ -6,9 +6,9 @@ export default function TrustAuthoritySection({ heroBanner }: any) {
   const { featuresLeft, featuresRight, heading, subHeading } = heroBanner || {};
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-color">
       <div className="inner-wrapper mx-auto px-6 lg:px-0">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="grid lg:grid-cols-[38%_60%] gap-[2%] items-start">
           <div>
             <h2 className="text-[1.875rem] font-semibold text-black fredoka">
               {heading}
@@ -17,7 +17,6 @@ export default function TrustAuthoritySection({ heroBanner }: any) {
               {subHeading}
             </p>
           </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
             {featuresLeft?.map((item: any, i: number) => {
