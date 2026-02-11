@@ -101,7 +101,7 @@ const VetGallery = ({ recentStories }: any) => {
         </div>
       </div>
       <div className="mt-12 flex justify-center">
-        <Button href={button?.href} label={button?.label} />
+        <Button href={button?.href} label={button?.label} className='px-14 py-4' />
       </div>
     </section>
   );

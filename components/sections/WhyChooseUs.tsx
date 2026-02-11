@@ -1,7 +1,84 @@
+'use client';
 import Image from 'next/image';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
+import { FaPlay } from "react-icons/fa";
+import { FaPauseCircle } from "react-icons/fa";
+
+
+
+
+import { useRef, useState } from 'react';
+
+const VideoSection = ({ data }: any) => {
+  const { floatingImage, background } = data || {};
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  return (
+    <section className="relative lg:pt-0 pt-10">
+      <div className="wrapper mx-auto relative">
+        <div className="relative rounded-3xl overflow-hidden">
+
+          {/* VIDEO */}
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
+          >
+            <source src={background?.src || '/video/video.mp4'} type="video/mp4" />
+          </video>
+
+          {/* OVERLAY */}
+          <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
+
+          {/* PLAY / PAUSE BUTTON */}
+          <button
+            onClick={togglePlay}
+            className="
+              absolute bottom-4
+               right-6 z-20
+              px-4 py-2 rounded-full
+              text-sm font-medium
+              shadow-lg
+              transition
+              h-20
+              w-20
+              border
+              border-white
+              text-white
+              text-center
+              flex
+              items-center
+              justify-center
+            "
+          >
+            {isPlaying ? <FaPauseCircle className='text-white' size={18} /> : <FaPlay className='text-white' size={18} />}
+          </button>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 
 const ArcFeaturesSection = ({ data }: any) => {
@@ -48,29 +125,28 @@ const ArcFeaturesSection = ({ data }: any) => {
   );
 };
 
-const VideoSection = ({ data }: any) => {
-  const { floatingImage, background } = data || {};
-  return (
-    <section className="relative lg:pt-0 pt-10">
-      <div className="wrapper mx-auto relative">
-        <div className="relative rounded-3xl overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
-          >
-            <source src={background.src || '/video/video.mp4'} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
-
-        </div>
-      </div>
-    </section>
-  );
-};
+// const VideoSection = ({ data }: any) => {
+//   const { floatingImage, background } = data || {};
+//   return (
+//     <section className="relative lg:pt-0 pt-10">
+//       <div className="wrapper mx-auto relative">
+//         <div className="relative rounded-3xl overflow-hidden">
+//           <video
+//             autoPlay
+//             muted
+//             loop
+//             playsInline
+//             className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
+//           >
+//             <source src={background.src || '/video/video.mp4'} type="video/mp4" />
+//             Your browser does not support the video tag.
+//           </video>
+//           <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 export default function WhyChooseUs({ chooseSection }: any) {
   const { arcFeatures, video, tag, heading, subHeading, tagicon } = chooseSection || {};
