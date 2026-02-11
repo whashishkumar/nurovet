@@ -42,9 +42,8 @@ const AppointmentForm = ({ className }: any) => {
     <section>
       <div className="max-w-5xl mx-auto text-black">
         <div
-          className={`${
-            className ? `${className} ` : 'bg-[#0B5D3B]'
-          } rounded-4xl p-6 sm:p-10 md:py-16`}
+          className={`${className ? `${className} ` : 'bg-[#0B5D3B]'
+            } rounded-4xl p-6 sm:p-10 md:py-16`}
         >
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <input
@@ -54,7 +53,7 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name*"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
             />
             <input
               type="tel"
@@ -62,7 +61,7 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter your phone number*"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
               required
             />
             <input
@@ -71,7 +70,7 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.business_name}
               onChange={handleChange}
               placeholder="Business Name"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
             />
             <input
               type="url"
@@ -79,21 +78,21 @@ const AppointmentForm = ({ className }: any) => {
               value={formData.website}
               onChange={handleChange}
               placeholder="Website URL"
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
             />
             <input
               type="date"
               name="date"
               value={formData.date}
               onChange={handleChange}
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
             />
             <input
               type="time"
               name="time"
               value={formData.time}
               onChange={handleChange}
-              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+              className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
             />
             <div className="md:col-span-2">
               <input
@@ -102,14 +101,14 @@ const AppointmentForm = ({ className }: any) => {
                 value={formData.address}
                 onChange={handleChange}
                 placeholder="Address 1"
-                className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#E4E4E5]"
+                className="w-full rounded-xl px-5 py-4 text-sm outline-none bg-[#fff]"
               />
             </div>
             <div className="md:col-span-2 mt-6">
               <button
                 type="submit"
                 className={`inline-flex
-                  items-center justify-center rounded-full bg-[#f9f6f1] px-8 py-4  text-lg  font-medium text-black  cursor-pointer  hover:bg-gray-100  transition`}
+                  items-center justify-center rounded-full bg-[#f9f6f1] px-8 py-4  text-base  font-normal text-black  cursor-pointer  hover:bg-gray-100  transition`}
               >
                 Submit Now
               </button>

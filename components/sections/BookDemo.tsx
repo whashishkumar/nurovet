@@ -32,7 +32,8 @@ export default function BookDemo({ bookDemoSection }: any) {
           cssClass="text-left"
           title={heading}
           subTitle={subHeading}
-          subHeadingCss="lg:width-[38rem]"
+          subHeadingCss="lg:max-w-[40rem]"
+
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-center">
           <div className="relative w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[490px]">
@@ -41,7 +42,7 @@ export default function BookDemo({ bookDemoSection }: any) {
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-fill rounded-2xl"
+                className="object-cover rounded-2xl"
                 priority
               />
             )}

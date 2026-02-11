@@ -20,7 +20,7 @@ const ArcFeaturesSection = ({ data }: any) => {
         <div className="relative flex justify-center">
           <div className="relative w-full flex flex-col items-center gap-10 md:block md:h-[350px] lg:h-[400px]">
             {/* Arc Line */}
-            <div className="hidden md:block absolute inset-0 rounded-t-full border-t border-gray-200" />
+            <div className="hidden md:block absolute inset-0 rounded-t-full border-t border-white" />
             {items?.map((item: any, index: any) => (
               <div
                 key={item.id}
@@ -50,20 +50,9 @@ const ArcFeaturesSection = ({ data }: any) => {
 
 const VideoSection = ({ data }: any) => {
   const { floatingImage, background } = data || {};
-
   return (
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
-        {/* <div className="absolute top-7 left-1/2 -translate-x-1/2  -translate-y-1/1 z-20 ">
-          <Image
-            src={floatingImage?.src}
-            alt={floatingImage.alt}
-            width={600}
-            height={140}
-            className="object-contain hidden md:block"
-            priority
-          />
-        </div>    */}
         <div className="relative rounded-3xl overflow-hidden">
           <video
             autoPlay
@@ -75,7 +64,7 @@ const VideoSection = ({ data }: any) => {
             <source src={background.src || '/video/video.mp4'} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-            <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
 
         </div>
       </div>
@@ -86,7 +75,7 @@ const VideoSection = ({ data }: any) => {
 export default function WhyChooseUs({ chooseSection }: any) {
   const { arcFeatures, video, tag, heading, subHeading, tagicon } = chooseSection || {};
 
-  
+
   return (
     <div className="bg-color relative">
       <div

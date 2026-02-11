@@ -32,10 +32,11 @@ export default function NewHeroBanner({ heroBanner }: any) {
 
 
   return (
-    <div className="mx-auto sm:px-6 p-4 sm:py-6">
+    <div className="mx-auto sm:px-6 p-4 sm:py-6 bg-color">
       <section className="relative overflow-hidden bg-[#00603A] min-h-auto lg:min-h-[90vh] flex items-center  rounded-2xl">
         <div
-          className="absolute hidden md:block right-0 top-0 h-full w-[60vw] bg-no-repeat bg-contain bg-right-bottom"
+          className="absolute hidden md:block right-0 top-0 h-full   aspect-[16/9]
+    max-w-[60vw] bg-no-repeat bg-contain bg-right-bottom"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
         <div className="relative z-10 inner-wrapper mx-auto px-6 lg:px-0 w-full  py-20">
@@ -47,7 +48,7 @@ export default function NewHeroBanner({ heroBanner }: any) {
               {features?.map((feature: string, index: number) => (
                 <li
                   key={index}
-                  className="font-semibold text-lg lg:text-xl flex items-center"
+                  className="font-semibold text-lg lg:text-[1.5rem] flex items-center"
                 >
                   <BsCheck2All className="w-6 h-6 mr-3 text-white" />
                   {feature}
@@ -55,25 +56,24 @@ export default function NewHeroBanner({ heroBanner }: any) {
               ))}
             </ul>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4 onesta">
               <Button
                 href={cta?.
                   href
                 }
                 label={cta?.label}
-                className="bg-white !text-black hover:bg-opacity-90 px-8 py-3 rounded-full font-normal transition-all hover:!text-white"
+                className="onesta bg-white !text-[#00603A]  px-5 py-3 rounded-full font-normal transition-all hover:!text-white font-normal text-base"
               />
               <Button
                 href={demobtn?.href}
                 label={demobtn?.label}
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:!text-black px-8 py-3 rounded-full font-normal transition-all"
+                className=" onesta border-white text-white hover:bg-white hover:!text-black px-5 py-3 rounded-full font-normal transition-all text-base
+"
               />
             </div>
-
           </div>
         </div>
-
       </section>
     </div>
   );
