@@ -85,7 +85,7 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
                             width={12}
                             height={10}
                             className="object-contain"
-                      
+
                           />
                         )}
                       </a>
@@ -103,6 +103,9 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
 
 export default function OurTestimonials({ sectionData, teamMembers, featuredVet }: any) {
   const { badge, heading } = sectionData.testimonialSection || {};
+
+  console.log(heading, "heading");
+
   return (
     <div
       className="
