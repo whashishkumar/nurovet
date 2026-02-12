@@ -104,8 +104,6 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
 export default function OurTestimonials({ sectionData, teamMembers, featuredVet }: any) {
   const { badge, heading } = sectionData.testimonialSection || {};
 
-  console.log(heading, "heading");
-
   return (
     <div
       className="

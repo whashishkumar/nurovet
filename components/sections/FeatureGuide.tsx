@@ -62,9 +62,6 @@ const appointmentData = [
   }
 ];
 
-
-
-
 type Section = {
   heading: string;
   items: string[];
@@ -88,51 +85,53 @@ const AppointmentInfo = ({ data }: { data: Item[] }) => {
             <div
               key={block.id}
               className={`
-                grid grid-cols-1 lg:grid-cols-2 gap-10 items-center
-                p-6 lg:p-10 rounded-2xl 
                 ${index === 0 ? "bg-white" : "bg-color"}
               `}
             >
-              <div
-                className={`
+              <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center
+                p-6 lg:p-10 rounded-2xl inner-wrapper m-auto'>
+                <div
+                  className={`
                   w-full 
                   ${isEven ? "lg:order-1 wrapper m-auto" : "lg:order-2 wrapper m-auto"}
                 `}
-              >
-                <div className="relative w-full h-[420px] lg:h-[460px]">
-                  <Image
-                    src={block?.imgSrc}
-                    alt={block.title}
-                    fill
-                    className="object-contain h-full w-full rounded-2xl"
-                  />
+                >
+                  <div className="relative w-full h-[420px] lg:h-[460px]">
+                    {block.imgSrc && (
+                      <Image
+                        src={block.imgSrc}
+                        alt={block.title}
+                        fill
+                        className="object-contain h-full w-full rounded-2xl"
+                      />
+                    )}
+                  </div>
                 </div>
 
-              </div>
+                {/* CONTENT */}
+                <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                  <h2 className="text-3xl font-semibold mb-2 fredoka">
+                    {block.title}
+                  </h2>
+                  <p className="text-black mb-4 leading-relaxed onesta">
+                    {block.description}
+                  </p>
+                  <div className="space-y-4">
+                    {block.sections.map((section, i) => (
+                      <div key={i}>
+                        <h3 className="text-xl font-medium mb-0 fredoka">
+                          {section.heading}
+                        </h3>
+                        <ul className="list-disc pl-5 text-black onesta">
+                          {section.items.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
 
-              {/* CONTENT */}
-              <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                <h2 className="text-3xl font-semibold mb-2 fredoka">
-                  {block.title}
-                </h2>
-                <p className="text-black mb-4 leading-relaxed onesta">
-                  {block.description}
-                </p>
-                <div className="space-y-4">
-                  {block.sections.map((section, i) => (
-                    <div key={i}>
-                      <h3 className="text-xl font-medium mb-0 fredoka">
-                        {section.heading}
-                      </h3>
-                      <ul className="list-disc pl-5 text-black onesta">
-                        {section.items.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
                 </div>
-
               </div>
 
             </div>
