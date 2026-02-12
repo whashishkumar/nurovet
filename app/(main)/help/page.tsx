@@ -22,7 +22,7 @@ export default async function page() {
       />
       <HelpCenterBanner bannerSection={bannerSection} />
       <FeatureGuide featuresData={features} />
-      <EmergencyContact emergency={emergency} />
+      {/* <EmergencyContact emergency={emergency} /> */}
       {/* <Reviews reviewsData={reviewsData} /> */}
     </>
   );
