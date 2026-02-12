@@ -91,8 +91,8 @@ export default function FeaturesNeuroVet({ featuresNuroVet }: any) {
   const { heading, subHeading, avatars, data } = featuresNuroVet || {};
 
   return (
-    <section className="bg-color py-12 ">
-      <div className="inner-wrapper mx-auto text-center">
+    <section className="bg-color ">
+      <div className="inner-wrapper mx-auto text-center  pt-12 md:pt-20">
         <div className="flex justify-center mb-6">
           <div className="flex space-x-1">
             {avatars?.map((src: any, index: number) => (
