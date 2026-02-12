@@ -87,16 +87,15 @@ export default function BlogDetail() {
   const FilterBlogs = async (search = '', tag = '', category = '') => {
     try {
       setIsLoading(true);
-      const filter = await BlogEndPoints.getfilteredPosts( search, tag, category);
+      const filter = await BlogEndPoints.getfilteredPosts(search, tag, category);
       // setCurrentArticle(filter);
-      console.log('Filtered blogs:', filter);
     } catch (error) {
       console.error('Failed to filter blogs:', error);
     } finally {
       setIsLoading(false);
     }
   };
-  
+
   useEffect(() => {
     getBlogs(slug);
     getBlogCommentList(slug);

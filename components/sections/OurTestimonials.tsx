@@ -5,14 +5,17 @@ import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
 import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 import { useState } from 'react';
+import { AboutPageEndPoints } from '@/lib/service/AboutUsPageEndPoints';
+
 
 
 const VetTeamSection = ({ teamMembers, featuredVetInfo }: any) => {
   const [featuredVetData, setFeaturedVetData] = useState(null)
-
   const fetchTestinomials = async (slug: any) => {
     const response = await HomePageEndPoints.testinomialsDetails(slug);
+    const resp = await AboutPageEndPoints.teamDetails(slug);
     setFeaturedVetData(response?.featuredVet)
+    setFeaturedVetData(resp?.featuredVet)
   }
 
   const featuredVet = featuredVetData || featuredVetInfo
@@ -120,24 +123,47 @@ export default function OurTestimonials({ sectionData, teamMembers, featuredVet 
     >
       <div className="inner-wrapper m-auto lg:py:16 py-12 lg:px-0 px-6 ">
         <div className="flex justify-between flex-wrap">
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-4 md:space-y-6 w-full">
             <div className="flex justify-start">
               <SectionBadge label={badge.label} icon={badge.icon} />
+
             </div>
-            <SectionHeading
-              cssClass="text-left "
-              title={heading.title}
-              subTitle={heading.subTitle}
-            />
+            {/* <div className='flex justify-center items-center'>
+              <SectionHeading
+                cssClass="text-left "
+                title={heading.title}
+                subTitle={heading.subTitle}
+                subHeadingCss={'lg:w-[50rem] '}
+              />
+              <div className='flex-end'>
+                <Button
+                  href={'/contact'}
+                  label={'Book a demo Now!'}
+                  variant={'outline'}
+                  className="text-black! border !border-[#00603A] "
+                />
+              </div>
+            </div> */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 ">
+              <SectionHeading
+                cssClass="text-left"
+                title={heading.title}
+                subTitle={heading.subTitle}
+                subHeadingCss="lg:w-[50rem]"
+              />
+
+              <div className="flex lg:justify-end">
+                <Button
+                  href="/contact"
+                  label="Book a demo Now!"
+                  variant="outline"
+                  className="!text-black border !border-[#00603A]"
+                />
+              </div>
+            </div>
+
           </div>
-          <div>
-            <Button
-              href={'/'}
-              label={'Book a demo Now!'}
-              variant={'outline'}
-              className="text-black! border !border-[#00603A] "
-            />
-          </div>
+
         </div>
         <VetTeamSection teamMembers={teamMembers} featuredVetInfo={featuredVet} />
       </div>

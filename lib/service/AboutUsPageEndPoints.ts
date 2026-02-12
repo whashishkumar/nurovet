@@ -41,4 +41,10 @@ export const AboutPageEndPoints = {
       cache: 'dynamic',
     });
   },
+    teamDetails: (slug: any) => {
+    return apiFetch({
+      endpoint: `testimonial/${slug}?page=true`,
+      cache: 'no-store',
+    });
+  },
 };
