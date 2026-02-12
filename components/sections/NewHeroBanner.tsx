@@ -49,8 +49,6 @@ export default function NewHeroBanner({ heroBanner }: any) {
   "
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
-
-
         <div className="relative z-10 inner-wrapper mx-auto px-6 lg:px-0 w-full  py-20">
           <div className="max-w-3xl text-white ">
             {title && <p className="mt-15 md:mt-25  text-white text-[2rem] lg:text-[3.125rem] font-bold leading-tight fredoka ">

@@ -151,7 +151,6 @@ const ArcFeaturesSection = ({ data }: any) => {
 export default function WhyChooseUs({ chooseSection }: any) {
   const { arcFeatures, video, tag, heading, subHeading, tagicon } = chooseSection || {};
 
-
   return (
     <div className="bg-color relative">
       <div
@@ -167,7 +166,7 @@ export default function WhyChooseUs({ chooseSection }: any) {
         <div className="flex justify-center">
           <SectionBadge label={tag} icon={tagicon} />
         </div>
-        <SectionHeading title={heading} subTitle={subHeading} />
+        <SectionHeading title={heading} subTitle={subHeading} cssClass={'text-center max-w-[50rem] m-auto'} />
         <ArcFeaturesSection data={arcFeatures} />
       </div>
       <VideoSection data={video} />
