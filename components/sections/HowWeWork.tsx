@@ -80,15 +80,25 @@ export default function HowWeWork({ ourWorkData }: any) {
           <SectionHeading cssClass="text-center" title={heading} subTitle={subHeading} />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-16 px-4 ">
-          <div className="bg-[#f6f2ed] flex justify-center items-center rounded-2xl p-6">
-            <Image
-              src={sideImage || '/images/howbgImg.png'}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-16 px-4 item-center ">
+          <div className="flex justify-center items-center ">
+            {/* <Image
+              src={sideImage}
               height={340}
               width={420}
               alt="How we help"
-              className="object-contain"
-            />
+              className="object-cover h-full w-full rounded-2xl"
+            /> */}
+            <div className="relative w-full h-[340px] lg:h-[450px] overflow-hidden rounded-2xl ">
+              <Image
+                src={sideImage}
+                alt="How we help"
+                fill
+                sizes="(max-width:768px) 100vw, 420px"
+                className="object-cover object-center h-full w-full rounded-2xl"
+              />
+            </div>
+
           </div>
           <ConsultationCards steps={work} />
         </div>
