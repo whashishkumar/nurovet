@@ -47,6 +47,7 @@ export default function BookDemo({ bookDemoSection }: any) {
               />
             )}
           </div>
+
           <AppointmentForm />
         </div>
       </div>

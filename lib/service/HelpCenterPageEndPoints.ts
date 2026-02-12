@@ -21,4 +21,19 @@ export const HelpCenterPageEndPoints = {
       cache: 'dynamic',
     });
   },
+
+  bannerSection: () => {
+    return apiFetch({
+      endpoint: 'page/help-center/banner',
+      cache: 'dynamic',
+    });
+  },
+
+  features: () => {
+    return apiFetch({
+      endpoint: 'page/help-center/features',
+      cache: 'dynamic',
+    });
+  }
+
 };
