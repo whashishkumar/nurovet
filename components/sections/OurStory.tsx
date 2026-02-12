@@ -43,11 +43,12 @@ export default function OurStory({ ourStoryData }: any) {
   return (
     <div className="bg-white">
       <div className="inner-wrapper m-auto lg:py-16 py-12 lg:px-0 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="flex justify-left">
+          <SectionBadge label={tag} icon={tagicon} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="flex justify-left">
-              <SectionBadge label={tag} icon={tagicon} />
-            </div>
+
             <SectionHeading
               cssClass={'text-left'}
               title={heading}
@@ -56,7 +57,6 @@ export default function OurStory({ ourStoryData }: any) {
             />
 
             <div className="max-w-4xl">
-              {/* FEATURES GRID */}
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                 {features?.map((item: any, index: any) => (
                   <li key={index} className="flex items-start gap-3 group">
@@ -69,7 +69,6 @@ export default function OurStory({ ourStoryData }: any) {
                   </li>
                 ))}
               </ul>
-              {/* CTA SECTION */}
               <div className="mt-12 flex flex-col lg:flex-row items-center gap-8">
                 <Button
                   href={cta.buttonHref}
@@ -78,7 +77,7 @@ export default function OurStory({ ourStoryData }: any) {
                   className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-6 py-4 rounded-full font-bold transition-all"
                 />
                 <div className="hidden lg:block w-px h-12 bg-gray-200" />
-                <a  href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
+                <a href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#A1A4B1] text-[#00603A] transition-all group-hover:bg-[#00603A] group-hover:border-[#00603A] group-hover:text-white shadow-md">
                     <FiPhoneCall size={22} />
                   </span>
@@ -87,7 +86,7 @@ export default function OurStory({ ourStoryData }: any) {
                       {cta.phoneLabel}
                     </p>
                     <a
-  
+
                       className="font-bold text-lg sm:text-2xl text-[#02000F] hover:text-[#00603A] transition-colors"
                     >
                       {cta.phone}
@@ -97,12 +96,12 @@ export default function OurStory({ ourStoryData }: any) {
               </div>
             </div>
           </div>
-          <div className="relative w-full aspect-[16/9]">
+          <div className="relative w-full aspect-[18/16]">
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover rounded-2xl w-full h-full"
               priority
             />
           </div>

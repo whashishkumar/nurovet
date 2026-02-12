@@ -60,8 +60,8 @@ const AiPowerPetCare = ({ aiSection }: any) => {
     //   </div>
     // </section>
     <section className="lg:py-16 lg:px-0 px-6">
-  <div
-    className="
+      <div
+        className="
       relative
       w-full
       min-h-100
@@ -71,66 +71,76 @@ const AiPowerPetCare = ({ aiSection }: any) => {
       bg-[length:300px_220px]
       bg-[position:right_0rem_bottom_1.5rem]
     "
-    style={
-      images?.bgImage?.src
-        ? ({ "--bg-img": `url(${images.bgImage.src})` } as React.CSSProperties)
-        : undefined
-    }
-  >
-    <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
-      
-      {/* LEFT */}
-      <div className="relative flex justify-start">
-        <Image
-          {...images.dashboard}
-          className="object-contain max-w-70 sm:max-w-90 md:max-w-120 lg:max-w-170 w-full"
-          priority
-          width={680}
-          height={420}
-        />
-      </div>
+        style={
+          images?.bgImage?.src
+            ? ({ "--bg-img": `url(${images.bgImage.src})` } as React.CSSProperties)
+            : undefined
+        }
+      >
+        <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
 
-      {/* RIGHT */}
-      <div className="text-left">
-        <h1 className="text-[2rem] lg:text-[2.4rem] font-medium text-[#1F2021] onesta">
-          {heading}
-        </h1>
-        <p className="mt-2 text-black text-lg figtree">
-          {subHeading}
-        </p>
-        <ul className="mt-6 space-y-3">
-          {features?.map((item: any, index: number) => (
-            <li key={index} className="flex items-center gap-3 justify-start">
+          {/* LEFT */}
+          <div className="relative flex justify-start">
+            {/* <Image
+              {...images.dashboard}
+              className="object-contain max-w-70 sm:max-w-90 md:max-w-120 lg:max-w-170 w-full"
+              priority
+              width={680}
+              height={420}
+            /> */}
+            <div className="relative w-full h-[240px] lg:h-[420px] overflow-hidden ">
               <Image
-                src={images?.icon?.src}
-                alt="paw icon"
-                width={20}
-                height={20}
-                className="object-contain"
+                {...images.dashboard}
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-contain object-center"
+                priority={false}
               />
-              <span className="text-black onesta font-medium text-xl">
-                {item}
-              </span>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </div>
 
-        <div className="mt-8 flex justify-start">
-          <Button
-            href={cta.href}
-            label={cta.label}
-            variant="primary"
-            showICon={true}
-          />
+          {/* RIGHT */}
+          <div className="text-left">
+            <h1 className="text-[2rem] lg:text-[2.4rem] font-medium text-[#1F2021] onesta">
+              {heading}
+            </h1>
+            <p className="mt-2 text-black text-lg figtree">
+              {subHeading}
+            </p>
+            <ul className="mt-6 space-y-3">
+              {features?.map((item: any, index: number) => (
+                <li key={index} className="flex items-center gap-3 justify-start">
+                  <Image
+                    src={images?.icon?.src}
+                    alt="paw icon"
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                  />
+                  <span className="text-black onesta font-medium text-xl">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex justify-start">
+              <Button
+                href={cta.href}
+                label={cta.label}
+                variant="primary"
+                showICon={true}
+              />
+            </div>
+          </div>
+
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
+    </section>
   );
 };
+
+
 
 const RemoteConsultaions = ({ remoteSection }: any) => {
   const { heading, subHeading, features, cta, images } = remoteSection || {};
@@ -201,10 +211,10 @@ export default function CustomizedDashboard({ customSection, aiSection, remoteSe
           />
 
           <div className="relative z-10 w-full flex flex-col lg:flex-row ">
-            <div className="w-full lg:w-[55%] flex items-end justify-start px-6 lg:px-12 ">
+            <div className="w-full lg:w-[50%] flex items-end justify-start px-6 lg:px-12 ">
               <Image
                 {...left.image}
-                className="object-contain hidden lg:block"
+                className="object-cover hidden lg:block w-full h-full"
                 width={450}
                 height={200}
               />
