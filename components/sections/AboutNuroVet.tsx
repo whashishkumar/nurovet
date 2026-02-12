@@ -37,7 +37,7 @@ import SectionBadge from '../common/SectionBadge';
 export default function Hero({ aboutSection }: any) {
   const { description, features, cta, images, tag, tagicon, heading } = aboutSection || {};
   return (
-    <section className="bg-color overflow-hidden">
+    <section className="bg-color overflow-hidden lg:py-16">
       <div
         className="
           absolute
