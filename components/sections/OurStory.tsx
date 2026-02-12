@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { FiPhoneCall } from 'react-icons/fi';
 import Button from '../ui/Button';
 import { BsCheck } from 'react-icons/bs';
+import Link from 'next/link';
+
 
 // const data = {
 //   badge: {
@@ -77,7 +79,7 @@ export default function OurStory({ ourStoryData }: any) {
                   className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-6 py-4 rounded-full font-bold transition-all"
                 />
                 <div className="hidden lg:block w-px h-12 bg-gray-200" />
-                <a href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
+                <Link href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#A1A4B1] text-[#00603A] transition-all group-hover:bg-[#00603A] group-hover:border-[#00603A] group-hover:text-white shadow-md">
                     <FiPhoneCall size={22} />
                   </span>
@@ -92,7 +94,7 @@ export default function OurStory({ ourStoryData }: any) {
                       {cta.phone}
                     </a>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
