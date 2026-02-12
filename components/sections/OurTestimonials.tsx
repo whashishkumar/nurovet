@@ -1,9 +1,25 @@
+'use client'
 import Image from 'next/image';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
+import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
+import { useState } from 'react';
+import { AboutPageEndPoints } from '@/lib/service/AboutUsPageEndPoints';
 
-const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
+
+
+const VetTeamSection = ({ teamMembers, featuredVetInfo }: any) => {
+  const [featuredVetData, setFeaturedVetData] = useState(null)
+  const fetchTestinomials = async (slug: any) => {
+    const response = await HomePageEndPoints.testinomialsDetails(slug);
+    const resp = await AboutPageEndPoints.teamDetails(slug);
+    setFeaturedVetData(response?.featuredVet)
+    setFeaturedVetData(resp?.featuredVet)
+  }
+
+  const featuredVet = featuredVetData || featuredVetInfo
+
   return (
     <section className="pt-14">
       <div className="wrapper mx-auto ">
@@ -16,7 +32,7 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
             >
               <div style={{ direction: 'ltr', marginLeft: '40px' }}>
                 {teamMembers?.map((member: any, index: any) => (
-                  <li key={index} className="flex items-center gap-4 mb-8 last:mb-0">
+                  <li key={index} className="flex items-center gap-4 mb-8 last:mb-0 cursor-pointer" onClick={() => fetchTestinomials(member?.slug)}>
                     <Image
                       src={member?.avatar}
                       alt={member?.name}
@@ -40,15 +56,6 @@ const VetTeamSection = ({ teamMembers, featuredVet }: any) => {
           <div className="md:col-span-8">
             <div className="bg-white rounded-[40px] p-8 md:p-10 shadow-lg border border-gray-50">
               <div className="flex flex-col md:flex-row gap-10 items-center">
-                {/* <div className="relative shrink-0 rounded-3xl border-10 border-[#F6F6F6] overflow-hidden w-full max-w-[300px] lg:max-w-[320px]">
-                  <Image
-                    src={featuredVet?.image}
-                    alt={featuredVet?.name || 'Featured Vet'}
-                    className="w-full h-[400px] object-cover"
-                    height={200}
-                    width={200}
-                  />
-                </div> */}
                 <div className="relative w-full max-w-[360px] aspect-[3/4] rounded-3xl border-[10px] border-[#F6F6F6] overflow-hidden">
                   <Image
                     src={featuredVet?.image}
@@ -116,26 +123,49 @@ export default function OurTestimonials({ sectionData, teamMembers, featuredVet 
     >
       <div className="inner-wrapper m-auto lg:py:16 py-12 lg:px-0 px-6 ">
         <div className="flex justify-between flex-wrap">
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-4 md:space-y-6 w-full">
             <div className="flex justify-start">
               <SectionBadge label={badge.label} icon={badge.icon} />
+
             </div>
-            <SectionHeading
-              cssClass="text-left "
-              title={heading.title}
-              subTitle={heading.subTitle}
-            />
+            {/* <div className='flex justify-center items-center'>
+              <SectionHeading
+                cssClass="text-left "
+                title={heading.title}
+                subTitle={heading.subTitle}
+                subHeadingCss={'lg:w-[50rem] '}
+              />
+              <div className='flex-end'>
+                <Button
+                  href={'/contact'}
+                  label={'Book a demo Now!'}
+                  variant={'outline'}
+                  className="text-black! border !border-[#00603A] "
+                />
+              </div>
+            </div> */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 ">
+              <SectionHeading
+                cssClass="text-left"
+                title={heading.title}
+                subTitle={heading.subTitle}
+                subHeadingCss="lg:w-[50rem]"
+              />
+
+              <div className="flex lg:justify-end">
+                <Button
+                  href="/contact"
+                  label="Book a demo Now!"
+                  variant="outline"
+                  className="!text-black border !border-[#00603A]"
+                />
+              </div>
+            </div>
+
           </div>
-          <div>
-            <Button
-              href={''}
-              label={'Book a demo Now!'}
-              variant={'outline'}
-              className="text-black! "
-            />
-          </div>
+
         </div>
-        <VetTeamSection teamMembers={teamMembers} featuredVet={featuredVet} />
+        <VetTeamSection teamMembers={teamMembers} featuredVetInfo={featuredVet} />
       </div>
     </div>
   );

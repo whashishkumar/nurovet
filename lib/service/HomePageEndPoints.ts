@@ -98,4 +98,11 @@ export const HomePageEndPoints = {
   requestDemoForm: (data: any) => {
     return apiPost('contact-form', data);
   },
+
+  testinomialsDetails: (slug: any) => {
+    return apiFetch({
+      endpoint: `testimonial/${slug}`,
+      cache: 'no-store',
+    });
+  },
 };

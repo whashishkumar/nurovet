@@ -30,7 +30,7 @@ export default async function Home() {
   const chooseSection = await HomePageEndPoints.chooseSection();
   const recentStories = await HomePageEndPoints.gallerySection();
   const testimonialsData = await HomePageEndPoints.testimonialSection();
-  const { teamMembers, featuredVet, heading, subHeadingmtag, tagicon, tag } =
+  const { teamMembers, featuredVet, heading, subHeading, tagicon, tag } =
     testimonialsData || {};
   const sectionData = {
     testimonialSection: {
@@ -40,13 +40,15 @@ export default async function Home() {
       },
       heading: {
         title: heading,
-        subTitle: subHeadingmtag,
+        subTitle: subHeading,
       },
     },
   };
   const faqSection = await HomePageEndPoints.faqSection();
   const bookDemoSection = await HomePageEndPoints.bookDemoSection();
   const article = await HomePageEndPoints.articlesSection();
+
+
   return (
     <>
       <Navbar headerResp={headerResp} />

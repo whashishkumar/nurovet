@@ -18,7 +18,7 @@ export default async function page() {
         className="bg-color"
       />
       <QuickAnswers faqSection={faq} />
-      <Reviews reviewsData={reviewsData} />
+      {/* <Reviews reviewsData={reviewsData} /> */}
     </div>
   );
 }

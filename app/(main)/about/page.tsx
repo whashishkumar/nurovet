@@ -36,9 +36,9 @@ export default async function page() {
         featuredVet={featuredVet}
         sectionData={sectionData}
       />
-      <OurHitory ourHistoryData={ourHistoryData} />
+      {/* <OurHitory ourHistoryData={ourHistoryData} /> */}
       <HowWeWork ourWorkData={ourWorkData} />
-      <Reviews reviewsData={reviewsData} />
+      {/* <Reviews reviewsData={reviewsData} /> */}
     </>
   );
 }
