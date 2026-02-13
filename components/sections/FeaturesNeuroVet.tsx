@@ -92,7 +92,7 @@ export default function FeaturesNeuroVet({ featuresNuroVet }: any) {
 
   return (
     <section className="bg-color ">
-      <div className="inner-wrapper mx-auto text-center  pt-12 md:pt-20">
+      <div className="inner-wrapper mx-auto text-center  pt-12 md:pt-20 lg:pt-45 px-6 lg:px-0">
         <div className="flex justify-center mb-6">
           <div className="flex space-x-1">
             {avatars?.map((src: any, index: number) => (
