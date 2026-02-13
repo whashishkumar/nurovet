@@ -3,11 +3,8 @@ import Image from 'next/image';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
-import { FaPlay } from "react-icons/fa";
-import { FaPauseCircle } from "react-icons/fa";
-
-
-
+import { FaPlay } from 'react-icons/fa';
+import { FaPauseCircle } from 'react-icons/fa';
 
 import { useRef, useState } from 'react';
 
@@ -33,24 +30,36 @@ const VideoSection = ({ data }: any) => {
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
         <div className="relative rounded-3xl overflow-hidden">
-
           {/* VIDEO */}
-          <video
+          {/* <video
             ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover"
+            className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-contain"
           >
             <source src={background?.src || '/video/video.mp4'} type="video/mp4" />
-          </video>
+          </video> */}
+          <div className="relative w-full h-[260px] sm:h-[420px] lg:h-[540px] overflow-hidden rounded-2xl">
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full h-full object-contain "
+            >
+              <source src={background?.src || '/video/video.mp4'} type="video/mp4" />
+            </video>
+          </div>
 
           {/* OVERLAY */}
-          <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
 
           {/* PLAY / PAUSE BUTTON */}
-          <button
+          {/* <button
             onClick={togglePlay}
             className="
               absolute bottom-4
@@ -70,16 +79,17 @@ const VideoSection = ({ data }: any) => {
               justify-center
             "
           >
-            {isPlaying ? <FaPauseCircle className='text-white' size={18} /> : <FaPlay className='text-white' size={18} />}
-          </button>
-
+            {isPlaying ? (
+              <FaPauseCircle className="text-white" size={18} />
+            ) : (
+              <FaPlay className="text-white" size={18} />
+            )}
+          </button> */}
         </div>
       </div>
     </section>
   );
 };
-
-
 
 const ArcFeaturesSection = ({ data }: any) => {
   const { cta, items } = data || {};
@@ -166,7 +176,11 @@ export default function WhyChooseUs({ chooseSection }: any) {
         <div className="flex justify-center">
           <SectionBadge label={tag} icon={tagicon} />
         </div>
-        <SectionHeading title={heading} subTitle={subHeading} cssClass={'text-center max-w-[50rem] m-auto'} />
+        <SectionHeading
+          title={heading}
+          subTitle={subHeading}
+          cssClass={'text-center max-w-[50rem] m-auto'}
+        />
         <ArcFeaturesSection data={arcFeatures} />
       </div>
       <VideoSection data={video} />

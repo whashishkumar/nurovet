@@ -30,8 +30,7 @@ export default async function Home() {
   const chooseSection = await HomePageEndPoints.chooseSection();
   const recentStories = await HomePageEndPoints.gallerySection();
   const testimonialsData = await HomePageEndPoints.testimonialSection();
-  const { teamMembers, featuredVet, heading, subHeading, tagicon, tag } =
-    testimonialsData || {};
+  const { teamMembers, featuredVet, heading, subHeading, tagicon, tag } = testimonialsData || {};
   const sectionData = {
     testimonialSection: {
       badge: {
@@ -48,7 +47,6 @@ export default async function Home() {
   const bookDemoSection = await HomePageEndPoints.bookDemoSection();
   const article = await HomePageEndPoints.articlesSection();
 
-
   return (
     <>
       <Navbar headerResp={headerResp} />
@@ -64,11 +62,11 @@ export default async function Home() {
       <MobilePlatform mobileSection={mobileSection} />
       <WhyChooseUs chooseSection={chooseSection} />
       <RecentStories recentStories={recentStories} />
-      <OurTestimonials
+      {/* <OurTestimonials
         featuredVet={featuredVet}
         teamMembers={teamMembers}
         sectionData={sectionData}
-      />
+      /> */}
       <QuickAnswers faqSection={faqSection} />
       <BookDemo bookDemoSection={bookDemoSection} />
       <Articles article={article} />

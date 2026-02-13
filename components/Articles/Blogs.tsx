@@ -21,7 +21,7 @@ export default function Blogs({ blogs }: any) {
     setFilters({ search, tag, category });
     try {
       setIsLoading(true);
-      const blogs = await BlogEndPoints.getfilteredPosts( search, tag, category);
+      const blogs = await BlogEndPoints.getfilteredPosts(search, tag, category);
       setCurrentArticle(blogs?.data);
       setIsLoading(false);
     } catch (error) {
@@ -34,9 +34,10 @@ export default function Blogs({ blogs }: any) {
     setPage(page);
     try {
       setIsLoading(true);
-      const blogs = (filters.search || filters.tag || filters.category)
-        ? await BlogEndPoints.getfilteredPosts( filters?.search, filters?.tag, filters?.category)
-        : await BlogEndPoints.blogList(page);
+      const blogs =
+        filters.search || filters.tag || filters.category
+          ? await BlogEndPoints.getfilteredPosts(filters?.search, filters?.tag, filters?.category)
+          : await BlogEndPoints.blogList(page);
       setCurrentArticle(blogs?.data);
       setIsLoading(false);
     } catch (error) {
@@ -52,17 +53,17 @@ export default function Blogs({ blogs }: any) {
     // if (tag) {
     //   FilterBlogs('', tag, '');
     // } else {
-        const getBlogs = async () => {
-            try {
-              setIsLoading(true);
-              const blogs = await BlogEndPoints.blogList(page);
-              setCurrentArticle(blogs?.data);
-              setIsLoading(false);
-            } catch (error) {
-              console.error(error);
-            }
-        };
-        getBlogs();
+    const getBlogs = async () => {
+      try {
+        setIsLoading(true);
+        const blogs = await BlogEndPoints.blogList(page);
+        setCurrentArticle(blogs?.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getBlogs();
     // }
   }, []);
 
@@ -74,7 +75,7 @@ export default function Blogs({ blogs }: any) {
     <div className="bg-blog min-h-screen">
       <div className="wrapper m-auto py-16 px-6 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-[70%_28%] gap-[2%] min-h-[80vh]">
-          <div className="space-y-10 overflow-y-auto h-fit pr-2">
+          <div className="space-y-10 overflow-y-auto h-fit pr-2 grid  grid-cols-1 md:grid-cols-3 gap-8">
             {articlesData?.map((article: any, index: any) => (
               <ArticleCard key={index} article={article} />
             ))}

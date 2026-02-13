@@ -4,15 +4,11 @@ import localFont from 'next/font/local';
 import { ToastProvider } from '@/context/ToastContext';
 import { Fredoka, Onest, Figtree } from 'next/font/google';
 
-
 // const onesta = localFont({
 //   src: '../public/fonts/Onest-Regular.ttf',
 //   variable: '--font-onesta',
 //   display: 'swap',
 // });
-
-
-
 
 // const fredoka = localFont({
 //   src: '../public/fonts/Fredoka-Regular.ttf',
@@ -26,7 +22,6 @@ import { Fredoka, Onest, Figtree } from 'next/font/google';
 //   display: 'swap',
 // });
 
-
 const fredoka = Fredoka({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -37,23 +32,18 @@ const onesta = Onest({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
-
-
 const figtree = Figtree({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
 });
 
-
-
 export const metadata: Metadata = {
-  title: 'nuroVet',
+  title: 'NuroVet',
   description:
     'Nurovet is an AI-driven veterinary intelligence platform designed to augment—not replace—clinical judgment. It functions as a digital specialist, continuously analyzing data, recognizing patterns, and delivering insights that improve diagnostic accuracy, workflow efficiency, and patient outcomes.',
-
   icons: {
-    icon: "/logo/logoh.svg",
-    shortcut: "/logo/logoh.svg"
+    icon: '/icons/Nurovet.png',
+    shortcut: '/icons/Nurovet.png',
   },
   robots: {
     index: false,
