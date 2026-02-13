@@ -31,11 +31,11 @@ export default async function page() {
     <>
       <InnerBanner bannerInfo={heroBannerData} />
       <OurStory ourStoryData={ourStoryData} />
-      <OurTestimonials
+      {/* <OurTestimonials
         teamMembers={teamMembers}
         featuredVet={featuredVet}
-        sectionData={sectionData}
-      />
+        sectionData={sectionData}  
+      /> */}
       {/* <OurHitory ourHistoryData={ourHistoryData} /> */}
       <HowWeWork ourWorkData={ourWorkData} />
       {/* <Reviews reviewsData={reviewsData} /> */}
