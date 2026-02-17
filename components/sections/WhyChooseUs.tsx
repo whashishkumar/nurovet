@@ -21,18 +21,19 @@ const VideoSection = ({ data }: any) => {
 
   return (
     <section className="relative lg:pt-0 py-10">
-      <div className="wrapper mx-auto relative">
-        <div className="relative rounded-3xl overflow-hidden">
-          <div className="relative w-full h-[260px] sm:h-[420px] lg:h-[540px] overflow-hidden rounded-2xl">
+      <div className="wrapper m-auto relative">
+        {/* <div className="relative rounded-3xl overflow-hidden"> */}
+        {background?.src && (
+          <div className="relative w-full h-[260px] sm:h-[420px] lg:h-[540px] overflow-hidden rounded-2xl shadow-sm ">
             <video
               ref={videoRef}
               muted
               loop
               playsInline
               controls
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain "
             >
-              <source src={background?.src || '/video/video.mp4'} type="video/mp4" />
+              <source src={background?.src} type="video/mp4" />
             </video>
 
             {/* Video cover image - click to play */}
@@ -56,8 +57,9 @@ const VideoSection = ({ data }: any) => {
               </div>
             )}
           </div>
-        </div>
+        )}
       </div>
+      {/* </div> */}
     </section>
   );
 };

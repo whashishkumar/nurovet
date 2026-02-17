@@ -42,8 +42,9 @@ const AppointmentForm = ({ className }: any) => {
     <section>
       <div className="max-w-5xl mx-auto text-black">
         <div
-          className={`${className ? `${className} ` : 'bg-[#0B5D3B]'
-            } rounded-4xl p-6 sm:p-10 md:py-16`}
+          className={`${
+            className ? `${className} ` : 'bg-[#0B5D3B]'
+          } rounded-4xl p-6 sm:p-10 md:py-16`}
         >
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <input
@@ -108,7 +109,7 @@ const AppointmentForm = ({ className }: any) => {
               <button
                 type="submit"
                 className={`inline-flex
-                  items-center justify-center rounded-full bg-[#f9f6f1] px-8 py-4  text-base  font-normal text-black  cursor-pointer  hover:bg-gray-100  transition`}
+                  items-center justify-center rounded-full bg-[#fff] px-8 py-4  text-base  font-normal text-black  cursor-pointer  hover:bg-gray-100  transition`}
               >
                 Submit Now
               </button>
