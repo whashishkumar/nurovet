@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { IoMdArrowBack } from 'react-icons/io';
+import { IoMdArrowForward } from 'react-icons/io';
 
 interface PaginationConfig {
   totalPages: number;
@@ -21,12 +23,15 @@ export default function Pagination({ config, currentPage, onChange }: Pagination
 
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages) return;
+    window.scrollTo({
+      top: 10,
+      behavior: 'smooth',
+    });
     onChange?.(page);
   };
 
   const getVisibleRange = () => {
     const half = Math.floor(maxVisiblePages / 2);
-
     let start = Math.max(1, currentPage - half);
     let end = Math.min(totalPages, start + maxVisiblePages - 1);
 
@@ -56,7 +61,7 @@ export default function Pagination({ config, currentPage, onChange }: Pagination
           }
         `}
       >
-        ←
+        <IoMdArrowBack size={16} />
       </button>
 
       {/* First + left dots */}
@@ -125,7 +130,7 @@ export default function Pagination({ config, currentPage, onChange }: Pagination
           }
         `}
       >
-        →
+        <IoMdArrowForward size={16} />
       </button>
     </div>
   );

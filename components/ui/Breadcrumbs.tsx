@@ -48,10 +48,12 @@ const Breadcrumbs = ({
 
           return (
             <React.Fragment key={index}>
-              <li className={`text-xl font-semibold ${isLast ? activeClasses : listClasses}`}>
+              <li
+                className={`text-xl font-semibold hidden md:block ${isLast ? activeClasses : listClasses}`}
+              >
                 {isLast ? <span>{label}</span> : <Link href={href}>{label}</Link>}
               </li>
-              {!isLast && <li className="text-gray-400">{separator}</li>}
+              {!isLast && <li className="text-gray-400 hidden md:block">{separator}</li>}
             </React.Fragment>
           );
         })}

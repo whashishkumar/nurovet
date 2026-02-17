@@ -126,7 +126,7 @@ const Footer = ({ footerResp }: any) => {
         {/* DIVIDER */}
         <div className="my-10 h-px bg-white/20" />
         {/* BOTTOM */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white text-center md:text-left">
           <p className="text-base onesta">{copyright}</p>
 
           <div className="flex items-center gap-4 text-base onesta">
@@ -136,15 +136,15 @@ const Footer = ({ footerResp }: any) => {
                 target="__blank"
                 key={index}
                 href={item.href}
-                className="w-11.5 h-11.5 flex items-center justify-center rounded-full border border-white/40  hover:text-[#0B5D3B] transition"
+                className=" h-8 w-8 md:w-11.5 md:h-11.5 flex items-center justify-center rounded-full border border-white/40  hover:text-[#0B5D3B] transition"
               >
                 {item?.icon && (
                   <Image
                     src={item?.icon}
                     alt="icon"
-                    height={13}
-                    width={13}
-                    className="object-contain"
+                    height={12}
+                    width={12}
+                    className="object-contain "
                   />
                 )}
               </Link>

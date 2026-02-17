@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { IoMdArrowBack } from 'react-icons/io';
 
 type Blog = {
   author: string;
@@ -29,10 +30,11 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
           href="/blog"
           className="inline-flex items-center gap-2 text-[#0a5e3b] hover:text-[#0a5e3b] font-medium transition"
         >
-          ← Back to Blog
+          <IoMdArrowBack size={18} />
+          Back to Blog
         </a>
       </div>
-      <div className="relative h-[420px] w-full overflow-hidden rounded-3xl">
+      <div className="relative h-[320px] w-full overflow-hidden rounded-[15px]">
         {data?.image && (
           <Image
             src={data?.image}
@@ -53,7 +55,7 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
       <h1 className="mt-4 text-4xl font-bold text-black leading-tight">{data?.title}</h1>
       <div className="mt-8 space-y-4  leading-relaxed  ">
         <div
-          className="  blog-content
+          className=" blog-content
   prose 
   prose-lg 
   max-w-none
@@ -62,6 +64,7 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
   prose-h4:text-black
   prose-h4:font-semibold
   prose-ul:list-disc
+  prose-strong:py-2
   prose-li:ml-5
   prose-blockquote:border-l-4
   prose-blockquote:border-gray-300

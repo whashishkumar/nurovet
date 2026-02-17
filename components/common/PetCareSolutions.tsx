@@ -63,7 +63,7 @@ const ExplorePetcareBanner = () => {
               </h2>
             )}
             {/* CENTER IMAGE */}
-            <div className="absolute lg:-bottom-6.5 md:-bottom-10 translate-x-full hidden md:block">
+            <div className="absolute lg:-bottom-6 md:-bottom-10 translate-x-full hidden md:block">
               <div className="relative w-[190px] md:w-[280px] h-[140px] md:h-[100px]">
                 {image?.src && (
                   <Image
