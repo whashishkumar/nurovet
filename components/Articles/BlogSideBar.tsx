@@ -115,7 +115,7 @@ const TagsSection = ({ tags, onFilter }: any) => {
           <span
             key={index}
             onClick={() => handleTagPosts(tag?.slug)}
-            className="px-4 py-2 rounded-xl border border-gray-200 bg-white text-sm font-medium text-gray-800 hover:border-[#0a5e3b]/90 hover:text-white hover:bg-[#0a5e3b]/90 cursor-pointer"
+            className="px-4 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-800 hover:border-[#0a5e3b]/90 hover:text-white hover:bg-[#0a5e3b]/90 cursor-pointer"
           >
             {tag.name}
           </span>

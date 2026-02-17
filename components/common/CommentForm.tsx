@@ -13,9 +13,9 @@ type CommentFormState = {
   content: string;
 };
 
-export default function CommentForm({getBlogCommentList}:any) {
+export default function CommentForm({ getBlogCommentList }: any) {
   const { showToast } = useToast();
-    const { slug } = useParams();
+  const { slug } = useParams();
   const [form, setForm] = useState<CommentFormState>({
     name: '',
     email: '',
@@ -37,7 +37,7 @@ export default function CommentForm({getBlogCommentList}:any) {
     if (typeof slug !== 'string') {
       return;
     }
-    const resp = await BlogEndPoints.comments(slug,form);
+    const resp = await BlogEndPoints.comments(slug, form);
     showToast(resp.message || 'Form submitted successfully!');
     setForm({
       name: '',
@@ -46,10 +46,13 @@ export default function CommentForm({getBlogCommentList}:any) {
       content: '',
     });
     getBlogCommentList(slug);
-  };  
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[40px] bg-white p-8 md:p-16 max-w-4xl mx-auto overflow-hidden">
+    <form
+      onSubmit={handleSubmit}
+      className="rounded-[15px] bg-white p-8 md:p-16 max-w-4xl m-auto overflow-hidden"
+    >
       <div className="mb-10">
         <div className="flex items-center gap-3">
           <TiArrowBack className="text-[#0B5D3B] text-4xl" />

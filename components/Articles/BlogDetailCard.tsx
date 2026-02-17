@@ -19,7 +19,9 @@ type BlogDetailCardProps = {
 
 export default function BlogDetailCard({ data }: BlogDetailCardProps) {
   const content = data?.content;
-  
+
+  console.log(content, 'content');
+
   return (
     <article className="bg-color mx-auto px-6 lg:px-0">
       <div className="pb-8">
@@ -31,7 +33,15 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
         </a>
       </div>
       <div className="relative h-[420px] w-full overflow-hidden rounded-3xl">
-      {data?.image &&  <Image src={data?.image} alt={data?.title || 'article'} fill className="object-cover" priority />}
+        {data?.image && (
+          <Image
+            src={data?.image}
+            alt={data?.title || 'article'}
+            fill
+            className="object-cover"
+            priority
+          />
+        )}
       </div>
       <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-500">
         <span>By {data?.author}</span>
@@ -41,9 +51,9 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
         <span>{data?.comments} Comments</span>
       </div>
       <h1 className="mt-4 text-4xl font-bold text-black leading-tight">{data?.title}</h1>
-      <div className="mt-8 space-y-4  leading-relaxed ">
-            <div
-          className="
+      <div className="mt-8 space-y-4  leading-relaxed  ">
+        <div
+          className="  blog-content
   prose 
   prose-lg 
   max-w-none
@@ -63,9 +73,8 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
   prose-img:rounded-xl
   prose-img:shadow-md
 "
-
-        dangerouslySetInnerHTML={{ __html: content ||  ''}}
-      />
+          dangerouslySetInnerHTML={{ __html: content || '' }}
+        />
       </div>
     </article>
   );

@@ -55,7 +55,6 @@ const Footer = ({ footerResp }: any) => {
               />
             )}
             <p className="mt-6 text-base text-white leading-relaxed onesta">{brand?.description}</p>
-
           </div>
 
           {/* QUICK LINKS */}
@@ -95,7 +94,6 @@ const Footer = ({ footerResp }: any) => {
                 <a href={`mailto:${brand?.email}`} className=" hover:underline">
                   {brand?.email}
                 </a>
-
               </li>
               <li className="flex items-center gap-3">
                 <p className="border border-white rounded-full p-2">
@@ -104,7 +102,6 @@ const Footer = ({ footerResp }: any) => {
                 <a href={`tel:${brand?.phone}`} className="hover:underline">
                   {brand?.phone}
                 </a>
-
               </li>
               <li className="flex items-center gap-3">
                 <p className="border border-white rounded-full p-2">
@@ -113,7 +110,7 @@ const Footer = ({ footerResp }: any) => {
                 {/* {brand?.address} */}
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                    brand?.address || ""
+                    brand?.address || ''
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -121,7 +118,6 @@ const Footer = ({ footerResp }: any) => {
                 >
                   {brand?.address}
                 </a>
-
               </li>
             </ul>
           </div>
@@ -140,14 +136,14 @@ const Footer = ({ footerResp }: any) => {
                 target="__blank"
                 key={index}
                 href={item.href}
-                className="w-8 h-8 flex items-center justify-center rounded-full border border-white/40  hover:text-[#0B5D3B] transition"
+                className="w-11.5 h-11.5 flex items-center justify-center rounded-full border border-white/40  hover:text-[#0B5D3B] transition"
               >
                 {item?.icon && (
                   <Image
                     src={item?.icon}
                     alt="icon"
-                    height={50}
-                    width={50}
+                    height={40}
+                    width={40}
                     className="object-contain"
                   />
                 )}

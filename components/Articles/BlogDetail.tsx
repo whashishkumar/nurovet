@@ -18,9 +18,8 @@ const BlogComments = ({ commentsData }: any) => {
   const { total, items } = commentsData || {};
 
   return (
-    <section className="max-w-4l mx-auto  px-4">
-      <h2 className="text-2xl font-bold mb-8 fredoka">{total} Comments</h2>
-
+    <section className="max-w-4l m-auto  px-4 lg:px-0">
+      <h2 className="text-2xl font-bold  fredoka mb-6">{total} Comments</h2>
       <div className="space-y-6">
         {items?.map((item: any) => (
           <div
@@ -60,7 +59,6 @@ export default function BlogDetail() {
   const { slug } = useParams();
   const { data }: any = article || {};
   const [comments, setComments] = useState([]);
-
 
   const getBlogs = async (slug: any) => {
     try {
@@ -111,7 +109,7 @@ export default function BlogDetail() {
         <div className="grid grid-cols-1 md:grid-cols-[70%_28%] gap-[2%] min-h-[80vh]">
           <div className="space-y-10  h-fit pr-2">
             <BlogDetailCard data={data} />
-            <div className="max-w-4xl justify-center mx-auto py-12">
+            <div className="max-w-4xl justify-center m-auto py-8">
               <BlogComments commentsData={comments} />
             </div>
             <div className="max-w-4xl justify-center mx-auto py-1">
@@ -119,8 +117,7 @@ export default function BlogDetail() {
             </div>
           </div>
           <div className="hidden md:block sticky top-24 h-fit">
-            <BlogSideBar onFilter={FilterBlogs}
-            />
+            <BlogSideBar onFilter={FilterBlogs} />
           </div>
         </div>
       </div>
