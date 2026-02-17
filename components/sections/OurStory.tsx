@@ -7,7 +7,6 @@ import Button from '../ui/Button';
 import { BsCheck } from 'react-icons/bs';
 import Link from 'next/link';
 
-
 // const data = {
 //   badge: {
 //     label: 'Our Story',
@@ -41,7 +40,8 @@ import Link from 'next/link';
 // };
 
 export default function OurStory({ ourStoryData }: any) {
-  const { heading, features, cta, image, tag, tagicon, subHeading, description } = ourStoryData || {};
+  const { heading, features, cta, image, tag, tagicon, subHeading, description } =
+    ourStoryData || {};
   return (
     <div className="bg-white">
       <div className="inner-wrapper m-auto lg:py-16 py-12 lg:px-0 px-6">
@@ -50,7 +50,6 @@ export default function OurStory({ ourStoryData }: any) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-
             <SectionHeading
               cssClass={'text-left'}
               title={heading}
@@ -88,8 +87,8 @@ export default function OurStory({ ourStoryData }: any) {
                   variant="primary"
                   className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-6 py-4 rounded-full font-bold transition-all"
                 />
-                <div className="hidden lg:block w-px h-12 bg-gray-200" />
-                <Link href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
+                {/* <div className="hidden lg:block w-px h-12 bg-gray-200" /> */}
+                {/* <Link href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">
                   <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#A1A4B1] text-[#00603A] transition-all group-hover:bg-[#00603A] group-hover:border-[#00603A] group-hover:text-white shadow-md">
                     <FiPhoneCall size={22} />
                   </span>
@@ -104,7 +103,18 @@ export default function OurStory({ ourStoryData }: any) {
                       {cta.phone}
                     </a>
                   </div>
-                </Link>
+                </Link> */}
+                <a href={`tel:${cta.phone}`} className=" flex items-center gap-4">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
+                    <FiPhoneCall size={20} />
+                  </span>
+                  <div>
+                    <p className="font-semibold fredoka text-lg sm:text-xl  text-[#02000F] leading-tight">
+                      {cta?.phoneLabel}
+                    </p>
+                    <p className="font-normal text-[#02000F] text-base sm:text-lg">{cta?.phone}</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

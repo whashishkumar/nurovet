@@ -34,9 +34,10 @@ export default function Header({ headerResp = {} }: any) {
   return (
     <header
       className={`w-full z-50 transition-all duration-300 
-        ${scrolled
-          ? 'fixed top-0 bg-[#00603A] py-4 shadow-lg'
-          : 'absolute top-5 lg:top-10 bg-transparent py-6 px-4'
+        ${
+          scrolled
+            ? 'fixed top-0 bg-[#00603A] py-4 shadow-lg'
+            : 'absolute top-5 lg:top-10 bg-transparent py-6 px-4'
         }
       `}
     >
@@ -46,10 +47,10 @@ export default function Header({ headerResp = {} }: any) {
             <Image
               src={logo?.src || '/logo/logoh.svg'}
               alt={logo?.alt || 'Nuro Vet Logo'}
-              width={270}
-              height={60}
+              width={263}
+              height={61}
               priority
-              className={`object-contain transition-all duration-300
+              className={`object-cover transition-all duration-300
                 ${scrolled ? 'w-32 sm:w-40 md:w-44' : 'w-30 sm:w-45 md:w-45 lg:w-60.5'}
               `}
             />
@@ -62,7 +63,7 @@ export default function Header({ headerResp = {} }: any) {
                 key={item.label}
                 href={item.href}
                 className={`text-base transition
-                  ${isActive(item.href) ? 'text-[#22c55e] font-bold' : 'hover:text-white'}
+                  ${isActive(item.href) ? 'text-[#fff] font-bold ' : 'hover:text-white'}
                 `}
               >
                 {item.label}
@@ -76,11 +77,11 @@ export default function Header({ headerResp = {} }: any) {
               <span className="h-12 w-12 flex items-center justify-center rounded-full ">
                 <FiPhoneCall size={20} />
               </span>
-              <div className="text-sm leading-tight">
-                <span className="fredoka font-medium block">{phone?.label || ''}</span>
+              <div className="text-[1.5rem] leading-tight mr-14">
+                <span className="fredoka font-medium block">{phone?.label || ''} </span>
                 <a
                   href={`tel:${(phone?.number || '').replace(/\s|\(|\)|-/g, '')}`}
-                  className="font-normal hover:text-green-400 transition"
+                  className="font-normal hover:text-green-400 transition text-[1.125rem]"
                 >
                   {phone?.number || ''}
                 </a>
@@ -89,7 +90,7 @@ export default function Header({ headerResp = {} }: any) {
 
             <button
               onClick={() => setOpenModals(true)}
-              className="rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:text-[#00603A] hover:bg-white transition border border-white"
+              className=" rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:text-[#00603A] hover:bg-white transition border border-white"
             >
               {cta?.label || ''}
             </button>
@@ -135,9 +136,10 @@ export default function Header({ headerResp = {} }: any) {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`text-xl border-b border-white/10 pb-3 transition
-                  ${isActive(item.href)
-                    ? 'text-[#22c55e] font-bold'
-                    : 'font-light hover:text-green-400'
+                  ${
+                    isActive(item.href)
+                      ? 'text-[#22c55e] font-bold'
+                      : 'font-light hover:text-green-400'
                   }
                 `}
               >

@@ -20,7 +20,7 @@ const VideoSection = ({ data }: any) => {
   };
 
   return (
-    <section className="relative lg:pt-0 pt-10">
+    <section className="relative lg:pt-0 py-10">
       <div className="wrapper mx-auto relative">
         <div className="relative rounded-3xl overflow-hidden">
           <div className="relative w-full h-[260px] sm:h-[420px] lg:h-[540px] overflow-hidden rounded-2xl">
@@ -90,7 +90,7 @@ const ArcFeaturesSection = ({ data }: any) => {
                 <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white shadow-md flex items-center justify-center font-bold text-gray-900 border border-gray-100 shrink-0">
                   {item.id}
                 </div>
-                <p className="mt-2 lg:mt-3 text-xs lg:text-sm font-semibold text-gray-800 whitespace-pre-line leading-snug w-[10rem]">
+                <p className="onesta mt-2 lg:mt-3 text-xs lg:text-[18px] font-medium w-[14rem]">
                   {item.text}
                 </p>
               </div>

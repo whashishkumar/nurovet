@@ -43,7 +43,7 @@ const VetGallery = ({ recentStories }: any) => {
   const { left, centerStack, highlight, rightStack, button } = recentStories || {};
 
   return (
-    <section className="wrapper m-auto px-6 md:px-6">
+    <section className="wrapper m-auto px-6 md:px-6 pb-12">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
         <div className="md:col-span-4 h-[300px] md:h-auto">
           <div className="h-full overflow-hidden rounded-2xl">
@@ -101,7 +101,7 @@ const VetGallery = ({ recentStories }: any) => {
         </div>
       </div>
       <div className="mt-12 flex justify-center">
-        <Button href={button?.href} label={button?.label} className='px-14 py-4' />
+        <Button href={button?.href} label={button?.label} className="px-14 py-4" />
       </div>
     </section>
   );
@@ -110,7 +110,7 @@ const VetGallery = ({ recentStories }: any) => {
 export default function RecentStories({ recentStories }: any) {
   const { tag, heading, tagicon, subHeading } = recentStories || {};
   return (
-    <div className="bg-color">
+    <div className="bg-white">
       <div className="inner-wrapper m-auto lg:py:16 py-12  px-6 lg:px-0">
         <div className="flex justify-center">
           <SectionBadge label={tag} icon={tagicon} />

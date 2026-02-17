@@ -23,7 +23,7 @@ export default function BookDemo({ bookDemoSection }: any) {
   const { heading, image, tag, tagicon, subHeading } = bookDemoSection || {};
 
   return (
-    <div className="bg-color" id="demo">
+    <div className="bg-white" id="demo">
       <div className="inner-wrapper m-auto lg:py-16 py-12 lg:px-0 px-6">
         <div className="flex justify-left">
           <SectionBadge label={tag} icon={tagicon} />
@@ -33,7 +33,6 @@ export default function BookDemo({ bookDemoSection }: any) {
           title={heading}
           subTitle={subHeading}
           subHeadingCss="lg:max-w-[40rem]"
-
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-center">
           <div className="relative w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[490px]">

@@ -63,6 +63,7 @@ export default function QuickAnswers({ faqSection }: any) {
           bg-no-repeat
           bg-contain
           overflow-hidden
+          bottom-0 left-0
         "
         style={
           bgImage?.src && {
@@ -77,7 +78,7 @@ export default function QuickAnswers({ faqSection }: any) {
         </div>
         <SectionHeading cssClass="text-left lg:w-[60rem]" title={heading} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="pt-6">
+          <div className="pt-6 ">
             <Accordion data={faq} />
           </div>
           <div className="relative w-full h-[260px] sm:h-[300px] md:h-[380px] lg:h-[490px]">

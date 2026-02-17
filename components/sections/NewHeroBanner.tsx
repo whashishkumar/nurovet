@@ -24,15 +24,11 @@ export default function NewHeroBanner({ heroBanner }: any) {
   //   bannerImage: "/images/herobanner.png",
   // };
 
-  const { heroContent } = heroBanner || {}
-  const { cta, backgroundImage,
-    demobtn, features, title
-
-  } = heroContent || {}
-
+  const { heroContent } = heroBanner || {};
+  const { cta, backgroundImage, demobtn, features, title } = heroContent || {};
 
   return (
-    <div className="mx-auto sm:px-6 p-4 sm:py-6 bg-color">
+    <div className="m-auto sm:px-6 p-4 sm:py-6 bg-color">
       <section className="relative overflow-hidden bg-[#00603A] min-h-auto lg:min-h-[90vh] flex items-center  rounded-2xl">
         {/* <div
           className="absolute hidden md:block right-0 top-0 h-full   aspect-[16/9]
@@ -49,11 +45,13 @@ export default function NewHeroBanner({ heroBanner }: any) {
   "
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
-        <div className="relative z-10 inner-wrapper mx-auto px-6 lg:px-0 w-full  py-20">
+        <div className="relative z-10 inner-wrapper m-auto px-6 lg:px-0 w-full  py-20 ">
           <div className="max-w-3xl text-white ">
-            {title && <p className="mt-15 md:mt-25  text-white text-[2rem] lg:text-[3.125rem] font-bold leading-tight fredoka ">
-              {title?.first}
-            </p>}
+            {title && (
+              <p className="mt-15 md:mt-25  text-white text-[2rem] lg:text-[3.125rem] font-bold leading-tight fredoka ">
+                {title?.first}
+              </p>
+            )}
             <ul className="mt-8 space-y-4">
               {features?.map((feature: string, index: number) => (
                 <li
@@ -68,17 +66,15 @@ export default function NewHeroBanner({ heroBanner }: any) {
 
             <div className="mt-10 flex flex-wrap gap-4 onesta">
               <Button
-                href={cta?.
-                  href
-                }
+                href={cta?.href}
                 label={cta?.label}
-                className="onesta bg-white !text-[#00603A]  px-8 py-4 rounded-full font-normal transition-all hover:!text-white font-normal text-base"
+                className="lg:min-w-[227px]   onesta bg-white !text-[#00603A]  px-8 py-5  rounded-full font-normal transition-all hover:!text-white font-normal text-base"
               />
               <Button
                 href={demobtn?.href}
                 label={demobtn?.label}
                 variant="outline"
-                className=" onesta border-white text-white hover:bg-white hover:!text-[#00603A] px-8 py-4 rounded-full font-normal transition-all text-base
+                className="lg:min:w-[210px]  onesta border-white text-white hover:bg-white hover:!text-[#00603A] px-8 py-5 rounded-full font-normal transition-all text-base
 "
               />
             </div>

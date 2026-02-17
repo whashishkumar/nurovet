@@ -5,25 +5,25 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { HiOutlineCalendar, HiOutlineLink } from 'react-icons/hi';
 
-const CategoriesCard = ({ categories ,onFilter}: any) => {
+const CategoriesCard = ({ categories, onFilter }: any) => {
   const { title, data } = categories || {};
   const router = useRouter();
 
   const handleSelectCategory = (slug: string) => {
     onFilter('', '', slug);
     router.push(`/blog`);
-     setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 100);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   return (
-    <div className="max-w-sm bg-[#F9F6F1] rounded-xl p-6 shadow-sm border border-gray-100 font-sans">
+    <div className="max-w-sm bg-[#fff] rounded-[15px] p-6  ">
       <div className="mb-4">
         <h2 className="text-2xl font-bold text-black fredoka">{title}</h2>
         <div className="relative mt-4">
-          <div className="h-0.5 w-full bg-gray-200 rounded-full" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-0.75 w-20  rounded-xl" />
+          {/* <div className="h-0.5 w-full bg-gray-200 rounded-full" /> */}
+          {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 h-0.75 w-20  rounded-xl" /> */}
         </div>
       </div>
       <div className="space-y-2">
@@ -51,12 +51,12 @@ const RecentPostsCard = ({ recentPosts }: any) => {
   };
 
   return (
-    <div className="max-w-sm bg-[#F9F6F1] rounded-xl p-8 shadow-sm border border-gray-100 figtree">
+    <div className="max-w-sm bg-[#fff] rounded-[15px] p-8 ">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-black fredoka">{title}</h2>
         <div className="relative mt-4">
-          <div className="h-0.5 w-full bg-gray-200 rounded-full" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-0.75 w-20 rounded-xl" />
+          {/* <div className="h-0.5 w-full bg-gray-200 rounded-full" /> */}
+          {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 h-0.75 w-20 rounded-xl" /> */}
         </div>
       </div>
       {/* Posts */}
@@ -92,23 +92,23 @@ const RecentPostsCard = ({ recentPosts }: any) => {
   );
 };
 
-const TagsSection = ({ tags,onFilter }: any) => {
+const TagsSection = ({ tags, onFilter }: any) => {
   const { title, data } = tags || {};
   const router = useRouter();
- const handleTagPosts =  (slug: string) => {
-  onFilter('', slug, '');
-  router.push(`/blog`)
-   setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 100);
-};
+  const handleTagPosts = (slug: string) => {
+    onFilter('', slug, '');
+    router.push(`/blog`);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
   return (
-    <section className="max-w-sm rounded-2xl bg-[#FDF8F2] p-6 shadow-sm">
+    <section className="max-w-sm rounded-[15px] bg-[#fff] p-6 ">
       <div className="mb-4">
         <h2 className="text-2xl font-semibold text-gray-900">{title}</h2>
-        <div className="relative mt-2 h-0.75 w-full bg-gray-200 rounded-full overflow-hidden">
+        {/* <div className="relative mt-2 h-0.75 w-full bg-gray-200 rounded-full overflow-hidden">
           {data?.activeBar && <span className="absolute left-1/2 h-full w-20  rounded-full" />}
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-wrap gap-3">
         {data?.map((tag: any, index: any) => (
@@ -125,7 +125,7 @@ const TagsSection = ({ tags,onFilter }: any) => {
   );
 };
 
-export default function BlogSideBar({onFilter}:any) {
+export default function BlogSideBar({ onFilter }: any) {
   const [categories, setCategories] = useState([]);
   const [recentPosts, setRecentPosts] = useState([]);
   const [tags, setTags] = useState([]);
@@ -141,7 +141,6 @@ export default function BlogSideBar({onFilter}:any) {
   const getTags = async () => {
     const tags = await BlogEndPoints.tags();
     setTags(tags);
-  
   };
 
   useEffect(() => {
@@ -152,7 +151,7 @@ export default function BlogSideBar({onFilter}:any) {
 
   return (
     <div className="grid gap-8">
-      <CategoriesCard categories={categories}  onFilter={onFilter}  />
+      <CategoriesCard categories={categories} onFilter={onFilter} />
       <RecentPostsCard recentPosts={recentPosts} />
       <TagsSection tags={tags} onFilter={onFilter} />
     </div>

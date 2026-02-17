@@ -73,12 +73,11 @@ const AiPowerPetCare = ({ aiSection }: any) => {
     "
         style={
           images?.bgImage?.src
-            ? ({ "--bg-img": `url(${images.bgImage.src})` } as React.CSSProperties)
+            ? ({ '--bg-img': `url(${images.bgImage.src})` } as React.CSSProperties)
             : undefined
         }
       >
         <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
-
           {/* LEFT */}
           <div className="relative flex justify-start">
             {/* <Image
@@ -104,9 +103,7 @@ const AiPowerPetCare = ({ aiSection }: any) => {
             <h1 className="text-[2rem] lg:text-[2.4rem] font-medium text-[#1F2021] onesta">
               {heading}
             </h1>
-            <p className="mt-2 text-black text-lg figtree">
-              {subHeading}
-            </p>
+            <p className="mt-2 text-black text-lg figtree">{subHeading}</p>
             <ul className="mt-6 space-y-3">
               {features?.map((item: any, index: number) => (
                 <li key={index} className="flex items-center gap-3 justify-start">
@@ -117,30 +114,20 @@ const AiPowerPetCare = ({ aiSection }: any) => {
                     height={20}
                     className="object-contain"
                   />
-                  <span className="text-black onesta font-medium text-xl">
-                    {item}
-                  </span>
+                  <span className="text-black onesta font-medium text-xl">{item}</span>
                 </li>
               ))}
             </ul>
 
             <div className="mt-8 flex justify-start">
-              <Button
-                href={cta.href}
-                label={cta.label}
-                variant="primary"
-                showICon={true}
-              />
+              <Button href={cta.href} label={cta.label} variant="primary" showICon={true} />
             </div>
           </div>
-
         </div>
       </div>
     </section>
   );
 };
-
-
 
 const RemoteConsultaions = ({ remoteSection }: any) => {
   const { heading, subHeading, features, cta, images } = remoteSection || {};

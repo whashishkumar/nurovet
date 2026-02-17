@@ -34,8 +34,8 @@ export default function Button({
           className={`
         onesta
         rounded-full 
-        px-6 
-        py-2.5 
+        px-8 
+        py-4
         text-base 
         transition-all 
         duration-300 
@@ -44,6 +44,8 @@ export default function Button({
         justify-center
         items-center
         gap-2
+        min:h-[54px]
+
         ${variants[variant]} 
         ${className}
       `}

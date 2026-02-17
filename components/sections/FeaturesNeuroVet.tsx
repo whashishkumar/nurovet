@@ -92,29 +92,26 @@ export default function FeaturesNeuroVet({ featuresNuroVet }: any) {
 
   return (
     <section className="bg-color ">
-      <div className="inner-wrapper mx-auto text-center  pt-12 md:pt-20 lg:pt-45 px-6 lg:px-0">
+      <div className="inner-wrapper m-auto text-center  pt-12 md:pt-20 lg:pt-45 px-6 lg:px-0">
         <div className="flex justify-center mb-6">
           <div className="flex space-x-1">
             {avatars?.map((src: any, index: number) => (
-              <div
-                key={index}
-                className="w-12 h-12 rounded-full border-3 border-white overflow-hidden bg-gray-200"
-              >
+              <div key={index} className="rounded-full  overflow-hidden">
                 <Image
                   src={src}
                   alt="Pet avatar"
                   width={55}
                   height={55}
-                  className="object-cover w-full h-full"
+                  className="object-contain w-full h-full rounded-full"
                 />
               </div>
             ))}
           </div>
         </div>
-        <h2 className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold text-[#1F2021] leading-tight lg:w-[39.438rem] m-auto">
+        <h2 className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-semibold text-[#1F2021] leading-tight lg:w-[39.438rem] m-auto onesta">
           {heading}
         </h2>
-        <p className="mt-4 text-lg sm:text-base text-[#475569] font-normal">{subHeading}</p>
+        <p className="mt-4 text-lg sm:text-base text-[#475569] font-normal figtree">{subHeading}</p>
       </div>
       <FeaturesCards featuresData={data} />
     </section>

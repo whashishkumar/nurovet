@@ -45,7 +45,7 @@ export default function Hero({ aboutSection }: any) {
           lg:block
           bg-bottom-left
           lg:w-[30vw] xl:w-[30vw]
-          lg:h-175
+          lg:h-135
           bg-no-repeat
           bg-contain
           overflow-hidden
@@ -59,7 +59,7 @@ export default function Hero({ aboutSection }: any) {
           lg:block
           right-0
           lg:w-[50vw] xl:w-[50vw]
-          lg:h-175
+          lg:h-165
           bg-no-repeat
           bg-contain
           bg-right
@@ -68,12 +68,12 @@ export default function Hero({ aboutSection }: any) {
         style={{ backgroundImage: `url('${images?.backgroundRight}')` }}
       />
 
-      <div className="wrapper m-auto lg:px-0 px-6 ">
+      <div className="inner-wrapper m-auto lg:px-0 px-6 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0  ">
           {/* LEFT CONTENT */}
-          <div className="sm:px-10 md:px-16 lg:px-0 lg:pl-30 order-2 lg:order-1 z-1 ">
+          <div className="sm:px-10 md:px-16 lg:px-0  order-2 lg:order-1 z-1 ">
             <SectionBadge label={tag} icon={tagicon} />
-            <div className="inner-wrapper mx-auto ">
+            <div className="inner-wrapper m-auto ">
               <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight fredoka">
                 {heading}
               </h1>
@@ -100,14 +100,14 @@ export default function Hero({ aboutSection }: any) {
                   href={cta?.buttonHref}
                   label={cta?.buttonText}
                   variant="primary"
-                  className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
+                  className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-8 py-4 flex justify-center items-center lg:w-[145px] lg:h-[43px]"
                 />
-                <a href={`tel:${cta.phone}`} className=' flex items-center gap-4' >
+                <a href={`tel:${cta.phone}`} className=" flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
                     <FiPhoneCall size={20} />
                   </span>
                   <div>
-                    <p className="font-semibold fredoka text-lg sm:text-xl text-[#02000F] leading-tight">
+                    <p className="font-semibold fredoka text-lg sm:text-xl  text-[#02000F] leading-tight">
                       {cta?.phoneLabel}
                     </p>
                     <p className="font-normal text-[#02000F] text-base sm:text-lg">{cta?.phone}</p>
