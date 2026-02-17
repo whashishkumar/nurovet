@@ -45,7 +45,7 @@ export default function Hero({ aboutSection }: any) {
           lg:block
           bg-bottom-left
           lg:w-[30vw] xl:w-[30vw]
-          lg:h-135
+          lg:h-125
           bg-no-repeat
           bg-contain
           overflow-hidden
@@ -100,7 +100,7 @@ export default function Hero({ aboutSection }: any) {
                   href={cta?.buttonHref}
                   label={cta?.buttonText}
                   variant="primary"
-                  className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-8 py-4 flex justify-center items-center lg:w-[145px] lg:h-[43px]"
+                  className=" transform hover:scale-105 w-full sm:w-auto px-8  flex justify-center items-center lg:w-[145px] lg:h-[52px]"
                 />
                 <a href={`tel:${cta.phone}`} className=" flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">

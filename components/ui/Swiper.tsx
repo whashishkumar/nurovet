@@ -70,7 +70,7 @@ export default function SwiperContainer({
   const nextRef = useRef(null);
 
   return (
-    <div className="relative w-full mx-auto px-4 sm:px-8 lg:px-12">
+    <div className="relative w-full m-auto px-4 sm:px-8 lg:px-12">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={15}

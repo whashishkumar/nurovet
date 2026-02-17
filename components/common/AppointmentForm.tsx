@@ -40,7 +40,7 @@ const AppointmentForm = ({ className }: any) => {
 
   return (
     <section>
-      <div className="max-w-5xl mx-auto text-black">
+      <div className="max-w-5xl m-auto text-black">
         <div
           className={`${
             className ? `${className} ` : 'bg-[#0B5D3B]'

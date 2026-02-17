@@ -16,7 +16,7 @@ export default function MapLoaction({ location }: any) {
 
   return (
     <div className="bg-color">
-      <section className="inner-wrapper mx-auto px-6 py-16 lg:px-0 relative">
+      <section className="inner-wrapper m-auto px-6 py-16 lg:px-0 relative">
         <div className="items-start">
           <div className="relative rounded-[2.5rem] h-full min-h-125">
             <div className="absolute inset-0 bg-gray-50 rounded-[2.5rem] overflow-hidden">

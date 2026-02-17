@@ -85,7 +85,7 @@ export default function OurStory({ ourStoryData }: any) {
                   href={cta.buttonHref}
                   label={cta.buttonText}
                   variant="primary"
-                  className="shadow-xl transform hover:scale-105 w-full sm:w-auto px-6 py-4 rounded-full font-bold transition-all"
+                  className=" transform hover:scale-105 w-full sm:w-auto px-6 py-5 rounded-full font-bold transition-all "
                 />
                 {/* <div className="hidden lg:block w-px h-12 bg-gray-200" /> */}
                 {/* <Link href={`tel:${cta.phone}`} className="flex items-center gap-4 group cursor-pointer">

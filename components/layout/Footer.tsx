@@ -42,7 +42,7 @@ const Footer = ({ footerResp }: any) => {
   "
       />
 
-      <div className="inner-wrapper mx-auto lg:px-0 px-4 py-14">
+      <div className="inner-wrapper m-auto lg:px-0 px-4 py-14">
         <div className="grid grid-cols-1  md:grid-cols-4 gap-14">
           <div>
             {brand.logo && (
@@ -142,8 +142,8 @@ const Footer = ({ footerResp }: any) => {
                   <Image
                     src={item?.icon}
                     alt="icon"
-                    height={40}
-                    width={40}
+                    height={13}
+                    width={13}
                     className="object-contain"
                   />
                 )}

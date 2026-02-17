@@ -2,14 +2,14 @@ import React from 'react';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Image from 'next/image';
-  
+
 const PetServicesSection = ({ services, centerImage }: any) => {
   const leftServices = services.filter((_: any, idx: number) => idx % 2 === 0);
   const rightServices = services.filter((_: any, idx: number) => idx % 2 !== 0);
 
   return (
     <section className="relative pt-18">
-      <div className="wrapper mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+      <div className="wrapper m-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
         <div className="space-y-16">
           {leftServices.map((item: any) => (
             <ServiceCard key={item.id} data={item} align="left" />
@@ -48,8 +48,15 @@ function ServiceCard({ data, align }: { data: any; align: 'left' | 'right' }) {
 }
 
 export default function HelpCenterServices({ services }: any) {
-  const {tag,tagicon, background, subHeading, heading, centerImage,services:serviceList
- } = services || {};
+  const {
+    tag,
+    tagicon,
+    background,
+    subHeading,
+    heading,
+    centerImage,
+    services: serviceList,
+  } = services || {};
 
   return (
     <>

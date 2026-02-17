@@ -37,7 +37,7 @@ const ExplorePetcareBanner = () => {
 
   return (
     <section className="relative bg-[#0B5D3B] pb-10">
-      <div className="inner-wrapper mx-auto px-4">
+      <div className="inner-wrapper m-auto px-4">
         <div
           className="
             relative

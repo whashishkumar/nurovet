@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
@@ -7,22 +7,20 @@ import { HomePageEndPoints } from '@/lib/service/HomePageEndPoints';
 import { useState } from 'react';
 import { AboutPageEndPoints } from '@/lib/service/AboutUsPageEndPoints';
 
-
-
 const VetTeamSection = ({ teamMembers, featuredVetInfo }: any) => {
-  const [featuredVetData, setFeaturedVetData] = useState(null)
+  const [featuredVetData, setFeaturedVetData] = useState(null);
   const fetchTestinomials = async (slug: any) => {
     const response = await HomePageEndPoints.testinomialsDetails(slug);
     const resp = await AboutPageEndPoints.teamDetails(slug);
-    setFeaturedVetData(response?.featuredVet)
-    setFeaturedVetData(resp?.featuredVet)
-  }
+    setFeaturedVetData(response?.featuredVet);
+    setFeaturedVetData(resp?.featuredVet);
+  };
 
-  const featuredVet = featuredVetData || featuredVetInfo
+  const featuredVet = featuredVetData || featuredVetInfo;
 
   return (
     <section className="pt-14">
-      <div className="wrapper mx-auto ">
+      <div className="wrapper m-auto ">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-4 relative">
             <span className="hidden md:block absolute left-0 top-0 h-full w-[2px] bg-gray-100" />
@@ -32,7 +30,11 @@ const VetTeamSection = ({ teamMembers, featuredVetInfo }: any) => {
             >
               <div style={{ direction: 'ltr', marginLeft: '40px' }}>
                 {teamMembers?.map((member: any, index: any) => (
-                  <li key={index} className="flex items-center gap-4 mb-8 last:mb-0 cursor-pointer" onClick={() => fetchTestinomials(member?.slug)}>
+                  <li
+                    key={index}
+                    className="flex items-center gap-4 mb-8 last:mb-0 cursor-pointer"
+                    onClick={() => fetchTestinomials(member?.slug)}
+                  >
                     <Image
                       src={member?.avatar}
                       alt={member?.name}
@@ -92,7 +94,6 @@ const VetTeamSection = ({ teamMembers, featuredVetInfo }: any) => {
                             width={12}
                             height={10}
                             className="object-contain"
-
                           />
                         )}
                       </a>
@@ -126,7 +127,6 @@ export default function OurTestimonials({ sectionData, teamMembers, featuredVet 
           <div className="space-y-4 md:space-y-6 w-full">
             <div className="flex justify-start">
               <SectionBadge label={badge.label} icon={badge.icon} />
-
             </div>
             {/* <div className='flex justify-center items-center'>
               <SectionHeading
@@ -161,9 +161,7 @@ export default function OurTestimonials({ sectionData, teamMembers, featuredVet 
                 />
               </div>
             </div>
-
           </div>
-
         </div>
         <VetTeamSection teamMembers={teamMembers} featuredVetInfo={featuredVet} />
       </div>

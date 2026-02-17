@@ -36,7 +36,7 @@ export default function Gallery({ galleryData }: any) {
 
   return (
     <div className="bg-white">
-      <div className="inner-wrapper mx-auto lg:px-0 px-4 pb-10">
+      <div className="inner-wrapper m-auto lg:px-0 px-4 pb-10">
         <SectionHeading cssClass="text-left" title={heading} subTitle={subHeading} />
         <div
           className="

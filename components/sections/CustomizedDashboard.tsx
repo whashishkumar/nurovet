@@ -77,7 +77,7 @@ const AiPowerPetCare = ({ aiSection }: any) => {
             : undefined
         }
       >
-        <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
+        <div className="wrapper m-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
           {/* LEFT */}
           <div className="relative flex justify-start">
             {/* <Image
@@ -133,7 +133,7 @@ const RemoteConsultaions = ({ remoteSection }: any) => {
   const { heading, subHeading, features, cta, images } = remoteSection || {};
   return (
     <section className="px-6 sm:px-10 lg:px-0 mt-8">
-      <div className="wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
+      <div className="wrapper m-auto grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-12">
         <div className="text-left order-2 md:order-1">
           <h1 className="text-[2rem] lg:text-[2.4rem] font-medium text-[#1F2021] onesta">
             {heading}

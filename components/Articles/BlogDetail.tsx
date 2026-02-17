@@ -112,7 +112,7 @@ export default function BlogDetail() {
             <div className="max-w-4xl justify-center m-auto py-8">
               <BlogComments commentsData={comments} />
             </div>
-            <div className="max-w-4xl justify-center mx-auto py-1">
+            <div className="max-w-4xl justify-center m-auto py-1">
               <CommentForm getBlogCommentList={getBlogCommentList} />
             </div>
           </div>

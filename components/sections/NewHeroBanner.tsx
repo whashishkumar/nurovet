@@ -68,7 +68,7 @@ export default function NewHeroBanner({ heroBanner }: any) {
               <Button
                 href={cta?.href}
                 label={cta?.label}
-                className="lg:min-w-[227px]   onesta bg-white !text-[#00603A]  px-8 py-5  rounded-full font-normal transition-all hover:!text-white font-normal text-base"
+                className="lg:min-w-[217px] onesta bg-white !text-[#00603A]  px-6 py-5  rounded-full font-normal transition-all hover:!text-white font-normal text-base"
               />
               <Button
                 href={demobtn?.href}

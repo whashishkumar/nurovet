@@ -23,7 +23,7 @@ export default function BlogDetailCard({ data }: BlogDetailCardProps) {
   console.log(content, 'content');
 
   return (
-    <article className="bg-color mx-auto px-6 lg:px-0">
+    <article className="bg-color m-auto px-6 lg:px-0">
       <div className="pb-8">
         <a
           href="/blog"

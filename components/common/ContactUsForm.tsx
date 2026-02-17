@@ -51,7 +51,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-      if (!form.name || !form.email || !form.phone) {
+    if (!form.name || !form.email || !form.phone) {
       return;
     }
     const resp = await ContactUsEndPoints.contactUsForm(form);
@@ -67,7 +67,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-4xl bg-white p-8 md:p-10  mx-auto  shadow-sm">
+    <form onSubmit={handleSubmit} className="rounded-4xl bg-white p-8 md:p-10  m-auto  shadow-sm">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <input
           required

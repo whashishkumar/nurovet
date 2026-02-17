@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function HistoryCard({ year, image, alt, description }: any) {
   return (
-    <div className="flex flex-col items-center  mx-auto  mt-12 ">
+    <div className="flex flex-col items-center  m-auto  mt-12 ">
       <div className="rounded-full border border-gray-300 px-8 py-4 text-3xl font-bold text-black  fredoka">
         {year}
       </div>

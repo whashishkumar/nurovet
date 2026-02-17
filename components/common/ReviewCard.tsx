@@ -4,7 +4,7 @@ import { FaStar, FaQuoteRight } from 'react-icons/fa';
 
 export default function ReviewCard({ name, role, avatar, rating, review }: any) {
   return (
-    <div className="relative bg-[#F9F5EF] rounded-3xl px-8 py-10 shadow-sm max-w-3xl mx-auto  flex flex-col">
+    <div className="relative bg-[#F9F5EF] rounded-3xl px-8 py-10 shadow-sm max-w-3xl m-auto  flex flex-col">
       {/* Header */}
       <div className="flex items-center gap-4 mb-4">
         <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">

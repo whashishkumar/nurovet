@@ -76,7 +76,7 @@ const ArcFeaturesSection = ({ data }: any) => {
 
   return (
     <section className="relative pt-10 md:pt-20 lg:pt-24 overflow-hidden px-6">
-      <div className="inner-wrapper mx-auto relative">
+      <div className="inner-wrapper m-auto relative">
         <div className="relative flex justify-center">
           <div className="relative w-full flex flex-col items-center gap-10 md:block md:h-[350px] lg:h-[400px]">
             {/* Arc Line */}

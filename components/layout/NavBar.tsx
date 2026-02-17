@@ -41,7 +41,7 @@ export default function Header({ headerResp = {} }: any) {
         }
       `}
     >
-      <nav className="mx-auto wrapper px-6">
+      <nav className="m-auto wrapper px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
@@ -56,44 +56,46 @@ export default function Header({ headerResp = {} }: any) {
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8 text-white/90">
-            {menu?.map((item: any) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`text-base transition
+          <div className="flex gap-16">
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-8 text-white/90">
+              {menu?.map((item: any) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`text-base transition
                   ${isActive(item.href) ? 'text-[#fff] font-bold ' : 'hover:text-white'}
                 `}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Desktop Right */}
-          <div className="hidden lg:flex items-center gap-4">
-            <div className="flex items-center gap-2 text-white">
-              <span className="h-12 w-12 flex items-center justify-center rounded-full ">
-                <FiPhoneCall size={20} />
-              </span>
-              <div className="text-[1.5rem] leading-tight mr-14">
-                <span className="fredoka font-medium block">{phone?.label || ''} </span>
-                <a
-                  href={`tel:${(phone?.number || '').replace(/\s|\(|\)|-/g, '')}`}
-                  className="font-normal hover:text-green-400 transition text-[1.125rem]"
                 >
-                  {phone?.number || ''}
-                </a>
-              </div>
+                  {item.label}
+                </Link>
+              ))}
             </div>
 
-            <button
-              onClick={() => setOpenModals(true)}
-              className=" rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:text-[#00603A] hover:bg-white transition border border-white"
-            >
-              {cta?.label || ''}
-            </button>
+            {/* Desktop Right */}
+            <div className="hidden lg:flex items-center gap-4">
+              <div className="flex items-center gap-2 text-white">
+                <span className="h-12 w-12 flex items-center justify-center rounded-full ">
+                  <FiPhoneCall size={20} />
+                </span>
+                <div className="text-[1.5rem] leading-tight mr-14">
+                  <span className="fredoka font-medium block">{phone?.label || ''} </span>
+                  <a
+                    href={`tel:${(phone?.number || '').replace(/\s|\(|\)|-/g, '')}`}
+                    className="font-normal hover:text-green-400 transition text-[1.125rem]"
+                  >
+                    {phone?.number || ''}
+                  </a>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setOpenModals(true)}
+                className=" rounded-full bg-[#00603A] px-5 py-3 text-sm text-white hover:text-[#00603A] hover:bg-white transition border border-white"
+              >
+                {cta?.label || ''}
+              </button>
+            </div>
           </div>
           <Modal isOpen={openModals} onClose={() => setOpenModals(false)} maxWidth="max-w-2xl">
             <AppointmentForm />
