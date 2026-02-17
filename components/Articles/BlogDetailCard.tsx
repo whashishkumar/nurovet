@@ -21,8 +21,6 @@ type BlogDetailCardProps = {
 export default function BlogDetailCard({ data }: BlogDetailCardProps) {
   const content = data?.content;
 
-  console.log(content, 'content');
-
   return (
     <article className="bg-color m-auto px-6 lg:px-0">
       <div className="pb-8">
