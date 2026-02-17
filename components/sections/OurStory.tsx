@@ -41,7 +41,7 @@ import Link from 'next/link';
 // };
 
 export default function OurStory({ ourStoryData }: any) {
-  const { heading, features, cta, image, tag, tagicon, subHeading } = ourStoryData || {};
+  const { heading, features, cta, image, tag, tagicon, subHeading, description } = ourStoryData || {};
   return (
     <div className="bg-white">
       <div className="inner-wrapper m-auto lg:py-16 py-12 lg:px-0 px-6">
@@ -57,6 +57,16 @@ export default function OurStory({ ourStoryData }: any) {
               subTitle={subHeading}
               subHeadingCss={'lg:width-[2rem] '}
             />
+
+            {description?.length > 0 && (
+              <div className="mt-2 space-y-2">
+                {description.map((paragraph: string, index: number) => (
+                  <p key={index} className="font-normal text-lg text-[#6C6D71] onesta">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
 
             <div className="max-w-4xl">
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">

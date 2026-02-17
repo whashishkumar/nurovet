@@ -4,87 +4,58 @@ import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../ui/Button';
 import { FaPlay } from 'react-icons/fa';
-import { FaPauseCircle } from 'react-icons/fa';
 
 import { useRef, useState } from 'react';
 
 const VideoSection = ({ data }: any) => {
-  const { floatingImage, background } = data || {};
+  const { floatingImage, background, videoCover } = data || {};
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [hasStartedPlaying, setHasStartedPlaying] = useState(false);
 
-  const togglePlay = () => {
+  const handlePlayClick = () => {
     if (!videoRef.current) return;
-
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
+    videoRef.current.play();
+    setHasStartedPlaying(true);
   };
 
   return (
     <section className="relative lg:pt-0 pt-10">
       <div className="wrapper mx-auto relative">
         <div className="relative rounded-3xl overflow-hidden">
-          {/* VIDEO */}
-          {/* <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-[260px] sm:h-[420px] lg:h-[520px] object-contain"
-          >
-            <source src={background?.src || '/video/video.mp4'} type="video/mp4" />
-          </video> */}
           <div className="relative w-full h-[260px] sm:h-[420px] lg:h-[540px] overflow-hidden rounded-2xl">
             <video
               ref={videoRef}
-              autoPlay
               muted
               loop
               playsInline
               controls
-              className="w-full h-full object-contain "
+              className="w-full h-full object-cover"
             >
               <source src={background?.src || '/video/video.mp4'} type="video/mp4" />
             </video>
-          </div>
 
-          {/* OVERLAY */}
-          <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
-
-          {/* PLAY / PAUSE BUTTON */}
-          {/* <button
-            onClick={togglePlay}
-            className="
-              absolute bottom-4
-               right-6 z-20
-              px-4 py-2 rounded-full
-              text-sm font-medium
-              shadow-lg
-              transition
-              h-20
-              w-20
-              border
-              border-white
-              text-white
-              text-center
-              flex
-              items-center
-              justify-center
-            "
-          >
-            {isPlaying ? (
-              <FaPauseCircle className="text-white" size={18} />
-            ) : (
-              <FaPlay className="text-white" size={18} />
+            {/* Video cover image - click to play */}
+            {videoCover?.src && !hasStartedPlaying && (
+              <div
+                onClick={handlePlayClick}
+                className="absolute inset-0 z-20 cursor-pointer flex items-center justify-center group"
+              >
+                <Image
+                  src={videoCover.src}
+                  alt={videoCover.alt || 'Video thumbnail'}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                  <div className="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <FaPlay className="text-gray-900 ml-1" size={32} />
+                  </div>
+                </div>
+              </div>
             )}
-          </button> */}
+          </div>
         </div>
       </div>
     </section>

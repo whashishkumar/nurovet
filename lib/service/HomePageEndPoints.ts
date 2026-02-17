@@ -36,7 +36,7 @@ export const HomePageEndPoints = {
   aiSection: () => {
     return apiFetch({
       endpoint: 'section/home-ai-section',
-      cache: 'dynamic',
+      cache: 'realtime', // 10s revalidate - ensures dashboard image updates appear quickly
     });
   },
 
@@ -57,7 +57,7 @@ export const HomePageEndPoints = {
   chooseSection: () => {
     return apiFetch({
       endpoint: 'section/home-choose-section',
-      cache: 'dynamic',
+      cache: 'realtime', // 10s revalidate - ensures cover image updates appear quickly
     });
   },
 

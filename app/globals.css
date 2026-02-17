@@ -64,6 +64,13 @@ html {
   html {
     font-size: 10px;
   }
+  .inner-wrapper.mx-auto {
+    margin-left: 36px;
+    margin-top: -23px;
+  }
+  span.text-black.onesta.font-medium.text-xl {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 1301px) and (max-width: 1500px) {
