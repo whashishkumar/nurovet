@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     shortcut: '/icons/Nurovet.png',
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
